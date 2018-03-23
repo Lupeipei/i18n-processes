@@ -138,7 +138,7 @@ module I18n::Processes
         op.separator "    #{cmd.ljust(op.summary_width + 1, ' ')}#{try_call cmd_conf[:desc]}"
       end
       op.separator ''
-      op.separator 'See `i18n-tasks <command> --help` for more information on a specific command.'
+      op.separator 'See `i18n-processes <command> --help` for more information on a specific command.'
     end
 
     def optparse_args(flag)

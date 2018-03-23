@@ -45,6 +45,7 @@ GEM
     parser (2.5.0.4)
       ast (~> 2.4.0)
     powerpack (0.1.1)
+    racc (1.4.14)
     rainbow (3.0.0)
     rake (10.4.2)
     rspec (3.7.0)
@@ -89,7 +90,9 @@ PLATFORMS
 DEPENDENCIES
   axlsx (~> 2.0)
   bundler (~> 1.3)
+  highline
   i18n-processes!
+  racc
   rake
   rspec (~> 3.3)
   rubocop (~> 0.53.0)

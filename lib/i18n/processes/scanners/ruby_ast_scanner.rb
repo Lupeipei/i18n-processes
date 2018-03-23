@@ -14,7 +14,7 @@ module I18n::Processes::Scanners
     include RelativeKeys
     include AST::Sexp
 
-    MAGIC_COMMENT_PREFIX = /\A.\s*i18n-tasks-use\s+/
+    MAGIC_COMMENT_PREFIX = /\A.\s*i18n-processes-use\s+/
     RECEIVER_MESSAGES = [nil, AST::Node.new(:const, [nil, :I18n])].product(%i[t translate])
 
     def initialize(**args)

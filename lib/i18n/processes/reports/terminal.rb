@@ -4,7 +4,7 @@ require 'i18n/processes/reports/base'
 require 'i18n/processes/rainbow_utils'
 require 'terminal-table'
 module I18n
-  module Tasks
+  module Processes
     module Reports
       class Terminal < Base # rubocop:disable Metrics/ClassLength
         def missing_keys(forest = task.missing_keys)

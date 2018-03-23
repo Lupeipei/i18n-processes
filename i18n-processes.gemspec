@@ -9,10 +9,12 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Lucia"]
   spec.email         = ["learningleadtorebirth@gmail.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because RubyGems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
-  spec.license       = "MIT"
+  spec.summary       = 'manage synced translation'
+  spec.description   = <<-TEXT
+i18n-processes helps you to synchronize your local translation  with target translation.
+  TEXT
+  spec.homepage      = 'https://github.com/Lupeipei/i18n-processes'
+  spec.license       = 'MIT'
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.

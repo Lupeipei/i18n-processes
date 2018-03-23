@@ -32,7 +32,7 @@ en:
       desc:
         add_missing: add missing keys to locale data
         check_normalized: verify that all translation data is normalized
-        config: display i18n-tasks configuration
+        config: display i18n-processes configuration
         data: show locale data
         data_merge: merge locale data with trees
         data_remove: remove keys present in tree from data
@@ -41,7 +41,7 @@ en:
         find: show where keys are used in the code
         gem_path: show path to the gem
         health: is everything OK?
-        irb: start REPL session within i18n-tasks context
+        irb: start REPL session within i18n-processes context
         missing: show missing translations
         mv: rename/merge the keys in locale data that match the given pattern
         normalize: 'normalize translation data: sort and move to the right files'

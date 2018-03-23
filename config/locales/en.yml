@@ -1,6 +1,6 @@
 ---
 en:
-  i18n_tasks:
+  i18n_processes:
     add_missing:
       added:
         one: Added %{count} key
@@ -15,7 +15,7 @@ en:
           data_format: 'Data format: %{valid_text}.'
           key_pattern: Filter by key pattern (e.g. 'common.*')
           key_pattern_to_rename: Full key (pattern) to rename. Required
-          locale: :i18n_tasks.common.locale
+          locale: :i18n_processes.common.locale
           locale_to_translate_from: Locale to translate from
           locales_filter: 'Locale(s) to process. Special: base'
           missing_types: 'Filter by types: %{valid}'
@@ -93,11 +93,11 @@ en:
       errors:
         no_api_key: >-
           Set Google API key via GOOGLE_TRANSLATE_API_KEY environment variable or translation.api_key
-          in config/i18n-tasks.yml. Get the key at https://code.google.com/apis/console.
+          in config/i18n-processes.yml. Get the key at https://code.google.com/apis/console.
         no_results: >-
           Google Translate returned no results. Make sure billing information is set at https://code.google.com/apis/console.
     health:
-      no_keys_detected: No keys detected. Check data.read in config/i18n-tasks.yml.
+      no_keys_detected: No keys detected. Check data.read in config/i18n-processes.yml.
     missing:
       details_title: Value in other locales or source
       none: No translations are missing.

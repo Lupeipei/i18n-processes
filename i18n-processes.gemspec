@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = 'manage synced translation'
   spec.description   = <<-TEXT
-i18n-processes helps you to synchronize your local translation  with target translation.
+i18n-processes helps you to synchronize your translation.
   TEXT
   spec.homepage      = 'https://github.com/Lupeipei/i18n-processes'
   spec.license       = 'MIT'
@@ -25,14 +25,38 @@ i18n-processes helps you to synchronize your local translation  with target tran
       "public gem pushes."
   end
 
-  spec.files         = `git ls-files -z`.split("\x0").reject do |f|
-    f.match(%r{^(test|spec|features)/})
-  end
-  spec.bindir        = "exe"
-  spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
-  spec.require_paths = ["lib"]
+  # spec.files         = `git ls-files -z`.split("\x0").reject do |f|
+  #   f.match(%r{^(test|spec|features)/})
+  # end
+  # spec.bindir        = "exe"
+  # spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
+  # spec.require_paths = ["lib"]
+  #
+  # spec.add_development_dependency "bundler", "~> 1.16"
+  # spec.add_development_dependency "rake", "~> 10.0"
+  # spec.add_development_dependency "rspec", "~> 3.0"
 
-  spec.add_development_dependency "bundler", "~> 1.16"
-  spec.add_development_dependency "rake", "~> 10.0"
-  spec.add_development_dependency "rspec", "~> 3.0"
+
+  spec.files = `git ls-files`.split($/)
+  spec.files -= spec.files.grep(%r{^(doc/|\.|spec/)}) + %w[config/i18n-processes.yml Gemfile]
+  spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) } - %w[i18n-processes.cmd]
+  spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
+  spec.require_paths = ['lib']
+
+  spec.add_dependency 'activesupport', '>= 4.0.2'
+  spec.add_dependency 'ast', '>= 2.1.0'
+  spec.add_dependency 'easy_translate', '>= 0.5.1'
+  spec.add_dependency 'erubi'
+  spec.add_dependency 'highline', '>= 1.7.3'
+  spec.add_dependency 'i18n'
+  spec.add_dependency 'parser', '>= 2.2.3.0'
+  spec.add_dependency 'rainbow', '>= 2.2.2', '< 4.0'
+  spec.add_dependency 'terminal-table', '>= 1.5.1'
+  spec.add_development_dependency 'axlsx', '~> 2.0'
+  spec.add_development_dependency 'bundler', '~> 1.3'
+  spec.add_development_dependency 'rake'
+  spec.add_development_dependency 'rspec', '~> 3.3'
+  spec.add_development_dependency 'rubocop', '~> 0.53.0'
+  spec.add_development_dependency 'simplecov'
+  spec.add_development_dependency 'yard'
 end

@@ -20,18 +20,18 @@ module I18n
       # @param scanner_opts [Hash]
       # @return self
       def add_scanner(scanner_class_name, scanner_opts = {})
-        scanners = I18n::Tasks::Configuration::DEFAULTS[:search][:scanners]
+        scanners = I18n::Processes::Configuration::DEFAULTS[:search][:scanners]
         scanners << [scanner_class_name, scanner_opts]
         scanners.uniq!
         self
       end
 
-      # Add commands to i18n-tasks
+      # Add commands to i18n-processes
       #
       # @param commands_module [Module]
       # @return self
       def add_commands(commands_module)
-        ::I18n::Tasks::Commands.send :include, commands_module
+        ::I18n::Processes::Commands.send :include, commands_module
         self
       end
     end
@@ -59,11 +59,11 @@ end
 require 'rainbow'
 require 'erubi'
 
-require 'i18n/tasks/version'
-require 'i18n/tasks/base_task'
+require 'i18n/processes/version'
+require 'i18n/processes/base_process'
 
 # Add internal locale data to i18n gem load path
 require 'i18n'
-Dir[File.join(I18n::Tasks.gem_path, 'config', 'locales', '*.yml')].each do |locale_file|
+Dir[File.join(I18n::Processes.gem_path, 'config', 'locales', '*.yml')].each do |locale_file|
   I18n.config.load_path << locale_file
 end

@@ -22,20 +22,26 @@ module I18n::Processes::Reports
     def add_missing_sheet(wb) # rubocop:disable Metrics/AbcSize
       forest = collapse_missing_tree! task.missing_keys
       wb.styles do |s|
-        type_cell = s.add_style alignment: { horizontal: :center }
+        # type_cell = s.add_style alignment: { horizontal: :center }
         locale_cell = s.add_style alignment: { horizontal: :center }
         regular_style = s.add_style
         wb.add_worksheet(name: missing_title(forest)) do |sheet|
           sheet.page_setup.fit_to width: 1
-          sheet.add_row [I18n.t('i18n_processes.common.type'), I18n.t('i18n_processes.common.locale'),
-                         I18n.t('i18n_processes.common.key'), I18n.t('i18n_processes.common.base_value')]
+          sheet.add_row [I18n.t('i18n_processes.common.locale'),
+                         I18n.t('i18n_processes.common.key'), 'Zh', 'translated']
           style_header sheet
-          forest.keys do |key, node|
-            locale = format_locale(node.root.data[:locale])
-            type = node.data[:type]
-            sheet.add_row [missing_type_info(type)[:summary], locale, key, task.t(key)],
-                          styles: [type_cell, locale_cell, regular_style, regular_style]
+          # forest.keys do |key, node|
+          #   locale = format_locale(node.root.data[:locale])
+          #   # type = node.data[:type]
+          #   sheet.add_row [locale, key, task.t(key)],
+          #                 styles: [locale_cell, regular_style, regular_style]
+          # end
+          sort_by_attr!(forest_to_attr(forest)).map do |a|
+            sheet.add_row [a[:locale],
+                           a[:key],
+                           a[:value]], styles: [locale_cell, regular_style, regular_style]
           end
+
         end
       end
     end
@@ -59,6 +65,8 @@ module I18n::Processes::Reports
           sheet.add_row locale_k_v
         end
       end
+      # $stderr.puts Rainbow("first keys: #{keys.first}").green
+      # $stderr.puts Rainbow("last keys: #{keys.last}").green
     end
 
     def style_header(sheet)

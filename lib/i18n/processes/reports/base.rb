@@ -66,5 +66,6 @@ module I18n::Processes::Reports
       forest = task.collapse_same_key_in_locales!(forest) { |node| node.data[:type] == :missing_used }
       forest
     end
+
   end
 end

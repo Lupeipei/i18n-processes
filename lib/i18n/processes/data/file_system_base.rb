@@ -85,9 +85,12 @@ module I18n::Processes
 
       def merge!(forest)
         forest.inject(Tree::Siblings.new) do |result, root|
+          $stderr.puts Rainbow("result: #{result}").green
+          $stderr.puts Rainbow("root: #{root}").green
           locale = root.key
           merged = get(locale).merge(root)
           set locale, merged
+          # $stderr.puts Rainbow("merged: #{merged}").green
           result.merge! merged
         end
       end

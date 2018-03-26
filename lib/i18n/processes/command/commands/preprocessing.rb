@@ -11,7 +11,7 @@ module I18n::Processes
             pos:  '[locale...]',
             desc: t('i18n_processes.cmd.desc.preprocessing'),
             args: [:locales,
-                   ['-p', '--path PATH', 'Destination path', default: 'config/locals/origin/']]
+                   ['-p', '--path PATH', 'Destination path', default: 'upload/']]
 
         def preprocessing(opt = {})
           $stderr.puts Rainbow("#{opt}").green

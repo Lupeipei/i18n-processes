@@ -1,0 +1,8 @@
+---
+en:
+  booking:
+    success: 预定会议成功
+  date:
+    today: 今天
+  meeting:
+    cancel: 取消

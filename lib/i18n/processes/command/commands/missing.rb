@@ -63,18 +63,22 @@ module I18n::Processes
                    ['--nil-value', 'Set value to nil. Takes precedence over the value argument.']]
 
         def add_missing(opt = {}) # rubocop:disable Metrics/AbcSize
-          $stderr.puts Rainbow("missing: #{opt}").green
+          # $stderr.puts Rainbow("missing: #{opt}").green
           [ # Merge base locale first, as this may affect the value for the other locales
             [i18n.base_locale] & opt[:locales],
             opt[:locales] - [i18n.base_locale]
           ].reject(&:empty?).each_with_object(i18n.empty_forest) do |locales, added|
             forest = i18n.missing_keys(locales: locales, **opt.slice(:types, :base_locale))
                          .set_each_value!(opt[:'nil-value'] ? nil : opt[:value])
+            $stderr.puts Rainbow("missing: #{i18n.data}").green
+            # call method I18n::Processes::Data::FileSystemBase merge! to generate file
             i18n.data.merge! forest
+            # call method I18n::Processes::Data::Tree::Nodes::Siblings merge! to generate file
             added.merge! forest
           end.tap do |added|
             log_stderr t('i18n_processes.add_missing.added', count: added.leaves.count)
             print_forest added, opt
+            # $stderr.puts Rainbow("missing: #{added}").green
           end
         end
       end

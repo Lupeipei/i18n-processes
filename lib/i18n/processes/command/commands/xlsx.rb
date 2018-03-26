@@ -21,6 +21,7 @@ module I18n::Processes
             log_stderr Rainbow(message).red.bright
             exit 1
           end
+          $stderr.puts Rainbow("#{opt}").green
           spreadsheet_report.save_report opt[:path], opt.except(:path)
         end
       end

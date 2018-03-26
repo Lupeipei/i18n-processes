@@ -10,8 +10,8 @@ module I18n::Processes::Reports
       p = Axlsx::Package.new
       p.use_shared_strings = true # see #159
       add_missing_sheet p.workbook
-      add_unused_sheet p.workbook
-      add_eq_base_sheet p.workbook
+      add_all_keys_sheet p.workbook
+      # add_eq_base_sheet p.workbook
       FileUtils.mkpath(File.dirname(path))
       p.serialize(path)
       $stderr.puts Rainbow("Saved to #{path}").green
@@ -40,12 +40,12 @@ module I18n::Processes::Reports
       end
     end
 
-    def add_eq_base_sheet(wb)
-      keys = task.eq_base_keys.root_key_values(true)
-      add_locale_key_value_table wb, keys, name: eq_base_title(keys)
-    end
-
-    def add_unused_sheet(wb)
+    # def add_eq_base_sheet(wb)
+    #   keys = task.eq_base_keys.root_key_values(true)
+    #   add_locale_key_value_table wb, keys, name: eq_base_title(keys)
+    # end
+    #
+    def add_all_keys_sheet(wb)
       keys = task.unused_keys.root_key_values(true)
       add_locale_key_value_table wb, keys, name: unused_title(keys)
     end

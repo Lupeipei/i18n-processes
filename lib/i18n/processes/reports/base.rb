@@ -22,7 +22,7 @@ module I18n::Processes::Reports
     end
 
     def unused_title(key_values)
-      "Unused keys (#{key_values.count || '∅'})"
+      "All keys (#{key_values.count || '∅'})"
     end
 
     def eq_base_title(key_values, locale = base_locale)

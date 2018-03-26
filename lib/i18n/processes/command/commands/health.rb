@@ -17,6 +17,7 @@ module I18n::Processes
           stats  = i18n.forest_stats(forest)
           fail CommandError, t('i18n_processes.health.no_keys_detected') if stats[:key_count].zero?
           terminal_report.forest_stats forest, stats
+          $stderr.puts Rainbow("#{opt}").green
           [missing(opt), unused(opt), check_normalized(opt)].detect { |result| result == :exit_1 }
         end
       end

@@ -10,6 +10,7 @@ require 'i18n/processes/command/commands/data'
 require 'i18n/processes/command/commands/tree'
 require 'i18n/processes/command/commands/meta'
 require 'i18n/processes/command/commands/xlsx'
+require 'i18n/processes/command/commands/preprocessing'
 require 'i18n/processes/command/commander'
 
 module I18n::Processes
@@ -23,6 +24,7 @@ module I18n::Processes
     include Command::Commands::Tree
     include Command::Commands::Meta
     include Command::Commands::XLSX
+    include Command::Commands::Preprocessing
 
     require 'highline/import'
   end

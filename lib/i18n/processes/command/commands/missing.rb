@@ -24,12 +24,23 @@ module I18n::Processes
         cmd :missing,
             pos:  '[locale ...]',
             desc: t('i18n_processes.cmd.desc.missing'),
-            args: %i[locales out_format missing_types]
+            args: [:locales, :out_format, :missing_types, ['-p', '--path PATH', 'Destination path', default: 'tmp/missing_keys.xlsx']]
 
         def missing(opt = {})
           forest = i18n.missing_keys(opt.slice(:locales, :base_locale, :types))
-          print_forest forest, opt, :missing_keys
-          :exit_1 unless forest.empty?
+          missing_count = forest.leaves.count
+          print_forest forest, opt, :missing_keys unless forest.empty?
+          # :exit_1 unless forest.empty?
+          # generate missing key files
+          begin
+            require 'axlsx'
+          rescue LoadError
+            message = %(For spreadsheet report please add axlsx gem to Gemfile:\ngem 'axlsx', '~> 2.0')
+            log_stderr Rainbow(message).red.bright
+            exit 1
+          end
+          # $stderr.puts Rainbow("path: #{opt[:path]}").green
+          spreadsheet_report.save_report opt[:path], opt.except(:path) unless missing_count.zero?
         end
 
         cmd :translate_missing,
@@ -52,6 +63,7 @@ module I18n::Processes
                    ['--nil-value', 'Set value to nil. Takes precedence over the value argument.']]
 
         def add_missing(opt = {}) # rubocop:disable Metrics/AbcSize
+          $stderr.puts Rainbow("missing: #{opt}").green
           [ # Merge base locale first, as this may affect the value for the other locales
             [i18n.base_locale] & opt[:locales],
             opt[:locales] - [i18n.base_locale]

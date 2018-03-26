@@ -6,7 +6,7 @@ require 'fileutils'
 module I18n::Processes::Reports
   class Spreadsheet < Base
     def save_report(path, _opts)
-      path = path.presence || 'tmp/i18n-report.xlsx'
+      path = path.presence || 'tmp/missing_keys.xlsx'
       p = Axlsx::Package.new
       p.use_shared_strings = true # see #159
       add_missing_sheet p.workbook
@@ -41,7 +41,6 @@ module I18n::Processes::Reports
                            a[:key],
                            a[:value]], styles: [locale_cell, regular_style, regular_style]
           end
-
         end
       end
     end

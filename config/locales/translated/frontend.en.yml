@@ -1,10 +1,9 @@
 ---
 en:
   meeting:
-    'null': null {resource} message
-    'next': next meeting
     booking: booking
     close: close
-  booking:
+    next: next meeting
+    'null': null {resource} message
   since:
     seconds: S seconds before

@@ -1,0 +1,582 @@
+# You can specialize this file for each language.
+# For example, for French create a messages.fr file
+#
+since.seconds=%s秒前
+since.minutes=%s分钟前
+since.hours=%s小时前
+since.days=%s天前
+since.months=%s月前
+since.years=%s年前
+since.format  = yyyy-MM-dd E
+
+# =======================  表单验证定义 =============================
+validation.required=%s是必填项
+validation.min=%s应大于%s
+validation.max=%s应小于%s
+validation.email=无效的邮箱格式
+validation.minSize=最小长度应为%2$d
+validation.maxSize=最大长度应为%2$d
+validation.range=不在范围（%2$d至%3$d）内
+validation.match=应匹配 %2$s
+validation.isTrue=必须为真
+validation.equals=应等于&{%2$s}
+validation.invalid=无效的值
+validation.future=必须是将来的时间
+validation.after=必须在%2$s之后
+validation.past=必须是过去的时间
+validation.before=必须在%2$s之前
+validation.object=验证失败
+validation.notFound=找不到对象（id=%2$s）
+validation.url=不是一个有效的URL
+validation.phone=不是一个有效的电话号码
+validation.ipv4=不是有效的IP地址
+validation.ipv6=不是有效的IPv6地址
+validation.unique=必须是唯一值
+
+#
+play-paginate.prev=<
+play-paginate.next=>
+play-paginate.first=<<
+play-paginate.last=>>
+
+# 时间说明
+option.hours.6=上午6点
+option.hours.7=上午7点
+option.hours.8=上午8点
+option.hours.9=上午9点
+option.hours.10=上午10点
+option.hours.11=上午11点
+option.hours.14=下午14点
+option.hours.15=下午15点
+option.hours.16=下午16点
+option.hours.17=下午17点
+option.hours.18=下午18点
+option.hours.19=下午19点
+option.hours.20=下午20点
+option.hours.21=下午21点
+option.hours.22=下午22点
+option.hours.23=下午23点
+option.hour=小时
+option.hours=小时
+option.minute=分钟
+option.minutes=分钟
+option.day=天
+option.days=天
+option.unlimit=不限制
+option.bookings2days=今明两天
+
+# 扩展专用
+yesno.yes=是
+yesno.no=否
+option.undefine=未设置
+link.download=下载
+
+# app
+app.name=会议室助手
+
+# manager界面元素
+manager.form.saveAdd=添 加
+manager.form.saveEdit=保 存
+manager.form.cancel=取 消
+manager.form.back=返回
+manager.form.print=打 印
+manager.form.saveModify=保存修改
+
+manager.list.action=操作
+manager.list.edit=修改
+manager.list.delete=删除
+manager.list.confirm-delete=确认删除%s?
+manager.share.clear-selected-users=清空重选
+manager.share.clear-selected-users.hint=清空已选择的人员
+
+# 服务配置
+customer.service-email=service@hyshi.net
+
+# flash公共消息
+flash.notice.delete-success=%s已经被删除
+flash.notice.save-success=保存成功
+flash.notice.update-success-with-count=%s条记录修改成功
+flash.warn.form.valid-fail=表单验证失败
+flash.warn.form.valid-fail-for=表单验证失败: %s
+
+# 用户状态
+user.status.ACTIVE=已激活
+user.status.SUBSCRIBE=关注服务号
+user.status.UNSUBSCRIBE=未关注服务号
+user.status.FIRED=解雇
+user.status.NEW=新导入
+user.status.null=不可用
+
+# 频道
+cmsChannel.TOUR=教程
+cmsChannel.BLOG=博客
+cmsChannel.NOTICE=公告
+cmsChannel.null=未指定
+
+# 会议状态
+meeting.status.OPEN=正常
+meeting.status.LOCK=锁定
+meeting.status.CANCEL=取消
+meeting.status.APPROVE=待审批
+meeting.status.REJECTED=已拒绝
+
+# MeetingCheckedStatus 会议确认状态
+meetingCheckedStatus.Y=已签到
+meetingCheckedStatus.N=未签到
+meetingCheckedStatus.F=未召开
+
+# 会议重复类型
+meeting.repeat.NONE=单次会议
+meeting.repeat.WEEK=每周固定会议
+
+# 性别
+sex.M=男
+sex.F=女
+sex.null=
+sex.U=
+
+# 角色
+roles.ADMIN=管理员
+roles.ADMIN.hint=拥有最高权限
+roles.MANAGER=主管
+roles.MANAGER.hint=可修改和取消本部门人员的会议，可查看本部门非公开会议
+roles.USER=员工
+roles.USER.hint=员工
+roles.HR=人事
+roles.HR.hint=可以管理招聘
+roles.FMY=前台接待
+roles.FMY.hint=负责前台接待, 预约联系
+roles.HYSASS=会议室专员
+roles.HYSASS.hint=负责管理会议室预订, 代理预订
+
+# 应用名
+wxcp.app.TRIP=出差管理
+wxcp.app.HYSHI=会议室管理
+
+# 邀请码类型
+invite.code.COMPANY=公司开通邀请
+invite.code.EMPLOYEE=员工注册邀请
+
+# 会议室设施
+meetingRoom.facility.WHITEBOARD=白板
+meetingRoom.facility.PROJECTOR=投影仪
+meetingRoom.facility.PHONE=电话
+meetingRoom.facility.VIDEO=视频会议
+meetingRoom.facility.VIDIO=视频会议
+meetingRoom.facility.CLASSROOM=教室
+meetingRoom.facility.BAZAYU=八爪鱼
+###### 客户定制 会议室设施
+meetingRoom.facility.LAPTOP=笔记本
+meetingRoom.facility.HONSANSU=红杉树
+meetingRoom.facility.TV=电视
+meetingRoom.facility.MIC=话筒
+meetingRoom.facility.SF=沙发
+
+# 客户端类型
+clientType.SYS=系统
+clientType.null=无
+clientType.WEB=Web
+clientType.WEIXIN=微信
+clientType.WXAPP=小程序
+clientType.OUTLOOK=Outlook
+clientType.WEBAPP=WebApp
+
+# 订单状态
+orderStatus.UNPAID=待支付
+orderStatus.PAID=已支付
+orderStatus.DONE=已完成
+orderStatus.CANCELED=已取消
+orderStatus.REFUND=已退款
+
+# 公司授权版本 LicenseEdition
+licenseEdition.null=未指定
+licenseEdition.TRIAL=试用版
+licenseEdition.BASIC=基础版
+licenseEdition.FREE=免费版
+licenseEdition.EDU=教育版
+licenseEdition.STANDARD=专业版
+licenseEdition.ENTERPRISE=企业版
+licenseEdition.TESTING=全功能测试用
+
+# 功能开关列表
+func.BOOKING_MEETING=预订会议
+func.WXCP=微信企业号
+func.WXMP=微信服务号
+func.ROOM_OPEN_VIEW=会议室开放查看
+func.EXT_CUSTOMER=客户接待会议
+func.EXT_INTERVIEW=面试会议
+func.ORDER=订单支付
+func.NO_MAIL_CAL=不发会议邮件
+func.CORP_SETTING=公司高级设置
+func.REPORT=统计报表
+func.NO_EMAIL=不需要邮件
+func.SHOW_DEPT=会议详情显示部门
+func.HIDE_HYSCN=不显示会议室助手
+func.PAD=PAD屏(H5版)
+func.OUTLOOK=Outlook插件支持
+func.PAD_ANDROID=原生Android屏
+func.EDU=教育版限制
+func.VIDEO_BIZCONF=会畅视频会议
+func.SHORT_NAME=短名称字段
+func.DEVICE=设备管理
+func.UI_V2=界面V2
+func.UI_V1=旧微信界面
+func.AUTO_CANCLE=自动取消会议
+func.QUICK_CREATE=快速创建会议
+func.SMS_ACTIVE=短信激活用户
+func.I18N=多语言国际化
+func.NOON_SPLIT=中午休息不预订
+func.AREA_PAD=办公区域显示平板
+func.ROOM_APPROVE=会议室审批
+func.EXCHANGE=Exchange服务器支持
+func.ROOM_FEE=会议室收费
+func.MEETING_INTERVAL=会议间隔
+func.COMBINE_ROOM=组合会议室
+func.DASHBOARD_SIMPLE=简化面板
+func.LDAP=LDAP认证
+func.REACT_WEB=REACT网页版
+func.FREEZE_CORPNAME=冻结公司名
+func.STATIC_LOGIN=专用登录页
+func.WEB_V2=显示切换Web新版
+func.NO_COMMENT=关闭会议评论
+func.NO_INVITE=关闭邀请员工
+func.CAR_RETURN=汽车归还审批
+func.SMS_NOTIFY=短信通知
+func.HD_CTRL=硬件控制面板
+func.REPORT2=统计报表V2
+func.JH_FTP_SYNC=九华互联FTP同步
+func.SYNC_UPSTREAM=同步上游会议系统
+
+# 实体类型
+entityType=实体类型
+entityType.MEETING=会议
+entityType.MEETING_ROOM=会议室
+entityType.CORP=公司
+entityType.USER=用户
+entityType.OFFICE_AREA=办公区域
+
+# 会议评论类型
+CommentType.VISITOR_ARRIVED=访客到达
+CommentType.VISITOR_LATE=访客迟到
+CommentType.VISITOR_CANCEL=访客取消
+
+CommentType.INTERVIEW_SG_REJECT=建议淘汰
+CommentType.INTERVIEW_SG_NEXT=建议复试
+CommentType.INTERVIEW_SG_REVIEW=建议复试
+CommentType.INTERVIEW_SG_OFFER=建议录用
+
+CommentType.INTERVIEW_REJECT=淘汰
+CommentType.INTERVIEW_OFFER=录用
+CommentType.INTERVIEW_SUSPEND=挂起
+CommentType.INTERVIEW_REFUSE=面试者拒绝
+
+CommentType.CANCEL_MEETING=取消会议
+CommentType.CONFIRM_OPEN_MEETING=确认已开会
+
+showCommentType.null=留言
+showCommentType.VISITOR_ARRIVED=通知访客到达
+showCommentType.VISITOR_LATE=通知访客迟到
+showCommentType.VISITOR_CANCEL=通知访客取消
+showCommentType.INTERVIEW_SG_REJECT=建议淘汰
+showCommentType.INTERVIEW_SG_NEXT=建议复试
+showCommentType.INTERVIEW_SG_REVIEW=建议复试
+showCommentType.INTERVIEW_SG_OFFER=建议录用
+showCommentType.INTERVIEW_REJECT=确认淘汰
+showCommentType.INTERVIEW_OFFER=确认录用
+showCommentType.INTERVIEW_SUSPEND=确认挂起
+showCommentType.INTERVIEW_REFUSE=面试者拒绝
+showCommentType.CANCEL_MEETING=取消会议
+showCommentType.CONFIRM_OPEN_MEETING=确认已开会
+showCommentType.DELAY_MEETING=会议延时
+showCommentType.SIGNOUT_MEETING=提前结束会议
+showCommentType.CLOSE_UNSTART=会议未召开
+
+# 密码强度
+password.strong.VERY_WEAK=非常弱
+password.strong.WEAK=弱
+password.strong.AVERAGE=一般
+password.strong.STRONG=强
+password.strong.VERY_STRONG=非常强
+password.strong.SECURE=安全
+password.strong.VERY_SECURE=非常安全
+
+# 语言
+lang.zh=中文
+lang.en=英文
+
+# 会议室类型
+meetingRoomType.null=会议室
+meetingRoomType.ROOM=会议室
+meetingRoomType.OUTSIDE=外部会议室
+meetingRoomType.LAB_EQU=实验设备
+meetingRoomType.CAR=车辆
+
+meetingRoomType.DEFAULT=会议室
+
+#============= 面试状态 ===============
+RecruitStatus.FIRSTVIEW=初面
+RecruitStatus.SUGGEST_REJECT=建议淘汰
+RecruitStatus.SUGGEST_REVIEW=建议复试
+RecruitStatus.SUGGEST_OFFER=建议录用
+RecruitStatus.REJECT=淘汰
+RecruitStatus.REVIEW=复试
+RecruitStatus.OFFER=录用
+RecruitStatus.SUSPEND=挂起
+RecruitStatus.REFUSE=面试者拒绝
+RecruitStatus.null=
+
+#=============企业号应用状态==================
+WxcpAppStatus.OPEN=可用
+WxcpAppStatus.FREEZE=冻结
+
+speechType.null=暂无
+
+# =======================  导航定义 =============================
+nav.main=首页
+nav.receptions=前台接待
+nav.meetings=预订会议
+nav.view-meetings=查询会议
+nav.hiring=招聘管理
+nav.hiring-plans=招聘计划
+nav.recruits=面试管理
+nav.reports=统计报表
+nav.reports.memberTimes=参与人员时间统计
+nav.reports.ownerTimes=预订人时间统计
+nav.reports.checkerTimes=签到人时间统计
+nav.reports.roomTimes=会议室使用统计
+nav.admin-company=公司设置
+nav.admin-meeting-rooms=会议室管理
+nav.admin-devices=设备管理
+nav.admin-depts=部门管理
+nav.admin-employees=员工管理
+nav.my-tags=我的群组
+nav.my-profile=个人资料
+
+# ---------------- Diff -----------------
+diff.meeting.subject=会议主题
+diff.meeting.roomId=会议室
+diff.meeting.content=会议内容
+diff.meeting.beginAt=开始时间
+diff.meeting.endAt=结束时间
+diff.meeting.durationMinutes=时长
+diff.meeting.notPublic=是否公开
+
+# =======================  表单 =============================
+
+deptId=部门
+
+# 订单
+order.years=购买期限
+order.roomCount=会议室数量
+order.invoiceType=需要发票？
+
+# 公司联系信息
+corpContact.invoiceTitle=发票抬头
+corpContact.taxpayerNumber=纳税人识别号
+corpContact.taxAddress=公司地址电话
+corpContact.taxBankAccount=开户银行账号
+corpContact.invoiceSubject=发票内容
+corpContact.address=邮寄地址
+corpContact.receiverName=收件人姓名
+corpContact.receiverPhone=收件人手机
+
+
+# 公司注册
+corp.register.corpName=公司名称
+corp.register.name=您的名字
+corp.register.email=您的Email
+corp.register.inviteCode=邀请码
+
+# User
+user.name=姓名
+user.email=电子邮箱
+user.position=职位
+user.jobNumber=工号
+password=密码
+repeatPassword=确认密码
+user.lang=界面语言
+
+# CorpForm
+corpForm.name=公司名
+corpForm.corpName=公司名
+corpForm.email=电子邮箱
+corpForm.maxMeetingRooms=最大会议室数量
+corpForm.emailPostfix=邮箱后缀
+corpForm.expiredAt=有效日期
+corpForm.licenseEdition=授权类型
+corpForm.tabletViewUrl=平板视图URL
+corpForm.additionFuncs=可用功能
+corpForm.meetingRoomFacilities=可用设施
+corpForm.logoObject=Logo
+
+corpForm.enabled=启用状态
+corpForm.notice=公司说明
+
+corpForm.disabledFuncs=禁用功能
+corpForm.disabledRoles=禁用角色
+corpForm.meetingStartHour=预订开始时间
+corpForm.meetingEndHour=预订结束时间
+corpForm.meetingInterval=预订间隔
+corpForm.meetingMaxDuration=最大预订时长
+corpForm.supportRoomTypes=资源类型
+corpForm.bookingLimitDays=预订天数上限
+corpForm.customWebAssets=自定义Web资源
+corpForm.customMobileAssets=自定义Mobile资源
+
+tableAppVersion=平板App版本
+tableAppUrl=平板App下载URL
+
+# Dept
+dept.name=部门名称
+dept.noDeptName=无部门
+dept.not-exists=部门不存在
+flash.warn.dept-deleted-with-users=%s还有%s位员工，请先移走所有员工后再删除部门。
+
+# Role
+role.code=编码
+role.name=角色名称
+role.remark=备注
+role.showOrder=顺序
+
+# feeType
+ONCE=一次性收费
+MONTH=月费
+YEAR=年费
+
+# 招聘计划
+hiringPlan.title=职位名称
+hiringPlan.dept=需求部门
+hiringPlan.hireCount=招聘人数
+hiringPlan.offeredCount=已录用人数
+hiringPlan.dueDate=截止日期
+hiringPlan.jobDescription=职位需求说明
+
+# MeetingType
+meetingType.STANDARD=会议
+meetingType.null=会议
+meetingType.STANDARD.label=普通会议
+meetingType.INTERVIEW=面试
+meetingType.CUSTOMER=客户接待
+
+# Meeting
+meetingForm.subject=会议主题
+meetingForm.content=会议内容
+meetingForm.roomId=会议室
+meetingForm.meetingDate=会议日期
+meetingForm.meetingMembers=参与人员
+meetingForm.owner=预订人
+meetingForm.startTime=开始时间
+meetingForm.duration=时长
+meetingForm.meetingRepeatType=重复类型
+meetingForm.weekDays=
+meetingForm.endDate=固定会议结束于
+meetingForm.fixedEndDate=固定会议结束于
+meetingForm.config=会议设置
+meetingForm.time=时间
+meetingForm.ownerId=预订人
+
+meetingForm.hiringPlanId=应聘职位
+meetingForm.appliantName=面试人
+meetingForm.appliantEmail=邮箱
+meetingForm.appliantMobile=手机
+
+meetingForm.visitorName=访客姓名
+meetingForm.visitorEmail=访客邮箱
+meetingForm.visitorMobile=访客手机
+meetingForm.customerName=访客单位
+meetingForm.visitorCount=访客人数
+meetingForm.serveRemark=接待说明
+
+meetingForm.deskLabel=桌签
+meetingForm.banner=横幅
+meetingForm.keepLift=专梯
+meetingForm.carPlateNumber=车牌
+meetingForm.otherServeRemark=其它接待说明
+
+# 时间范围
+duration.15=15分钟
+duration.30=30分钟
+duration.45=45分钟
+duration.60=1小时
+duration.75=1小时15分钟
+duration.90=1个半小时
+duration.105=1小时45分钟
+duration.120=2小时
+duration.135=2小时15分钟
+duration.150=2个半小时
+duration.165=2小时45分钟
+duration.180=3小时
+duration.195=3小时15分钟
+duration.210=3个半小时
+duration.225=3小时45分钟
+duration.240=4小时
+duration.300=5小时
+duration.360=6小时
+duration.420=7小时
+duration.480=8小时
+duration.540=9小时
+duration.600=10小时
+duration.660=11小时
+duration.720=12小时
+
+# 会议留言
+meetingCommentForm.content=留言内容
+
+# 面试管理
+hiringPlan.id=应聘职位
+recruit.name=姓名
+recruit.mobile=手机
+recruit.email=电子邮件
+
+# 文章栏目
+articleCategory.code=栏目编码
+articleCategory.showName=显示名称
+articleCategory.shown=是否显示
+articleCategory.showOrder=显示顺序(倒序)
+articleCategory.channel=频道
+
+# OpenIdSource / ApiPlatform 定义
+openIdSource.WXMP=微信公众号
+openIdSource.WXCP=微信企业号
+openIdSource.WXOPEN=微信开放平台
+openIdSource.OUTLOOK=Outlook插件
+openIdSource.WXAPP=微信小程序
+openIdSource.PASSWORD=密码登录
+openIdSource.SMS=短信
+openIdSource.TEST=测试用
+openIdSource.UNDEFINE=未指定
+openIdSource.null=无数据
+
+# userStatus
+userStatus.ACTIVE=已激活
+userStatus.SUBSCRIBE=关注
+userStatus.FIRED=解雇
+userStatus.UNSUBSCRIBE=取消关注
+userStatus.NEW=新用户
+userStatus.LEAVE=离职
+
+# 视频会议类型
+videoMeetingType.VIDEO_BIZCONF=会畅视频会议
+
+# 文件上传
+upload.refType=目标对象类型
+upload.refId=目标对象Id
+
+# 门禁
+doorControl.null=空指令
+doorControl.ALWAY_OPEN=常开
+doorControl.ALWAY_CLOSE=常关
+doorControl.ONLINE_CONTROL=恢复
+doorControl.OPEN_ONCE=开门
+
+@include.article = ./_messages/zh/article.properties
+@include.meetingBooking = ./_messages/zh/meetingBooking.properties
+
+@include.meeting-rooms = ./_messages/zh/meeting-rooms.properties
+@include.office-areas = ./_messages/zh/office-areas.properties
+@include.company = ./_messages/zh/company.properties
+@include.orders = ./_messages/zh/orders.properties
+@include.visitor = ./_messages/zh/visitor.properties
+@include.devices = ./_messages/zh/devices.properties
+@include.tag = ./_messages/zh/tag.properties
+@include.schedulings = ./_messages/zh/schedulings.properties

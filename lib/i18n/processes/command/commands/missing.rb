@@ -71,7 +71,7 @@ module I18n::Processes
                          .set_each_value!(opt[:'nil-value'] ? nil : opt[:value])
             $stderr.puts Rainbow("forest_parent: #{forest.parent}").green # forest的parent为nil
             $stderr.puts Rainbow("forest_list: #{forest.list.class}").green
-            $stderr.puts Rainbow("forest_list: #{forest.list.first.class}").green # node, yes, list是一个nodes
+            $stderr.puts Rainbow("forest_list: #{forest.list.first.key_to_node}").green # node, yes, list是一个nodes
 
             # call method I18n::Processes::Data::FileSystemBase merge! to generate file
             i18n.data.merge! forest

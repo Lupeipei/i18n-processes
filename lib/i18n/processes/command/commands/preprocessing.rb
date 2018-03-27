@@ -11,22 +11,37 @@ module I18n::Processes
             pos:  '[locale...]',
             desc: 'preprocess origin data files into yaml format files',
             args: [:locales,
-                   ['-p', '--path PATH', 'Destination path', default: './upload/*']]
+                   ['-p', '--path PATH', 'Destination path', default: './upload']]
 
         def preprocessing(opt = {})
-          files = Dir[opt[:path]]
-          files.each do |file|
-            file_name = File.basename(file,".*")
-            yaml_file = File.new(".config/locales/origin/#{file_name}.zh.yml", 'w')
-            yaml_file.write("---\nzh:\n")
-            File.open(file).read.each_line do |line|
-              ## backend zh preprocessing
-              if line !~ /^#/
-                new_line = "  #{line.gsub(' ','').gsub(/=/, ': ')}"
-                yaml_file.write new_line
-              end
-            end
-            yaml_file.close
+          backend_files = Dir["#{opt[:path]}/backend/*"]
+          frontend_files = Dir["#{opt[:path]}/frontend/*"]
+          dic = {}
+          backend_files.each do |file|
+            dic.merge! backend_read(file)
+          end
+          frontend_files.each do |file|
+            dic.merge! frontend_read(file)
+          end
+        end
+
+        def backend_read(file)
+          a = {}
+          File.open(file).read.each_line do |line|
+            next if line =~ /^#/ || line == "\n"
+            key = line.split('=').first.delete(' ')
+            value = line.split('=').last
+            a[key] = value
+          end
+        end
+
+        def frontend_read(file)
+          a = {}
+          File.open(file).read.each_line do |line|
+            next unless line.include?(':')
+            key = line.split(': ').first.delete(' ')
+            value = line.split(': ').last.delete(',')
+            a[key] = value
           end
         end
 

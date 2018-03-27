@@ -10,7 +10,7 @@ module I18n::Processes
 
         cmd :tree_translate,
             pos:  '[tree (or stdin)]',
-            desc: t('i18n_processes.cmd.desc.tree_translate'),
+            desc: 'Google Translate a tree to root locales',
             args: [:locale_to_translate_from, arg(:data_format).from(1)]
 
         def tree_translate(opts = {})
@@ -20,7 +20,7 @@ module I18n::Processes
 
         cmd :tree_merge,
             pos:  '[[tree] [tree] ... (or stdin)]',
-            desc: t('i18n_processes.cmd.desc.tree_merge'),
+            desc: 'merge trees',
             args: %i[data_format nostdin]
 
         def tree_merge(opts = {})
@@ -29,7 +29,7 @@ module I18n::Processes
 
         cmd :tree_filter,
             pos:  '[pattern] [tree (or stdin)]',
-            desc: t('i18n_processes.cmd.desc.tree_filter'),
+            desc: 'filter tree by key pattern',
             args: %i[data_format pattern]
 
         def tree_filter(opts = {})
@@ -44,9 +44,9 @@ module I18n::Processes
 
         cmd :tree_rename_key,
             pos:  'KEY_PATTERN NAME [tree (or stdin)]',
-            desc: t('i18n_processes.cmd.desc.tree_rename_key'),
-            args: [['-k', '--key KEY_PATTERN', t('i18n_processes.cmd.args.desc.key_pattern_to_rename')],
-                   ['-n', '--name NAME', t('i18n_processes.cmd.args.desc.new_key_name')],
+            desc: 'rename tree node',
+            args: [['-k', '--key KEY_PATTERN', 'Full key (pattern) to rename. Required'],
+                   ['-n', '--name NAME', 'New name, interpolates original name as %{key}. Required'],
                    :data_format]
 
         def tree_rename_key(opt = {})
@@ -63,11 +63,11 @@ module I18n::Processes
         arg :all_locales,
             '-a',
             '--all-locales',
-            t('i18n_processes.cmd.args.desc.all_locales')
+            'Do not expect key patterns to start with a locale, instead apply them to all locales implicitly.'
 
         cmd :tree_mv,
             pos: 'FROM_KEY_PATTERN TO_KEY_PATTERN [tree (or stdin)]',
-            desc: t('i18n_processes.cmd.desc.tree_mv_key'),
+            desc: 'rename/merge/remove the keys matching the given pattern',
             args: %i[data_format all_locales]
         def tree_mv(opt = {})
           fail CommandError, 'requires FROM_KEY_PATTERN and TO_KEY_PATTERN' if opt[:arguments].size < 2
@@ -80,7 +80,7 @@ module I18n::Processes
 
         cmd :tree_subtract,
             pos:  '[[tree] [tree] ... (or stdin)]',
-            desc: t('i18n_processes.cmd.desc.tree_subtract'),
+            desc: 'tree A minus the keys in tree B',
             args: %i[data_format nostdin]
 
         def tree_subtract(opt = {})
@@ -91,7 +91,7 @@ module I18n::Processes
 
         cmd :tree_set_value,
             pos:  '[VALUE] [tree (or stdin)]',
-            desc: t('i18n_processes.cmd.desc.tree_set_value'),
+            desc: 'set values of keys, optionally match a pattern',
             args: %i[value data_format nostdin pattern]
 
         def tree_set_value(opt = {})
@@ -105,7 +105,7 @@ module I18n::Processes
 
         cmd :tree_convert,
             pos:  '[tree (or stdin)]',
-            desc: t('i18n_processes.cmd.desc.tree_convert'),
+            desc: 'convert tree between formats',
             args: [arg(:data_format).dup.tap { |a| a[0..1] = ['-f', '--from FORMAT'] },
                    arg(:out_format).dup.tap { |a| a[0..1] = ['-t', '--to FORMAT'] }]
 

@@ -38,14 +38,14 @@ module I18n::Processes
     # @return [Array<[String, Object]>] translated list
     def fetch_google_translations(list, opts)
       from_values(list, EasyTranslate.translate(to_values(list), opts)).tap do |result|
-        fail CommandError, I18n.t('i18n_processes.google_translate.errors.no_results') if result.blank?
+        fail CommandError, 'Google Translate returned no results. Make sure billing information is set at https://code.google.com/apis/console.' if result.blank?
       end
     end
 
     private
 
     def validate_google_translate_api_key!(key)
-      fail CommandError, I18n.t('i18n_processes.google_translate.errors.no_api_key') if key.blank?
+      fail CommandError, 'Set Google API key via GOOGLE_TRANSLATE_API_KEY environment variable or translation.api_key in config/i18n-processes.yml. Get the key at https://code.google.com/apis/console.' if key.blank?
     end
 
     # @param [Array<[String, Object]>] list of key-value pairs

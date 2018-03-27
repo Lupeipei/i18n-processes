@@ -9,11 +9,11 @@ module I18n::Processes
 
         arg :strict,
             '--[no-]strict',
-            t('i18n_processes.cmd.args.desc.strict')
+            'Avoid inferring dynamic key usages such as t("cats.#{cat}.name"). Takes precedence over the config setting if set.'
 
         cmd :find,
             pos:  '[pattern]',
-            desc: t('i18n_processes.cmd.desc.find'),
+            desc: 'show where keys are used in the code',
             args: %i[out_format pattern strict]
 
         def find(opt = {})
@@ -24,7 +24,7 @@ module I18n::Processes
 
         cmd :unused,
             pos:  '[locale ...]',
-            desc: t('i18n_processes.cmd.desc.unused'),
+            desc: 'show unused translations',
             args: %i[locales out_format strict]
 
         def unused(opt = {})
@@ -35,7 +35,7 @@ module I18n::Processes
 
         cmd :remove_unused,
             pos:  '[locale ...]',
-            desc: t('i18n_processes.cmd.desc.remove_unused'),
+            desc: 'remove unused keys',
             args: %i[locales out_format strict confirm]
 
         def remove_unused(opt = {})
@@ -44,10 +44,10 @@ module I18n::Processes
             terminal_report.unused_keys(unused_keys)
             confirm_remove_unused!(unused_keys, opt)
             removed = i18n.data.remove_by_key!(unused_keys)
-            log_stderr t('i18n_processes.remove_unused.removed', count: unused_keys.leaves.count)
+            log_stderr "Removed #{unused_keys.leaves.count} keys"
             print_forest removed, opt
           else
-            log_stderr Rainbow(t('i18n_processes.remove_unused.noop')).green.bright
+            log_stderr Rainbow("No unused keys to remove").green.bright
           end
         end
 
@@ -57,8 +57,8 @@ module I18n::Processes
           return if ENV['CONFIRM'] || opt[:confirm]
           locales = Rainbow(unused_keys.flat_map { |root| root.key.split('+') }.sort.uniq * ', ').bright
           msg     = [
-            Rainbow(t('i18n_processes.remove_unused.confirm', count: unused_keys.leaves.count, locales: locales)).red,
-            Rainbow(t('i18n_processes.common.continue_q')).yellow,
+            Rainbow("{:one =>'#{unused_keys.leaves.count} translation will be removed from #{locales}.', :other =>'#{unused_keys.leaves.count} translation will be removed from #{locales}.'}").red,
+            Rainbow("Continue?").yellow,
             Rainbow('(yes/no)').yellow
           ].join(' ')
           exit 1 unless agree msg

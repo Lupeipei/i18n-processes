@@ -58,6 +58,8 @@ module I18n::Processes
         @trees.delete(locale) if @trees
         paths_before = Set.new(get(locale)[locale].leaves.map { |node| node.data[:path] })
         paths_after = Set.new([])
+        $stderr.puts Rainbow("locale: #{locale}").green
+        $stderr.puts Rainbow("tree: #{tree.class}").green
         router.route locale, tree do |path, tree_slice|
           paths_after << path
           write_tree path, tree_slice
@@ -84,13 +86,15 @@ module I18n::Processes
       end
 
       def merge!(forest)
+        ## forest is a sibling
         forest.inject(Tree::Siblings.new) do |result, root|
-          $stderr.puts Rainbow("result: #{result}").green
-          $stderr.puts Rainbow("root: #{root}").green
+          # root is a node, merge is a sibling
           locale = root.key
           merged = get(locale).merge(root)
+          $stderr.puts Rainbow("root: #{root}").green
+          $stderr.puts Rainbow("locale: #{locale}").green
+          $stderr.puts Rainbow("merged: #{merged}").green
           set locale, merged
-          # $stderr.puts Rainbow("merged: #{merged}").green
           result.merge! merged
         end
       end

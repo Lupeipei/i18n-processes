@@ -1,11 +1,12 @@
-base_locale: en
-internal_locale: en
+base_locale: zh
+#internal_locale: zh
 locals: [zh, en]
 
 data:
   read:
     - config/locales/origin/*.%{locale}.yml
     - config/locales/translated/*.%{locale}.yml
+
   write:
     - config/locales/normalize/*.%{locale}.yml
   yaml:

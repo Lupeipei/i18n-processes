@@ -11,22 +11,22 @@ module I18n::Processes
         arg :nostdin,
             '-S',
             '--nostdin',
-            t('i18n_processes.cmd.args.desc.nostdin')
+            'Do not read from stdin'
 
         arg :confirm,
             '-y',
             '--confirm',
-            desc: t('i18n_processes.cmd.args.desc.confirm')
+            desc: 'Confirm automatically'
 
         arg :pattern,
             '-p',
             '--pattern PATTERN',
-            t('i18n_processes.cmd.args.desc.key_pattern')
+            "Filter by key pattern (e.g. 'common.*')"
 
         arg :value,
             '-v',
             '--value VALUE',
-            t('i18n_processes.cmd.args.desc.value')
+            'Value. Interpolates: %{value}, %{human_key}, %{key}, %{default}, %{value_or_human_key}, %{value_or_default_or_human_key}'
 
         def arg_or_pos!(key, opts)
           opts[key] ||= opts[:arguments].try(:shift)

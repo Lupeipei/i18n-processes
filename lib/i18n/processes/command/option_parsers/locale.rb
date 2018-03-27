@@ -9,7 +9,8 @@ module I18n::Processes
 
           def validate!(locale)
             if VALID_LOCALE_RE !~ locale
-              fail CommandError, I18n.t('i18n_processes.cmd.errors.invalid_locale', invalid: locale)
+              fail CommandError, "invalid locale: #{locale}"
+
             end
             locale
           end

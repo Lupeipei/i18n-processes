@@ -7,7 +7,7 @@ require 'i18n/processes/data/tree/node'
 
 module I18n::Processes::Data::Tree
   # Siblings represents a subtree sharing a common parent
-  # in case of an empty parent (nil) it represents a forest
+  # in case of an empty parent (nil) it represents a forest【也就是整棵树】
   # siblings' keys are unique
   class Siblings < Nodes # rubocop:disable Metrics/ClassLength
     include ::I18n::Processes::SplitKey

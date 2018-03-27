@@ -9,12 +9,25 @@ module I18n::Processes
 
         cmd :preprocessing,
             pos:  '[locale...]',
-            desc: t('i18n_processes.cmd.desc.preprocessing'),
+            desc: 'preprocess origin data files into yaml format files',
             args: [:locales,
-                   ['-p', '--path PATH', 'Destination path', default: 'upload/']]
+                   ['-p', '--path PATH', 'Destination path', default: './upload/*']]
 
         def preprocessing(opt = {})
-          $stderr.puts Rainbow("#{opt}").green
+          files = Dir[opt[:path]]
+          files.each do |file|
+            file_name = File.basename(file,".*")
+            yaml_file = File.new(".config/locales/origin/#{file_name}.zh.yml", 'w')
+            yaml_file.write("---\nzh:\n")
+            File.open(file).read.each_line do |line|
+              ## backend zh preprocessing
+              if line !~ /^#/
+                new_line = "  #{line.gsub(' ','').gsub(/=/, ': ')}"
+                yaml_file.write new_line
+              end
+            end
+            yaml_file.close
+          end
         end
 
       end

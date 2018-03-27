@@ -6,7 +6,7 @@ module I18n::Processes
       module Enum
         class Parser
           DEFAULT_ERROR = proc do |invalid, valid|
-            I18n.t('i18n_processes.cmd.enum_opt.invalid', invalid: invalid, valid: valid * ', ')
+            "#{invalid} is not one of: #{valid * ', '}."
           end
 
           def initialize(valid, error_message = DEFAULT_ERROR)
@@ -26,7 +26,7 @@ module I18n::Processes
 
         class ListParser
           DEFAULT_ERROR = proc do |invalid, valid|
-            I18n.t('i18n_processes.cmd.enum_list_opt.invalid', invalid: invalid * ', ', valid: valid * ', ')
+            "#{invalid * ', '} is not in: #{valid * ', '}."
           end
 
           def initialize(valid, error_message = DEFAULT_ERROR)

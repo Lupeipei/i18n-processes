@@ -12,7 +12,7 @@ module I18n::Processes
             '-l',
             '--locales en,es,ru',
             Array,
-            t('i18n_processes.cmd.args.desc.locales_filter'),
+            'Locale(s) to process. Special: base',
             parser:             OptionParsers::Locale::ListParser,
             default:            'all',
             consume_positional: true
@@ -20,14 +20,14 @@ module I18n::Processes
         arg :locale,
             '-l',
             '--locale en',
-            t('i18n_processes.cmd.args.desc.locale'),
+            'i18n_processes.common.locale',
             parser:  OptionParsers::Locale::Parser,
             default: 'base'
 
         arg :locale_to_translate_from,
             '-f',
             '--from en',
-            t('i18n_processes.cmd.args.desc.locale_to_translate_from'),
+            'Locale to translate from',
             parser:  OptionParsers::Locale::Parser,
             default: 'base'
       end

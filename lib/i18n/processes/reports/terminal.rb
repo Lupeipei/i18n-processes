@@ -11,9 +11,9 @@ module I18n
           forest = collapse_missing_tree! forest
           if forest.present?
             print_title missing_title(forest)
-            print_table headings: [Rainbow(I18n.t('i18n_processes.common.locale')).cyan.bright,
-                                   Rainbow(I18n.t('i18n_processes.common.key')).cyan.bright,
-                                   I18n.t('i18n_processes.missing.details_title')] do |t|
+            print_table headings: [Rainbow('Locale').cyan.bright,
+                                   Rainbow('Key').cyan.bright,
+                                   'Value in other locales or source'] do |t|
               t.rows = sort_by_attr!(forest_to_attr(forest)).map do |a|
                 [{ value: Rainbow(format_locale(a[:locale])).cyan, alignment: :center },
                  format_key(a[:key], a[:data]),
@@ -21,7 +21,7 @@ module I18n
               end
             end
           else
-            print_success I18n.t('i18n_processes.missing.none')
+            print_success 'No translations are missing.'
           end
         end
 
@@ -42,7 +42,7 @@ module I18n
               print_occurrences node, key
             end
           else
-            print_error I18n.t('i18n_processes.usages.none')
+            print_error 'No key usages found.'
           end
         end
 
@@ -52,7 +52,7 @@ module I18n
             print_title unused_title(keys)
             print_locale_key_value_data_table keys
           else
-            print_success I18n.t('i18n_processes.unused.none')
+            print_success 'Every translation is in use.'
           end
         end
 
@@ -72,11 +72,11 @@ module I18n
 
         def forest_stats(forest, stats = task.forest_stats(forest))
           text  = if stats[:locale_count] == 1
-                    I18n.t('i18n_processes.data_stats.text_single_locale', stats)
+                    "has #{stats[:key_count]} keys in total. On average, values are #{stats[:value_chars_avg]} characters long, keys have #{stats[:key_segments_avg]} segments."
                   else
-                    I18n.t('i18n_processes.data_stats.text', stats)
+                    "has #{stats[:key_count]} keys across #{stats[:locale_count]} locales. On average, values are #{stats[:value_chars_avg]} characters long, keys have #{stats[:key_segments_avg]} segments, a locale has #{stats[:per_locale_avg]} keys."
                   end
-          title = Rainbow(I18n.t('i18n_processes.data_stats.title', stats.slice(:locales))).bright
+          title = Rainbow("Forest (#{stats.slice(:locales)})").bright
           print_info "#{Rainbow(title).cyan} #{Rainbow(text).cyan}"
         end
 
@@ -151,9 +151,9 @@ module I18n
 
         def print_locale_key_value_data_table(locale_key_value_datas)
           if locale_key_value_datas.present?
-            print_table headings: [Rainbow(I18n.t('i18n_processes.common.locale')).cyan.bright,
-                                   Rainbow(I18n.t('i18n_processes.common.key')).cyan.bright,
-                                   I18n.t('i18n_processes.common.value')] do |t|
+            print_table headings: [Rainbow("Locale").cyan.bright,
+                                   Rainbow("Key").cyan.bright,
+                                   "Value"] do |t|
               t.rows = locale_key_value_datas.map { |(locale, k, v, data)|
                 [{ value: Rainbow(locale).cyan, alignment: :center }, format_key(k, data), format_value(v)]
               }
@@ -169,7 +169,7 @@ module I18n
         end
 
         def print_success(message)
-          log_stderr Rainbow("✓ #{I18n.t('i18n_processes.cmd.encourage').sample} #{message}").green.bright
+          log_stderr Rainbow("✓ #{["Good job!", "Well done!", "Perfect!"].sample} #{message}").green.bright
         end
 
         def print_error(message)
@@ -201,7 +201,8 @@ module I18n
           first = occurrences.first
           [
             Rainbow("#{first.path}:#{first.line_num}").green,
-            ("(#{I18n.t 'i18n_processes.common.n_more', count: occurrences.length - 1})" if occurrences.length > 1)
+            ("(#{occurrences.length - 1} more)" if occurrences.length > 1)
+
           ].compact.join(' ')
         end
 

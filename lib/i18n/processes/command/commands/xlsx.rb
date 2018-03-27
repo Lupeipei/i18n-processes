@@ -9,7 +9,7 @@ module I18n::Processes
 
         cmd :xlsx_report,
             pos:  '[locale...]',
-            desc: t('i18n_processes.cmd.desc.xlsx_report'),
+            desc: 'save missing and unused translations to an Excel file',
             args: [:locales,
                    ['-p', '--path PATH', 'Destination path', default: 'tmp/i18n-report.xlsx']]
 

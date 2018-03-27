@@ -9,7 +9,7 @@ module I18n::Processes
 
         cmd :config,
             pos:  '[section ...]',
-            desc: t('i18n_processes.cmd.desc.config')
+            desc: 'display i18n-processes configuration'
 
         def config(opts = {})
           cfg = i18n.config_for_inspect
@@ -20,13 +20,13 @@ module I18n::Processes
           puts cfg
         end
 
-        cmd :gem_path, desc: t('i18n_processes.cmd.desc.gem_path')
+        cmd :gem_path, desc: 'show path to the gem'
 
         def gem_path
           puts I18n::Processes.gem_path
         end
 
-        cmd :irb, desc: t('i18n_processes.cmd.desc.irb')
+        cmd :irb, desc: 'start REPL session within i18n-processes context'
 
         def irb
           require 'i18n/processes/console_context'

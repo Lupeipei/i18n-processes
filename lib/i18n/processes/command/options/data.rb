@@ -18,18 +18,15 @@ module I18n::Processes
               '--format FORMAT',
               values,
               { 'yml' => 'yaml' },
-              t("i18n_processes.cmd.args.desc.#{type}", valid_text: values * ', ', default_text: default),
+              "#{type}: #{values * ', '}",
               parser: OptionParsers::Enum::Parser.new(values,
                                                       proc do |value, valid|
-                                                        I18n.t('i18n_processes.cmd.errors.invalid_format',
-                                                               invalid: value, valid: valid * ', ')
+                                                        "invalid format: #{value}. valid: #{valid * ', '}."
                                                       end)
         end
 
-        # i18n-tasks-use t('i18n_processes.cmd.args.desc.data_format')
         format_arg.call(:data_format, DATA_FORMATS)
 
-        # i18n-tasks-use t('i18n_processes.cmd.args.desc.out_format')
         format_arg.call(:out_format, OUT_FORMATS)
 
         # @return [I18n::Processes::Data::Tree::Siblings]
@@ -63,7 +60,7 @@ module I18n::Processes
 
         # @return [I18n::Processes::Data::Tree::Siblings]
         def parse_forest(src, format)
-          fail CommandError, I18n.t('i18n_processes.cmd.errors.pass_forest') unless src
+          fail CommandError, "pass locale forest" unless src
           if format == 'keys'
             ::I18n::Processes::Data::Tree::Siblings.from_key_names parse_keys(src)
           else

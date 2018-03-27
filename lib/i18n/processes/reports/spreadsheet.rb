@@ -27,8 +27,7 @@ module I18n::Processes::Reports
         regular_style = s.add_style
         wb.add_worksheet(name: missing_title(forest)) do |sheet|
           sheet.page_setup.fit_to width: 1
-          sheet.add_row [I18n.t('i18n_processes.common.locale'),
-                         I18n.t('i18n_processes.common.key'), 'Zh', 'translated']
+          sheet.add_row %w[local key Zh translated]
           style_header sheet
           # forest.keys do |key, node|
           #   locale = format_locale(node.root.data[:locale])
@@ -57,8 +56,7 @@ module I18n::Processes::Reports
 
     def add_locale_key_value_table(wb, keys, worksheet_opts = {})
       wb.add_worksheet worksheet_opts do |sheet|
-        sheet.add_row [I18n.t('i18n_processes.common.locale'), I18n.t('i18n_processes.common.key'),
-                       I18n.t('i18n_processes.common.value')]
+        sheet.add_row %w[local key value]
         style_header sheet
         keys.each do |locale_k_v|
           sheet.add_row locale_k_v

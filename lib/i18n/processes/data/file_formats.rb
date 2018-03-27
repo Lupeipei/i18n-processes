@@ -49,6 +49,8 @@ module I18n
           hash = tree.to_hash(true)
           adapter = self.class.adapter_name_for_path(path)
           content = adapter_dump(hash, adapter)
+          $stderr.puts Rainbow("contents: #{content}").green
+          $stderr.puts Rainbow("path: #{path}").green
           # Ignore unchanged data
           return if File.file?(path) && content == read_file(path)
           ::FileUtils.mkpath(File.dirname(path))

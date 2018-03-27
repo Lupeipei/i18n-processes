@@ -62,9 +62,11 @@ module I18n::Processes
       end.set_root_key!(locale, type: :missing_diff).keys do |_key, node|
         # change path and locale to base
         data = { locale: locale, missing_diff_locale: node.data[:locale] }
+        # $stderr.puts Rainbow("data: #{data}").green
         if node.data.key?(:path)
           data[:path] = LocalePathname.replace_locale(node.data[:path], node.data[:locale], locale)
         end
+        # $stderr.puts Rainbow("data: #{node.data}").green
         node.data.update data
       end
     end

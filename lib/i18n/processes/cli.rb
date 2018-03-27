@@ -28,7 +28,7 @@ module I18n::Processes
           end
         rescue Errno::EPIPE
           # ignore Errno::EPIPE which is throw when pipe breaks, e.g.:
-          # i18n-tasks missing | head
+          # i18n-processes missing | head
           exit 1
         end
       end
@@ -146,7 +146,7 @@ module I18n::Processes
       args.map! { |v| try_call v }
       conf = args.extract_options!
       if conf.key?(:default)
-        args[-1] = "#{args[-1]}. #{I18n.t('i18n_processes.cmd.args.default_text', value: conf[:default])}"
+        args[-1] = "#{args[-1]}.Default: #{conf[:default]}"
       end
       args
     end

@@ -9,7 +9,7 @@ module I18n::Processes
 
         cmd :eq_base,
             pos:  '[locale ...]',
-            desc: t('i18n_processes.cmd.desc.eq_base'),
+            desc: 'show translations equal to base value',
             args: %i[locales out_format]
 
         def eq_base(opt = {})

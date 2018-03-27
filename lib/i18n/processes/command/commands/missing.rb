@@ -12,18 +12,17 @@ module I18n::Processes
             '-t',
             "--types #{missing_types * ','}",
             Array,
-            t('i18n_processes.cmd.args.desc.missing_types', valid: missing_types * ', '),
+            "Filter by types: #{missing_types * ', '}",
             parser: OptionParsers::Enum::ListParser.new(
               missing_types,
               proc do |invalid, valid|
-                I18n.t('i18n_processes.cmd.errors.invalid_missing_type',
-                       invalid: invalid * ', ', valid: valid * ', ', count: invalid.length)
+                "{:one =>'invalid type: #{invalid}. valid: #{valid}.', :other =>'unknown types: #{invalid}. valid: #{valid}.'}"
               end
             )
 
         cmd :missing,
             pos:  '[locale ...]',
-            desc: t('i18n_processes.cmd.desc.missing'),
+            desc: 'show missing translations',
             args: [:locales, :out_format, :missing_types, ['-p', '--path PATH', 'Destination path', default: 'tmp/missing_keys.xlsx']]
 
         def missing(opt = {})
@@ -45,20 +44,20 @@ module I18n::Processes
 
         cmd :translate_missing,
             pos:  '[locale ...]',
-            desc: t('i18n_processes.cmd.desc.translate_missing'),
+            desc: 'translate missing keys with Google Translate',
             args: [:locales, :locale_to_translate_from, arg(:out_format).from(1)]
 
         def translate_missing(opt = {})
           missing    = i18n.missing_diff_forest opt[:locales], opt[:from]
           translated = i18n.google_translate_forest missing, opt[:from]
           i18n.data.merge! translated
-          log_stderr t('i18n_processes.translate_missing.translated', count: translated.leaves.count)
+          log_stderr "Translated #{translated.leaves.count} keys"
           print_forest translated, opt
         end
 
         cmd :add_missing,
             pos:  '[locale ...]',
-            desc: t('i18n_processes.cmd.desc.add_missing'),
+            desc: 'add missing keys to locale data',
             args: [:locales, :out_format, arg(:value) + [{ default: '%{value_or_default_or_human_key}' }],
                    ['--nil-value', 'Set value to nil. Takes precedence over the value argument.']]
 
@@ -70,15 +69,17 @@ module I18n::Processes
           ].reject(&:empty?).each_with_object(i18n.empty_forest) do |locales, added|
             forest = i18n.missing_keys(locales: locales, **opt.slice(:types, :base_locale))
                          .set_each_value!(opt[:'nil-value'] ? nil : opt[:value])
-            $stderr.puts Rainbow("missing: #{i18n.data}").green
+            $stderr.puts Rainbow("forest_parent: #{forest.parent}").green # forest的parent为nil
+            $stderr.puts Rainbow("forest_list: #{forest.list.class}").green
+            $stderr.puts Rainbow("forest_list: #{forest.list.first.class}").green # node, yes, list是一个nodes
+
             # call method I18n::Processes::Data::FileSystemBase merge! to generate file
             i18n.data.merge! forest
             # call method I18n::Processes::Data::Tree::Nodes::Siblings merge! to generate file
             added.merge! forest
           end.tap do |added|
-            log_stderr t('i18n_processes.add_missing.added', count: added.leaves.count)
+            log_stderr "{:one => 'Added #{added.leaves.count} key', :other => 'Added #{added.leaves.count} keys'}"
             print_forest added, opt
-            # $stderr.puts Rainbow("missing: #{added}").green
           end
         end
       end

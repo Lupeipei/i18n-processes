@@ -10,11 +10,11 @@ module I18n::Processes
         arg :pattern_router,
             '-p',
             '--pattern_router',
-            t('i18n_processes.cmd.args.desc.pattern_router')
+            'Use pattern router: keys moved per config data.write'
 
         cmd :normalize,
             pos:  '[locale ...]',
-            desc: t('i18n_processes.cmd.desc.normalize'),
+            desc: 'normalize translation data: sort and move to the right files',
             args: %i[locales pattern_router]
 
         def normalize(opt = {})
@@ -24,7 +24,7 @@ module I18n::Processes
 
         cmd :check_normalized,
             pos: '[locale ...]',
-            desc: t('i18n_processes.cmd.desc.check_normalized'),
+            desc: 'verify that all translation data is normalized',
             args: %i[locales]
 
         def check_normalized(opt)
@@ -35,7 +35,7 @@ module I18n::Processes
 
         cmd :mv,
             pos: 'FROM_KEY_PATTERN TO_KEY_PATTERN',
-            desc: t('i18n_processes.cmd.desc.mv')
+            desc: 'rename/merge the keys in locale data that match the given pattern'
         def mv(opt = {})
           fail CommandError, 'requires FROM_KEY_PATTERN and TO_KEY_PATTERN' if opt[:arguments].size < 2
           from_pattern = opt[:arguments].shift
@@ -48,7 +48,7 @@ module I18n::Processes
 
         cmd :rm,
             pos: 'KEY_PATTERN [KEY_PATTERN...]',
-            desc: t('i18n_processes.cmd.desc.rm')
+            desc: 'remove the keys in locale data that match the given pattern'
         def rm(opt = {})
           fail CommandError, 'requires KEY_PATTERN' if opt[:arguments].empty?
           forest = i18n.data_forest
@@ -61,7 +61,7 @@ module I18n::Processes
 
         cmd :data,
             pos:  '[locale ...]',
-            desc: t('i18n_processes.cmd.desc.data'),
+            desc: 'show locale data',
             args: %i[locales out_format]
 
         def data(opt = {})
@@ -70,7 +70,7 @@ module I18n::Processes
 
         cmd :data_merge,
             pos:  '[tree ...]',
-            desc: t('i18n_processes.cmd.desc.data_merge'),
+            desc: 'merge locale data with trees',
             args: %i[data_format nostdin]
 
         def data_merge(opt = {})
@@ -81,7 +81,7 @@ module I18n::Processes
 
         cmd :data_write,
             pos:  '[tree]',
-            desc: t('i18n_processes.cmd.desc.data_write'),
+            desc: 'replace locale data with tree',
             args: %i[data_format nostdin]
 
         def data_write(opt = {})
@@ -92,7 +92,7 @@ module I18n::Processes
 
         cmd :data_remove,
             pos:  '[tree]',
-            desc: t('i18n_processes.cmd.desc.data_remove'),
+            desc: 'remove keys present in tree from data',
             args: %i[data_format nostdin]
 
         def data_remove(opt = {})

@@ -1,0 +1,166 @@
+---
+en:
+  meeting:
+    'null': null {resource} message
+    next:
+      'null': not has next meeting
+    booking: booking
+    close: close
+    cancel: cancel
+    status:
+      OPEN: Open
+      LOCK: Lock
+      CANCEL: Canceled
+    repeat:
+      NONE: Meeting
+      WEEK: Repeat Meeting
+  booking:
+    success: booking success
+    meeting: 预约{resource}
+  input:
+    meeting:
+      subject: input meeting subject
+  default:
+    subject: extraordinary meeting
+  date:
+    today: today
+    towrrow: towrrow
+    acquired: acquired
+  time:
+    '30': 30 minutes
+    '60': an hour
+    '90': an hour and a half
+    '120': two hours
+  app:
+    title: appName
+    name: MeetingRoom Booking System
+  since:
+    seconds: " %s second%s ago"
+    minutes: " %s minute%s ago"
+    hours: " %s hour%s ago"
+    days: " %s day%s ago"
+    months: " %s month%s ago"
+    years: " %s year%s ago"
+    format: " MMM d, yyyy"
+  validation:
+    required: Required
+    minSize: Minimum size is %2$d
+    maxSize: Maximum size is %2$d
+    email: Invalid email address
+    range: Not in the range %2$d through %3$d
+    min: Cannot be lower than %2$d
+    max: Cannot be greater than %2$d
+    match: Must match %2$s
+    isTrue: Must be checked
+    equals: Must be equal to &{%2$s}
+    invalid: Incorrect value
+    future: Must be in the future
+    after: Must be after %2$s
+    past: Must be in the past
+    before: Must be before %2$s
+    object: Validation failed
+    notFound: Object not found for id %2$s
+    url: Not a valid URL
+    phone: Not a valid phone
+    ipv4: Not a valid IP address
+    ipv6: Not a valid IP v6 address
+    unique: Must be unique
+  playpaginate:
+    prev: "<"
+    next: ">"
+    first: !!str '<<'
+    last: ">>"
+  option:
+    hour: Hour
+    hours: Hours
+    minute: Minute
+    minutes: Minutes
+    day: Day
+    days: Days
+    unlimit: Unlimit
+    undefine: Undefined
+  yesno:
+    'yes': 'Yes'
+    'no': 'No'
+  link:
+    download: Download
+  manager:
+    form:
+      saveAdd: Add
+      saveEdit: Save
+      cancel: Cancel
+      back: Back
+      print: Print
+      saveModify: Save Modify
+    list:
+      action: Operate
+      edit: Edit
+      delete: Delete
+      confirmdelete: Confirm delete %s?
+    share:
+      clearselectedusers:
+        hint: Clear Selected Users
+  customer:
+    serviceemail: service@hyshi.net
+  cmsChannel:
+    TOUR: TOUR
+    BLOG: BLOG
+    NOTICE: NOTICE
+    'null': Uncategory
+  sex:
+    M: Male
+    F: Female
+    'null': Unknown
+    U: Unknown
+  roles:
+    ADMIN: Admin
+    MANAGER: Manager
+    USER: Staff
+    HR: HR
+    FMY: Receptionist
+    HYSASS: Meeting Asst
+  WxcpAppStatus:
+    OPEN: Open
+    FREEZE: Freeze
+  nav:
+    main: Home
+    receptions: Reception
+    meetings: Book Meeting
+    viewmeetings: Query Meeting
+    hiring: Hiring
+    hiringplans: Hiring Plans
+    recruits: Recruits
+    reports:
+      memberTimes: Member Times
+      ownerTimes: Owner Times
+      checkerTimes: Checkin Times
+      roomTimes: Meetingroom Times
+    admincompany: Company Settings
+    adminmeetingrooms: Meeting Rooms
+    admindevices: Devices
+    admindepts: Departments
+    adminemployees: Staff
+    mytags: My Contacts
+    myprofile: My Profile
+  duration:
+    '15': 15 Minutes
+    '30': 30 Minutes
+    '45': 45 Minutes
+    '60': 1 Hour
+  "@include":
+    article: " ./_messages/en/article.properties"
+    meetingBooking: " ./_messages/en/meetingBooking.properties"
+    meetingrooms: " ./_messages/en/meetingrooms.properties"
+    officeareas: " ./_messages/en/officeareas.properties"
+    company: " ./_messages/en/company.properties"
+    orders: " ./_messages/en/orders.properties"
+    visitor: " ./_messages/en/visitor.properties"
+    devices: " ./_messages/en/devices.properties"
+    tag: " ./_messages/en/tag.properties"
+    schedulings: "./_messages/zh/schedulings.properties"
+  CommentType:
+    CANCEL_MEETING: meeting cancel
+    CONFIRM_OPEN_MEETING: " confirm that meeting has started"
+    INTERVIEW_OFFER: hired
+    INTERVIEW_REFUSE: interview refuse
+    INTERVIEW_REJECT: interviewee rejected

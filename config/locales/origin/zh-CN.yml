@@ -80,7 +80,7 @@ zh-CN:
     warn:
       form:
         validfail: 表单验证失败
-        validfailfor: '表单验证失败: %s'
+        validfailfor=表单验证失败: "%s"
       deptdeletedwithusers: "%s还有%s位员工，请先移走所有员工后再删除部门。"
   user:
     status:
@@ -269,6 +269,15 @@ zh-CN:
     DELAY_MEETING: 会议延时
     SIGNOUT_MEETING: 提前结束会议
     CLOSE_UNSTART: 会议未召开
+  password:
+    strong:
+      VERY_WEAK: 非常弱
+      WEAK: 弱
+      AVERAGE: 一般
+      STRONG: 强
+      VERY_STRONG: 非常强
+      SECURE: 安全
+      VERY_SECURE: 非常安全
   lang:
     zh: 中文
     en: 英文
@@ -324,7 +333,6 @@ zh-CN:
       endAt: 结束时间
       durationMinutes: 时长
       notPublic: 是否公开
-  deptId: 部门
   order:
     years: 购买期限
     roomCount: 会议室数量
@@ -344,8 +352,6 @@ zh-CN:
       name: 您的名字
       email: 您的Email
       inviteCode: 邀请码
-  password: 密码
-  repeatPassword: 确认密码
   corpForm:
     name: 公司名
     corpName: 公司名
@@ -370,8 +376,6 @@ zh-CN:
     bookingLimitDays: 预订天数上限
     customWebAssets: 自定义Web资源
     customMobileAssets: 自定义Mobile资源
-  tableAppVersion: 平板App版本
-  tableAppUrl: 平板App下载URL
   dept:
     name: 部门名称
     noDeptName: 无部门
@@ -381,9 +385,6 @@ zh-CN:
     name: 角色名称
     remark: 备注
     showOrder: 顺序
-  ONCE: 一次性收费
-  MONTH: 月费
-  YEAR: 年费
   hiringPlan:
     title: 职位名称
     dept: 需求部门

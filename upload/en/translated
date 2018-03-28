@@ -1,0 +1,17 @@
+#  ./_messages/zh/schedulings.properties
+@include.schedulings=./_messages/zh/schedulings.properties
+
+# 取消会议
+CommentType.CANCEL_MEETING=meeting cancel
+
+# 确认已开会
+CommentType.CONFIRM_OPEN_MEETING= confirm that meeting has started
+
+# 录用
+CommentType.INTERVIEW_OFFER=hired
+
+# 面试者拒绝
+CommentType.INTERVIEW_REFUSE=interview refuse
+
+# 淘汰
+CommentType.INTERVIEW_REJECT=interviewee rejected

@@ -5,7 +5,7 @@ locals: [zh-CN, en]
 data:
   read:
     - config/locales/origin/%{locale}.yml
-    - config/locales/translated/%{locale}.yml
+    - config/locales/dictionary/%{locale}.yml
 
   write:
     - config/locales/normalize/*.%{locale}.yml

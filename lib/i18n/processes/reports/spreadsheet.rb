@@ -17,6 +17,20 @@ module I18n::Processes::Reports
       $stderr.puts Rainbow("Saved to #{path}").green
     end
 
+    def missing_report(path, _opt)
+      path = path.presence || 'tmp/missing_keys'
+      report = File.new(path,'w')
+      report.write("# 说明：以#开头的行，表示key对应的中文翻译\n# 下一行'='左边为key，'='右边需要填上对应的英文翻译： \n")
+      report.write("\n\n# =======================  missing keys list =============================\n\n")
+      forest = collapse_missing_tree! task.missing_keys
+      sort_by_attr!(forest_to_attr(forest)).map do |a|
+        report.write("# #{a[:value]}\n")
+        report.write("#{a[:key]}=\n\n")
+      end
+      report.close
+      $stderr.puts Rainbow("missing report saved to #{path}").green
+    end
+
     private
 
     def add_missing_sheet(wb) # rubocop:disable Metrics/AbcSize

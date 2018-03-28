@@ -1,11 +1,13 @@
 # frozen_string_literal: true
 
 require 'i18n/processes/command/collection'
+require 'i18n/processes/command/commands/preprocessing'
 module I18n::Processes
   module Command
     module Commands
       module Missing
         include Command::Collection
+        include Command::Commands::Preprocessing
 
         missing_types = I18n::Processes::MissingKeys.missing_keys_types
         arg :missing_types,
@@ -23,23 +25,19 @@ module I18n::Processes
         cmd :missing,
             pos:  '[locale ...]',
             desc: 'show missing translations',
-            args: [:locales, :out_format, :missing_types, ['-p', '--path PATH', 'Destination path', default: 'tmp/missing_keys.xlsx']]
+            args: [:locales, :out_format, :missing_types, ['-p', '--path PATH', 'Destination path', default: 'tmp/missing_keys']]
 
         def missing(opt = {})
+          # update the compared file en.yml
+          preprocessing({:locales => ['en'], :path => './upload/en'})
+          # find missing
           forest = i18n.missing_keys(opt.slice(:locales, :base_locale, :types))
           missing_count = forest.leaves.count
           print_forest forest, opt, :missing_keys unless forest.empty?
-          # :exit_1 unless forest.empty?
-          # generate missing key files
-          begin
-            require 'axlsx'
-          rescue LoadError
-            message = %(For spreadsheet report please add axlsx gem to Gemfile:\ngem 'axlsx', '~> 2.0')
-            log_stderr Rainbow(message).red.bright
-            exit 1
-          end
-          # $stderr.puts Rainbow("path: #{opt[:path]}").green
-          spreadsheet_report.save_report opt[:path], opt.except(:path) unless missing_count.zero?
+          # save to primitive file
+          spreadsheet_report.missing_report opt[:path], opt.except(:path) unless missing_count.zero?
+          # if missing_count == 0 ,generate corresponding en file for origin zh-CH files
+
         end
 
         cmd :translate_missing,
@@ -69,9 +67,6 @@ module I18n::Processes
           ].reject(&:empty?).each_with_object(i18n.empty_forest) do |locales, added|
             forest = i18n.missing_keys(locales: locales, **opt.slice(:types, :base_locale))
                          .set_each_value!(opt[:'nil-value'] ? nil : opt[:value])
-            $stderr.puts Rainbow("forest_parent: #{forest.parent}").green # forest的parent为nil
-            $stderr.puts Rainbow("forest_list: #{forest.list.class}").green
-            $stderr.puts Rainbow("forest_list: #{forest.list.first.key_to_node}").green # node, yes, list是一个nodes
 
             # call method I18n::Processes::Data::FileSystemBase merge! to generate file
             i18n.data.merge! forest

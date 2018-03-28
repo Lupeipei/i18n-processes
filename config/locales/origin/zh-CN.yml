@@ -1,0 +1,525 @@
+---
+zh-CN:
+  since:
+    seconds: "%s秒前"
+    minutes: "%s分钟前"
+    hours: "%s小时前"
+    days: "%s天前"
+    months: "%s月前"
+    years: "%s年前"
+    format: " yyyyMMdd E"
+  validation:
+    required: "%s是必填项"
+    min: "%s应大于%s"
+    max: "%s应小于%s"
+    email: 无效的邮箱格式
+    minSize: 最小长度应为%2$d
+    maxSize: 最大长度应为%2$d
+    range: 不在范围（%2$d至%3$d）内
+    match: 应匹配 %2$s
+    isTrue: 必须为真
+    equals: 应等于&{%2$s}
+    invalid: 无效的值
+    future: 必须是将来的时间
+    after: 必须在%2$s之后
+    past: 必须是过去的时间
+    before: 必须在%2$s之前
+    object: 验证失败
+    notFound: "%2$s）"
+    url: 不是一个有效的URL
+    phone: 不是一个有效的电话号码
+    ipv4: 不是有效的IP地址
+    ipv6: 不是有效的IPv6地址
+    unique: 必须是唯一值
+  playpaginate:
+    prev: "<"
+    next: ">"
+    first: !!str '<<'
+    last: ">>"
+  option:
+    hour: 小时
+    hours: 小时
+    minute: 分钟
+    minutes: 分钟
+    day: 天
+    days: 天
+    unlimit: 不限制
+    bookings2days: 今明两天
+    undefine: 未设置
+  yesno:
+    'yes': 是
+    'no': 否
+  link:
+    download: 下载
+  app:
+    name: 会议室助手
+    title: appName
+  manager:
+    form:
+      saveAdd: 添 加
+      saveEdit: 保 存
+      cancel: 取 消
+      back: 返回
+      print: 打 印
+      saveModify: 保存修改
+    list:
+      action: 操作
+      edit: 修改
+      delete: 删除
+      confirmdelete: 确认删除%s?
+    share:
+      clearselectedusers:
+        hint: 清空已选择的人员
+  customer:
+    serviceemail: service@hyshi.net
+  flash:
+    notice:
+      deletesuccess: "%s已经被删除"
+      savesuccess: 保存成功
+      updatesuccesswithcount: "%s条记录修改成功"
+    warn:
+      form:
+        validfail: 表单验证失败
+        validfailfor: '表单验证失败: %s'
+      deptdeletedwithusers: "%s还有%s位员工，请先移走所有员工后再删除部门。"
+  user:
+    status:
+      ACTIVE: 已激活
+      SUBSCRIBE: 关注服务号
+      UNSUBSCRIBE: 未关注服务号
+      FIRED: 解雇
+      NEW: 新导入
+      'null': 不可用
+    name: 姓名
+    email: 电子邮箱
+    position: 职位
+    jobNumber: 工号
+    lang: 界面语言
+  cmsChannel:
+    TOUR: 教程
+    BLOG: 博客
+    NOTICE: 公告
+    'null': 未指定
+  meeting:
+    status:
+      OPEN: 正常
+      LOCK: 锁定
+      CANCEL: 取消
+      APPROVE: 待审批
+      REJECTED: 已拒绝
+    repeat:
+      NONE: 单次会议
+      WEEK: 每周固定会议
+    'null': 无会议信息
+    next:
+      'null': 接下来没有会议了
+    booking: 预定
+    close: 结束
+    cancel: 取消
+  meetingCheckedStatus:
+    Y: 已签到
+    N: 未签到
+    F: 未召开
+  sex:
+    M: 男
+    F: 女
+    'null': ''
+    U: ''
+  roles:
+    ADMIN:
+      hint: 拥有最高权限
+    MANAGER:
+      hint: 可修改和取消本部门人员的会议，可查看本部门非公开会议
+    USER:
+      hint: 员工
+    HR:
+      hint: 可以管理招聘
+    FMY:
+      hint: 负责前台接待, 预约联系
+    HYSASS:
+      hint: 负责管理会议室预订, 代理预订
+  wxcp:
+    app:
+      TRIP: 出差管理
+      HYSHI: 会议室管理
+  invite:
+    code:
+      COMPANY: 公司开通邀请
+      EMPLOYEE: 员工注册邀请
+  meetingRoom:
+    facility:
+      WHITEBOARD: 白板
+      PROJECTOR: 投影仪
+      PHONE: 电话
+      VIDEO: 视频会议
+      VIDIO: 视频会议
+      CLASSROOM: 教室
+      BAZAYU: 八爪鱼
+      LAPTOP: 笔记本
+      HONSANSU: 红杉树
+      TV: 电视
+      MIC: 话筒
+      SF: 沙发
+  clientType:
+    SYS: 系统
+    'null': 无
+    WEB: Web
+    WEIXIN: 微信
+    WXAPP: 小程序
+    OUTLOOK: Outlook
+    WEBAPP: WebApp
+  orderStatus:
+    UNPAID: 待支付
+    PAID: 已支付
+    DONE: 已完成
+    CANCELED: 已取消
+    REFUND: 已退款
+  licenseEdition:
+    'null': 未指定
+    TRIAL: 试用版
+    BASIC: 基础版
+    FREE: 免费版
+    EDU: 教育版
+    STANDARD: 专业版
+    ENTERPRISE: 企业版
+    TESTING: 全功能测试用
+  func:
+    BOOKING_MEETING: 预订会议
+    WXCP: 微信企业号
+    WXMP: 微信服务号
+    ROOM_OPEN_VIEW: 会议室开放查看
+    EXT_CUSTOMER: 客户接待会议
+    EXT_INTERVIEW: 面试会议
+    ORDER: 订单支付
+    NO_MAIL_CAL: 不发会议邮件
+    CORP_SETTING: 公司高级设置
+    REPORT: 统计报表
+    NO_EMAIL: 不需要邮件
+    SHOW_DEPT: 会议详情显示部门
+    HIDE_HYSCN: 不显示会议室助手
+    PAD: PAD屏(H5版)
+    OUTLOOK: Outlook插件支持
+    PAD_ANDROID: 原生Android屏
+    EDU: 教育版限制
+    VIDEO_BIZCONF: 会畅视频会议
+    SHORT_NAME: 短名称字段
+    DEVICE: 设备管理
+    UI_V2: 界面V2
+    UI_V1: 旧微信界面
+    AUTO_CANCLE: 自动取消会议
+    QUICK_CREATE: 快速创建会议
+    SMS_ACTIVE: 短信激活用户
+    I18N: 多语言国际化
+    NOON_SPLIT: 中午休息不预订
+    AREA_PAD: 办公区域显示平板
+    ROOM_APPROVE: 会议室审批
+    EXCHANGE: Exchange服务器支持
+    ROOM_FEE: 会议室收费
+    MEETING_INTERVAL: 会议间隔
+    COMBINE_ROOM: 组合会议室
+    DASHBOARD_SIMPLE: 简化面板
+    LDAP: LDAP认证
+    REACT_WEB: REACT网页版
+    FREEZE_CORPNAME: 冻结公司名
+    STATIC_LOGIN: 专用登录页
+    WEB_V2: 显示切换Web新版
+    NO_COMMENT: 关闭会议评论
+    NO_INVITE: 关闭邀请员工
+    CAR_RETURN: 汽车归还审批
+    SMS_NOTIFY: 短信通知
+    HD_CTRL: 硬件控制面板
+    REPORT2: 统计报表V2
+    JH_FTP_SYNC: 九华互联FTP同步
+    SYNC_UPSTREAM: 同步上游会议系统
+  entityType:
+    MEETING: 会议
+    MEETING_ROOM: 会议室
+    CORP: 公司
+    USER: 用户
+    OFFICE_AREA: 办公区域
+  CommentType:
+    VISITOR_ARRIVED: 访客到达
+    VISITOR_LATE: 访客迟到
+    VISITOR_CANCEL: 访客取消
+    INTERVIEW_SG_REJECT: 建议淘汰
+    INTERVIEW_SG_NEXT: 建议复试
+    INTERVIEW_SG_REVIEW: 建议复试
+    INTERVIEW_SG_OFFER: 建议录用
+    INTERVIEW_REJECT: 淘汰
+    INTERVIEW_OFFER: 录用
+    INTERVIEW_SUSPEND: 挂起
+    INTERVIEW_REFUSE: 面试者拒绝
+    CANCEL_MEETING: 取消会议
+    CONFIRM_OPEN_MEETING: 确认已开会
+  showCommentType:
+    'null': 留言
+    VISITOR_ARRIVED: 通知访客到达
+    VISITOR_LATE: 通知访客迟到
+    VISITOR_CANCEL: 通知访客取消
+    INTERVIEW_SG_REJECT: 建议淘汰
+    INTERVIEW_SG_NEXT: 建议复试
+    INTERVIEW_SG_REVIEW: 建议复试
+    INTERVIEW_SG_OFFER: 建议录用
+    INTERVIEW_REJECT: 确认淘汰
+    INTERVIEW_OFFER: 确认录用
+    INTERVIEW_SUSPEND: 确认挂起
+    INTERVIEW_REFUSE: 面试者拒绝
+    CANCEL_MEETING: 取消会议
+    CONFIRM_OPEN_MEETING: 确认已开会
+    DELAY_MEETING: 会议延时
+    SIGNOUT_MEETING: 提前结束会议
+    CLOSE_UNSTART: 会议未召开
+  lang:
+    zh: 中文
+    en: 英文
+  meetingRoomType:
+    'null': 会议室
+    ROOM: 会议室
+    OUTSIDE: 外部会议室
+    LAB_EQU: 实验设备
+    CAR: 车辆
+    DEFAULT: 会议室
+  RecruitStatus:
+    FIRSTVIEW: 初面
+    SUGGEST_REJECT: 建议淘汰
+    SUGGEST_REVIEW: 建议复试
+    SUGGEST_OFFER: 建议录用
+    REJECT: 淘汰
+    REVIEW: 复试
+    OFFER: 录用
+    SUSPEND: 挂起
+    REFUSE: 面试者拒绝
+    'null': ''
+  WxcpAppStatus:
+    OPEN: 可用
+    FREEZE: 冻结
+  speechType:
+    'null': 暂无
+  nav:
+    main: 首页
+    receptions: 前台接待
+    meetings: 预订会议
+    viewmeetings: 查询会议
+    hiring: 招聘管理
+    hiringplans: 招聘计划
+    recruits: 面试管理
+    reports:
+      memberTimes: 参与人员时间统计
+      ownerTimes: 预订人时间统计
+      checkerTimes: 签到人时间统计
+      roomTimes: 会议室使用统计
+    admincompany: 公司设置
+    adminmeetingrooms: 会议室管理
+    admindevices: 设备管理
+    admindepts: 部门管理
+    adminemployees: 员工管理
+    mytags: 我的群组
+    myprofile: 个人资料
+  diff:
+    meeting:
+      subject: 会议主题
+      roomId: 会议室
+      content: 会议内容
+      beginAt: 开始时间
+      endAt: 结束时间
+      durationMinutes: 时长
+      notPublic: 是否公开
+  deptId: 部门
+  order:
+    years: 购买期限
+    roomCount: 会议室数量
+    invoiceType: 需要发票？
+  corpContact:
+    invoiceTitle: 发票抬头
+    taxpayerNumber: 纳税人识别号
+    taxAddress: 公司地址电话
+    taxBankAccount: 开户银行账号
+    invoiceSubject: 发票内容
+    address: 邮寄地址
+    receiverName: 收件人姓名
+    receiverPhone: 收件人手机
+  corp:
+    register:
+      corpName: 公司名称
+      name: 您的名字
+      email: 您的Email
+      inviteCode: 邀请码
+  password: 密码
+  repeatPassword: 确认密码
+  corpForm:
+    name: 公司名
+    corpName: 公司名
+    email: 电子邮箱
+    maxMeetingRooms: 最大会议室数量
+    emailPostfix: 邮箱后缀
+    expiredAt: 有效日期
+    licenseEdition: 授权类型
+    tabletViewUrl: 平板视图URL
+    additionFuncs: 可用功能
+    meetingRoomFacilities: 可用设施
+    logoObject: Logo
+    enabled: 启用状态
+    notice: 公司说明
+    disabledFuncs: 禁用功能
+    disabledRoles: 禁用角色
+    meetingStartHour: 预订开始时间
+    meetingEndHour: 预订结束时间
+    meetingInterval: 预订间隔
+    meetingMaxDuration: 最大预订时长
+    supportRoomTypes: 资源类型
+    bookingLimitDays: 预订天数上限
+    customWebAssets: 自定义Web资源
+    customMobileAssets: 自定义Mobile资源
+  tableAppVersion: 平板App版本
+  tableAppUrl: 平板App下载URL
+  dept:
+    name: 部门名称
+    noDeptName: 无部门
+    notexists: 部门不存在
+  role:
+    code: 编码
+    name: 角色名称
+    remark: 备注
+    showOrder: 顺序
+  ONCE: 一次性收费
+  MONTH: 月费
+  YEAR: 年费
+  hiringPlan:
+    title: 职位名称
+    dept: 需求部门
+    hireCount: 招聘人数
+    offeredCount: 已录用人数
+    dueDate: 截止日期
+    jobDescription: 职位需求说明
+    id: 应聘职位
+  meetingType:
+    STANDARD:
+      label: 普通会议
+    'null': 会议
+    INTERVIEW: 面试
+    CUSTOMER: 客户接待
+  meetingForm:
+    subject: 会议主题
+    content: 会议内容
+    roomId: 会议室
+    meetingDate: 会议日期
+    meetingMembers: 参与人员
+    owner: 预订人
+    startTime: 开始时间
+    duration: 时长
+    meetingRepeatType: 重复类型
+    weekDays: ''
+    endDate: 固定会议结束于
+    fixedEndDate: 固定会议结束于
+    config: 会议设置
+    time: 时间
+    ownerId: 预订人
+    hiringPlanId: 应聘职位
+    appliantName: 面试人
+    appliantEmail: 邮箱
+    appliantMobile: 手机
+    visitorName: 访客姓名
+    visitorEmail: 访客邮箱
+    visitorMobile: 访客手机
+    customerName: 访客单位
+    visitorCount: 访客人数
+    serveRemark: 接待说明
+    deskLabel: 桌签
+    banner: 横幅
+    keepLift: 专梯
+    carPlateNumber: 车牌
+    otherServeRemark: 其它接待说明
+  duration:
+    '15': 15分钟
+    '30': 30分钟
+    '45': 45分钟
+    '60': 1小时
+    '75': 1小时15分钟
+    '90': 1个半小时
+    '105': 1小时45分钟
+    '120': 2小时
+    '135': 2小时15分钟
+    '150': 2个半小时
+    '165': 2小时45分钟
+    '180': 3小时
+    '195': 3小时15分钟
+    '210': 3个半小时
+    '225': 3小时45分钟
+    '240': 4小时
+    '300': 5小时
+    '360': 6小时
+    '420': 7小时
+    '480': 8小时
+    '540': 9小时
+    '600': 10小时
+    '660': 11小时
+    '720': 12小时
+  meetingCommentForm:
+    content: 留言内容
+  recruit:
+    name: 姓名
+    mobile: 手机
+    email: 电子邮件
+  articleCategory:
+    code: 栏目编码
+    showName: 显示名称
+    shown: 是否显示
+    showOrder: 显示顺序(倒序)
+    channel: 频道
+  openIdSource:
+    WXMP: 微信公众号
+    WXCP: 微信企业号
+    WXOPEN: 微信开放平台
+    OUTLOOK: Outlook插件
+    WXAPP: 微信小程序
+    PASSWORD: 密码登录
+    SMS: 短信
+    TEST: 测试用
+    UNDEFINE: 未指定
+    'null': 无数据
+  userStatus:
+    ACTIVE: 已激活
+    SUBSCRIBE: 关注
+    FIRED: 解雇
+    UNSUBSCRIBE: 取消关注
+    NEW: 新用户
+    LEAVE: 离职
+  videoMeetingType:
+    VIDEO_BIZCONF: 会畅视频会议
+  upload:
+    refType: 目标对象类型
+    refId: 目标对象Id
+  doorControl:
+    'null': 空指令
+    ALWAY_OPEN: 常开
+    ALWAY_CLOSE: 常关
+    ONLINE_CONTROL: 恢复
+    OPEN_ONCE: 开门
+  "@include":
+    article: " ./_messages/zh/article.properties"
+    meetingBooking: " ./_messages/zh/meetingBooking.properties"
+    meetingrooms: " ./_messages/zh/meetingrooms.properties"
+    officeareas: " ./_messages/zh/officeareas.properties"
+    company: " ./_messages/zh/company.properties"
+    orders: " ./_messages/zh/orders.properties"
+    visitor: " ./_messages/zh/visitor.properties"
+    devices: " ./_messages/zh/devices.properties"
+    tag: " ./_messages/zh/tag.properties"
+    schedulings: " ./_messages/zh/schedulings.properties"
+  booking:
+    success: 预定会议成功
+    meeting: 预约{resource}
+  input:
+    meeting:
+      subject: 请输入会议主题
+  default:
+    subject: 临时会议
+  date:
+    today: 今天
+    towrrow: 明天
+    acquired: 后天
+  time:
+    '30': 30分钟
+    '60': 1小时
+    '90': 1个半小时
+    '120': 2小时

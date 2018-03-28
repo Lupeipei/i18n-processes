@@ -13,7 +13,6 @@ module I18n::Processes
         super
       end
 
-      ## route 用来做什么？输入是什么，输出是什么？
       def route(locale, forest, &block)
         return to_enum(:route, locale, forest) unless block
         out = Hash.new { |hash, key| hash[key] = Set.new }

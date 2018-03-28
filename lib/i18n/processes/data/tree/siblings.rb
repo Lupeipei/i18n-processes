@@ -311,6 +311,7 @@ module I18n::Processes::Data::Tree
       def from_flat_pairs(pairs)
         Siblings.new.tap do |siblings|
           pairs.each do |full_key, value|
+            value.gsub!(/'|\n/, '') if value.include?("\n")
             siblings[full_key] = ::I18n::Processes::Data::Tree::Node.new(key: split_key(full_key).last, value: value)
           end
         end

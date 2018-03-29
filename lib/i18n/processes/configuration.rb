@@ -8,7 +8,7 @@ module I18n::Processes::Configuration # rubocop:disable Metrics/ModuleLength
     data:            ::I18n::Processes::Data::DATA_DEFAULTS
   }.freeze
 
-  # i18n-tasks config (defaults + config/i18n-processes.yml)
+  # i18n-processes config (defaults + config/i18n-processes.yml)
   # @return [Hash{String => String,Hash,Array}]
   def config
     @config || (self.config = {})

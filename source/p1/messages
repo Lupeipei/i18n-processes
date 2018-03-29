@@ -379,7 +379,7 @@ corpContact.taxpayerNumber=纳税人识别号
 corpContact.taxAddress=公司地址电话
 corpContact.taxBankAccount=开户银行账号
 corpContact.invoiceSubject=发票内容
-corpContact.address=邮寄地址
+corpContact.address=收件地址
 corpContact.receiverName=收件人姓名
 # change corpContact.receiverPhone=收件人手机 to corpContact.receiverPhone=收件人手机号
 corpContact.receiverPhone=收件人手机号

@@ -6,7 +6,7 @@ require 'optparse'
 
 module I18n::Processes
   class CLI
-    include ::I18n::Processes::Logging
+    include I18n::Processes::Logging
 
     def self.start(argv)
       new.start(argv)

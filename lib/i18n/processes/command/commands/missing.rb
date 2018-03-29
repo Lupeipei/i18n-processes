@@ -28,21 +28,12 @@ module I18n::Processes
             args: [:locales, :out_format, :missing_types, ['-p', '--path PATH', 'Destination path', default: 'tmp/missing_keys']]
 
         def missing(opt = {})
-          # update the compared file en.yml
-          preprocessing({:locales => ['en'], :path => './upload/en'})
-          # find missing using forest
-          # forest = i18n.missing_keys(opt.slice(:locales, :base_locale, :types))
-          # missing_count = forest.leaves.count
-          # print_forest forest, opt, :missing_keys unless forest.empty?
+          options = {:locales => ['en'], :path => './upload/en'}
+          preprocessing(options)
           missing_keys = spreadsheet_report.find_missing
           missing_count = missing_keys.count
-
-
-          # save to primitive file
           spreadsheet_report.missing_report opt[:path], opt.except(:path) unless missing_count.zero?
-          # if missing_count == 0 ,generate corresponding en file for origin zh-CH files
           spreadsheet_report.translated_files if missing_count.zero?
-
         end
 
         cmd :translate_missing,
@@ -58,30 +49,29 @@ module I18n::Processes
           print_forest translated, opt
         end
 
-        cmd :add_missing,
-            pos:  '[locale ...]',
-            desc: 'add missing keys to locale data',
-            args: [:locales, :out_format, arg(:value) + [{ default: '%{value_or_default_or_human_key}' }],
-                   ['--nil-value', 'Set value to nil. Takes precedence over the value argument.']]
+        # cmd :add_missing,
+        #     pos:  '[locale ...]',
+        #     desc: 'add missing keys to locale data',
+        #     args: [:locales, :out_format, arg(:value) + [{ default: '%{value_or_default_or_human_key}' }],
+        #            ['--nil-value', 'Set value to nil. Takes precedence over the value argument.']]
 
-        def add_missing(opt = {}) # rubocop:disable Metrics/AbcSize
-          # $stderr.puts Rainbow("missing: #{opt}").green
-          [ # Merge base locale first, as this may affect the value for the other locales
-            [i18n.base_locale] & opt[:locales],
-            opt[:locales] - [i18n.base_locale]
-          ].reject(&:empty?).each_with_object(i18n.empty_forest) do |locales, added|
-            forest = i18n.missing_keys(locales: locales, **opt.slice(:types, :base_locale))
-                         .set_each_value!(opt[:'nil-value'] ? nil : opt[:value])
-
-            # call method I18n::Processes::Data::FileSystemBase merge! to generate file
-            i18n.data.merge! forest
-            # call method I18n::Processes::Data::Tree::Nodes::Siblings merge! to generate file
-            added.merge! forest
-          end.tap do |added|
-            log_stderr "{:one => 'Added #{added.leaves.count} key', :other => 'Added #{added.leaves.count} keys'}"
-            print_forest added, opt
-          end
-        end
+        # def add_missing(opt = {}) # rubocop:disable Metrics/AbcSize
+        #   [ # Merge base locale first, as this may affect the value for the other locales
+        #     [i18n.base_locale] & opt[:locales],
+        #     opt[:locales] - [i18n.base_locale]
+        #   ].reject(&:empty?).each_with_object(i18n.empty_forest) do |locales, added|
+        #     forest = i18n.missing_keys(locales: locales, **opt.slice(:types, :base_locale))
+        #                  .set_each_value!(opt[:'nil-value'] ? nil : opt[:value])
+        #
+        #     # call method I18n::Processes::Data::FileSystemBase merge! to generate file
+        #     i18n.data.merge! forest
+        #     # call method I18n::Processes::Data::Tree::Nodes::Siblings merge! to generate file
+        #     added.merge! forest
+        #   end.tap do |added|
+        #     log_stderr "{:one => 'Added #{added.leaves.count} key', :other => 'Added #{added.leaves.count} keys'}"
+        #     print_forest added, opt
+        #   end
+        # end
       end
     end
   end

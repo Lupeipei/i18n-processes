@@ -12,20 +12,20 @@ module I18n::Processes
             pos:  '[locale...]',
             desc: 'preprocess origin data files into yaml format files',
             args: [:locales,
-                   ['-p', '--path PATH', 'Destination path', default: './upload/zh-CN']]
+                   ['-p', '--path PATH', 'Destination path', default: './source']]
 
         def preprocessing(opt = {})
           locale = opt[:locales].first
+          folders = Dir["#{opt[:path]}/**/"]
           origin_files = Dir["#{opt[:path]}/*"]
           dic = {}
           origin_files.each do |file|
-            dic.merge!(origin_file_read(file)) { |key, v1, v2| fail "conflict: #{key}: #{v1}, #{v2} in #{file}" unless v1 == v2 }
+            # dic.merge!(origin_file_read(file)) { |key, v1, v2| fail "conflict: #{key}: #{v1}, #{v2} in #{file}" unless v1 == v2 }
+            dic.merge!(origin_file_read(file))
           end
           path_origin = './config/locales/origin/'
           path_dictionary = './config/locales/dictionary/'
           path = locale == 'zh-CN' ? path_origin : path_dictionary
-          # forest = generate_forest(dic)
-          # yaml_file(forest, path, locale)
           keys_source(dic, path, locale)
           $stderr.puts Rainbow('origin file transform to yaml file successfully').green unless locale == 'en'
         end
@@ -47,10 +47,10 @@ module I18n::Processes
           end
         end
 
-        def generate_forest(dic)
-          forest = I18n::Processes::Data::Tree::Siblings.new
-          forest.merge!I18n::Processes::Data::Tree::Siblings.from_flat_pairs(dic)
-        end
+        # def generate_forest(dic)
+        #   forest = I18n::Processes::Data::Tree::Siblings.new
+        #   forest.merge!I18n::Processes::Data::Tree::Siblings.from_flat_pairs(dic)
+        # end
 
         def yaml_file(forest, path, local)
           filename = "#{path + local}.yml"

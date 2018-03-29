@@ -1,8 +1,6 @@
 # I18n::Processes
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/i18n/processes`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+设置目标语言，根据给到的指定格式的中文文档，输出相对应的翻译文件。
 
 ## Installation
 
@@ -22,7 +20,11 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+- 将需要翻译的中文文件夹放入source/目录下
+- 运行：bundle exec i18n-processes preprocessing
+- 运行：bundle exec i18n-processes missing
+- 在translated/下，生成同名的文件夹，内含对应的翻译文件
+
 
 ## Development
 

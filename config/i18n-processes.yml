@@ -1,5 +1,5 @@
 base_locale: zh-CN
-#internal_locale: zh-CN
+
 locals: [zh-CN, en]
 
 data:
@@ -8,16 +8,15 @@ data:
     - config/locales/dictionary/%{locale}.yml
 
   write:
-    - config/locales/normalize/*.%{locale}.yml
+    - config/locales/dictionary/%{locale}.yml
   yaml:
     write:
       ## do not wrap lines at 80 characters (override default)
       line_width: 96
 
-# Find translate calls
 search:
   paths:
-    - template/
+    - spec/
   exclude:
     - 'tmp/*'
 

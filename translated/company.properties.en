@@ -1,0 +1,62 @@
+# page
+company.show.title=Company settings
+company.show.subtitle=Company basic information
+company.show.save-button=Save changes
+
+company.nav.show=Basic information
+company.nav.advance=Advanced settings
+company.nav.orders=Order center
+
+company.show.rightbar.invation=Invitation
+company.show.rightbar.invation.link=Invite colleagues to join
+company.show.rightbar.payinfo=Payment information
+company.show.rightbar.buy-link=Purchase license
+company.show.rightbar.price-link=Version feature comparison
+company.show.rightbar.expired-on=Valid until 
+company.show.rightbar.max-rooms-count=Authorized number of manageable meeting rooms
+company.show.rightbar.current-rooms-count=Number of meeting rooms opened
+company.show.rightbar.custom-domain=Custom domain name
+company.show.rightbar.custom-domain.hint1=%s now supports custom domain name, please send email to
+company.show.rightbar.custom-domain.hint2= request, and provide the company domain name you want to resolve.
+company.show.rightbar.custom-domain.hint3=company.show.rightbar.custom-domain.hint3
+
+company.show.rightbar.invate-code.line1=company.show.rightbar.invate-code.line1
+company.show.rightbar.invate-code.line2=company.show.rightbar.invate-code.line2
+
+company.advance.subtitle=Advanced company settings
+company.advance.ext-meeting-type=Extended meeting type
+company.advance.ext-meeting-type.hint=You can remove unused meeting type(s)
+company.advance.booking-begin=Start time of reserve meeting
+company.advance.booking-end=End time of reserve meeting
+company.advance.booking-limit=Max duration of meeting reservation
+company.advance.booking-split=Interval of meeting booking
+company.advance.booking-date-limit=Reservation date limit
+company.advance.booking-date-limit.hint=Specifies maxium days allowed for book a future meeting, if set too far then may result to waste of resources; repetitive meeting not subject to this restriction
+
+# form
+company.name=Company name
+company.corpName=Company name
+company.notice=Company profile
+company.notice.placeholder=Enter company profile
+company.notice.hint=200 words or less
+company.emailPostfix=Company email suffix
+company.emailPostfix.placeholder=Used to ensure that only company employees can join, if leave blank then mailbox restrictions do not apply
+company.emailPostfix.hint=It's the string after @ of your company mailbox, for example if company's mailbox is john.doe@bigcompany.com, then enter bigcompany.com; multiple suffixes can be separated by comma
+company.logoFile=Company logo
+company.logoFile.hint.please-select-file=Please select company logo image
+company.logoFile.hint.logo-usage=Uploaded company logo will be visible in system interface, please make sure use a square image.
+company.logoFile.hint.remove-logo.prefix=You can also
+company.logoFile.hint.remove-logo.title=Delete company logo
+company.logoFile.hint.remove-logo.confirm=Confirm delete company logo?
+company.logoFile.alt=company.logoFile.alt
+corpLang=公司默认界面语言
+company.wxqyContactsSecret=company.wxqyContactsSecret
+company.wxqyContactsSecret.placeholder=company.wxqyContactsSecret.placeholder
+company.wxqyContactsSecret.hint=company.wxqyContactsSecret.hint
+
+# flash
+flash.company.notice.save-advance-succ=Company advanced settings saved successfully!
+flash.company.notice.rm-logo-succ=Remove company logo successfully!
+flash.company.warn.bad-time-split=Time interval illegal!
+flash.company.warn.need-square-picture=Please make sure to select a square image!
+flash.company.warn.edu-cannot-change-name=It does not allow to modify company name, original name restored, please contact customer service if you need to change company name

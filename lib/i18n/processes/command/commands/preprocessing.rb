@@ -19,12 +19,12 @@ module I18n::Processes
           origin_files = Dir["#{opt[:path]}/*"]
           dic = {}
           origin_files.each do |file|
-            dic.merge!(origin_file_read(file)) { |key, v1, v2| fail "conflict: #{key}: #{v1}, #{v2}" }
+            dic.merge!(origin_file_read(file)) { |key, v1, v2| fail "conflict: #{key}: #{v1}, #{v2} in #{file}" unless v1 == v2 }
           end
-          forest = generate_forest(dic)
           path_origin = './config/locales/origin/'
           path_dictionary = './config/locales/dictionary/'
           path = locale == 'zh-CN' ? path_origin : path_dictionary
+          # forest = generate_forest(dic)
           # yaml_file(forest, path, locale)
           keys_source(dic, path, locale)
           $stderr.puts Rainbow('origin file transform to yaml file successfully').green unless locale == 'en'
@@ -70,7 +70,7 @@ module I18n::Processes
           filename = "#{path + locale}.yml"
           local_file = File.new(filename, 'w')
           dic.map do |key, value|
-            local_file.write("#{key}=#{value}\n")
+            value.include?("\n") ? local_file.write("#{key}=#{value}") : local_file.write("#{key}=#{value}\n")
           end
           local_file.close
         end

@@ -1,0 +1,18 @@
+# HTML页面
+meetingBooking.title.main=Book meeting
+meetingBooking.title.booking-by-date=Book by date
+meetingBooking.title.detail=Meeting details
+meetingBooking.title.find-room-by-time=Find a meeting room at specified time
+meetingBooking.title.find-time-by-room=Find a meeting time with specified room
+
+
+meetingBooking.booking=Book
+
+
+# 确认状态
+meeting.joinStatus.notMember=Non meeting participants can not set the engagement status
+meeting.joinStatus.invalidStatus=Illegal participation status
+
+# 会议审批
+meetingApprove.approval=meetingApprove.approval
+meetingApprove.remark=meetingApprove.remark

@@ -1,0 +1,64 @@
+# index page
+office-areas.index.title=Office area management
+office-areas.index.subtitle=Maintain office area
+office-areas.index.tablabel=Office area
+
+office-areas.operate.new=Add new office area
+
+officeAreaLevel.CAMPUS=officeAreaLevel.CAMPUS
+officeAreaLevel.BUILDING=officeAreaLevel.BUILDING
+officeAreaLevel.FLOOR=officeAreaLevel.FLOOR
+
+office-areas.operate.new-campus=office-areas.operate.new-campus
+office-areas.operate.new-building=office-areas.operate.new-building
+office-areas.operate.new-floor=office-areas.operate.new-floor
+
+office-areas.visitSetting=Visitor settings
+
+# add page
+office-areas.add.subtitle=Add office area
+office-areas.add.exists-same=Office of the same name already exists
+# edit page
+office-areas.edit.subtitle=Modified: %s
+
+# form
+officeArea.name=Office area
+officeArea.name.placeholder=Please enter name of the office area
+officeArea.phone=Receptionist phone
+officeArea.phone.placeholder=Please enter the office area corresponding to the receptionist corresponding to the phone (optional)
+officeArea.remark=Remarks
+officeArea.remark.placeholder=Office area notes (optional)
+officeArea.roomCount=Number of meeting rooms
+
+officeArea.address=Address
+officeArea.address.placeholder=Please enter specified office area address (optional)
+officeArea.address.hint=Send this address to visitors when sending an invitation
+officeArea.address.hint-view-map=, make sure the map on the right shows the correct address
+
+officeArea.trafficAdvice=Traffic advice
+officeArea.trafficAdvice.placeholder=Please enter traffic advice (optional)
+officeArea.trafficAdvice.hint=Send public transport information to visitors when sending an invitation
+
+officeArea.wifiName=Guest WIFI SSID
+officeArea.wifiName.placeholder=Please leave blank if you do not want to share WIFI with visitors
+officeArea.wifiName.hint=Please enter WIFI SSID to share with visitors
+officeArea.wifiPassword=WIFI password
+officeArea.wifiPassword.placeholder=Please leave blank if you do not want to share WIFI with visitors
+officeArea.wifiPassword.hint=Please enter WIFI password to share with visitors
+
+officeArea.admins=Service director
+officeArea.admins.placeholder=Meeting service director for the office area, support Chinese phonetic abbreviation
+#officeArea.admins.hint=可不设置。负责本办公区域会议协调, 会议审批; 所有本办公区域的会议都会抄送办公区域服务主管
+officeArea.admins.hint=Responsible for the coordination of meetings, can modify or cancel the meeting (optional)
+
+# flash
+office-areas.flash.update-succ=Office area saved successfully
+
+# other
+office-areas.all-areas=All areas
+office-areas.default-name=Default
+
+office-areas.show.top-hint1=office-areas.show.top-hint1
+office-areas.show.bottom-hint1=office-areas.show.bottom-hint1
+office-areas.show.bottom-hint2=office-areas.show.bottom-hint2
+office-areas.show.bottom-hint3=office-areas.show.bottom-hint3

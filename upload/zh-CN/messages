@@ -228,7 +228,6 @@ func.I18N=多语言国际化
 func.NOON_SPLIT=中午休息不预订
 func.AREA_PAD=办公区域显示平板
 func.ROOM_APPROVE=会议室审批
-func.EXCHANGE=Exchange服务器支持
 func.ROOM_FEE=会议室收费
 func.MEETING_INTERVAL=会议间隔
 func.COMBINE_ROOM=组合会议室
@@ -244,8 +243,12 @@ func.CAR_RETURN=汽车归还审批
 func.SMS_NOTIFY=短信通知
 func.HD_CTRL=硬件控制面板
 func.REPORT2=统计报表V2
-func.JH_FTP_SYNC=九华互联FTP同步
 func.SYNC_UPSTREAM=同步上游会议系统
+func.GROUP_CORP=集团公司
+
+# 以下不使用的配置
+func.EXCHANGE=Exchange服务器支持(废弃)
+func.JH_FTP_SYNC=九华互联FTP同步(废弃)
 
 # 实体类型
 entityType=实体类型
@@ -378,7 +381,8 @@ corpContact.taxBankAccount=开户银行账号
 corpContact.invoiceSubject=发票内容
 corpContact.address=邮寄地址
 corpContact.receiverName=收件人姓名
-corpContact.receiverPhone=收件人手机
+# change corpContact.receiverPhone=收件人手机 to corpContact.receiverPhone=收件人手机号
+corpContact.receiverPhone=收件人手机号
 
 
 # 公司注册

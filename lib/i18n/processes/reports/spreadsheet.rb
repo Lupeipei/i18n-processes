@@ -28,7 +28,7 @@ module I18n::Processes::Reports
       #   report.write("#{a[:key]}=#{a[:key]}\n\n")
       # end
       find_missing.map do |k,v|
-        report.write("# #{v}\n")
+        report.write("# #{v}")
         report.write("#{k}=#{k}\n\n")
       end
       report.close
@@ -36,15 +36,13 @@ module I18n::Processes::Reports
     end
 
     def translated_files
-      # dic = {}
-      # keys = task.unused_keys.root_key_values(true)
-      # keys.map {|x| dic[x[1]] = x.last if x.first == "en"}
       dic = get_dic('./config/locales/dictionary/en.yml')
       path = 'translated/'
       origin_files = Dir['./upload/zh-CN/*']
       origin_files.each do |file|
         translated_file(file, path, dic)
       end
+      $stderr.puts Rainbow("translated files saved to #{path}").green
     end
 
     def find_missing

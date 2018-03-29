@@ -120,9 +120,7 @@ roles.HR=HR
 roles.FMY=Receptionist
 roles.HYSASS=Meeting Asst
 
-#=============企业号应用状态==================
-WxcpAppStatus.OPEN=Open
-WxcpAppStatus.FREEZE=Freeze
+
 
 # =======================  导航定义 =============================
 nav.main=Home
@@ -146,11 +144,13 @@ nav.my-tags=My Contacts
 nav.my-profile=My Profile
 
 
-# 时间范围
-duration.15=15 Minutes
-duration.30=30 Minutes
-duration.45=45 Minutes
-duration.60=1 Hour
+
+# Dept
+dept.name=Dept Name
+dept.noDeptName=No Dept Name.
+dept.not-exists=The dept Not exists!
+flash.warn.dept-deleted-with-users=The %s had %s members，please remove the members before delete the dept.
+
 
 @include.article = ./_messages/en/article.properties
 @include.meetingBooking = ./_messages/en/meetingBooking.properties

@@ -1,1283 +1,582 @@
-# 今明两天
+# You can specialize this file for each language.
+# For example, for French create a messages.fr file
+#
+since.seconds= %s second%s ago
+since.minutes= %s minute%s ago
+since.hours= %s hour%s ago
+since.days= %s day%s ago
+since.months= %s month%s ago
+since.years= %s year%s ago
+since.format= MMM d, yyyy
 
+# =======================  表单验证定义 =============================
+validation.required=Required
+validation.min=Cannot be lower than %2$d
+validation.max=Cannot be greater than %2$d
+validation.email=Invalid email address
+validation.minSize=Minimum size is %2$d
+validation.maxSize=Maximum size is %2$d
+validation.range=Not in the range %2$d through %3$d
+validation.match=Must match %2$s
+validation.isTrue=Must be checked
+validation.equals=Must be equal to &{%2$s}
+validation.invalid=Incorrect value
+validation.future=Must be in the future
+validation.after=Must be after %2$s
+validation.past=Must be in the past
+validation.before=Must be before %2$s
+validation.object=Validation failed
+validation.notFound=Object not found for id %2$s
+validation.url=Not a valid URL
+validation.phone=Not a valid phone
+validation.ipv4=Not a valid IP address
+validation.ipv6=Not a valid IP v6 address
+validation.unique=Must be unique
+
+#
+play-paginate.prev=<
+play-paginate.next=>
+play-paginate.first=<<
+play-paginate.last=>>
+
+# 时间说明
+option.hours.6=6:00 AM
+option.hours.7=7:00 AM
+option.hours.8=8:00 AM
+option.hours.9=9:00 AM
+option.hours.10=10:00 AM
+option.hours.11=11:00 AM
+option.hours.14=14:00 PM
+option.hours.15=15:00 PM
+option.hours.16=16:00 PM
+option.hours.17=17:00 PM
+option.hours.18=18:00 PM
+option.hours.19=19:00 PM
+option.hours.20=20:00 PM
+option.hours.21=21:00 PM
+option.hours.22=22:00 PM
+option.hours.23=23:00 PM
+option.hour=Hour
+option.hours=Hours
+option.minute=Minute
+option.minutes=Minutes
+option.day=Day
+option.days=Days
+option.unlimit=Unlimit
 option.bookings2days=option.bookings2days
 
-# %s已经被删除
+# 扩展专用
+yesno.yes=Yes
+yesno.no=No
+option.undefine=Undefined
+link.download=Download
 
+# app
+app.name=MeetingRoom Booking System
+
+# manager界面元素
+manager.form.saveAdd=Add
+manager.form.saveEdit=Save
+manager.form.cancel=Cancel
+manager.form.back=Back
+manager.form.print=Print
+manager.form.saveModify=Save Modify
+
+manager.list.action=Operate
+manager.list.edit=Edit
+manager.list.delete=Delete
+manager.list.confirm-delete=Confirm delete %s?
+manager.share.clear-selected-users=Clear Selected
+manager.share.clear-selected-users.hint=Clear Selected Users
+
+# 服务配置
+customer.service-email=service@hyshi.net
+
+# flash公共消息
 flash.notice.delete-success=flash.notice.delete-success
-
-# 保存成功
-
 flash.notice.save-success=flash.notice.save-success
-
-# %s条记录修改成功
-
 flash.notice.update-success-with-count=flash.notice.update-success-with-count
-
-# 表单验证失败
-
 flash.warn.form.valid-fail=flash.warn.form.valid-fail
-
-# 表单验证失败: %s
-
 flash.warn.form.valid-fail-for=flash.warn.form.valid-fail-for
 
-# 已激活
-
+# 用户状态
 user.status.ACTIVE=user.status.ACTIVE
-
-# 关注服务号
-
 user.status.SUBSCRIBE=user.status.SUBSCRIBE
-
-# 未关注服务号
-
 user.status.UNSUBSCRIBE=user.status.UNSUBSCRIBE
-
-# 解雇
-
 user.status.FIRED=user.status.FIRED
-
-# 新导入
-
 user.status.NEW=user.status.NEW
-
-# 不可用
-
 user.status.null=user.status.null
 
-# 待审批
+# 频道
+cmsChannel.TOUR=TOUR
+cmsChannel.BLOG=BLOG
+cmsChannel.NOTICE=NOTICE
+cmsChannel.null=Uncategory
 
+# 会议状态
+meeting.status.OPEN=Open
+meeting.status.LOCK=Lock
+meeting.status.CANCEL=Canceled
 meeting.status.APPROVE=meeting.status.APPROVE
-
-# 已拒绝
-
 meeting.status.REJECTED=meeting.status.REJECTED
 
-# 已签到
-
+# MeetingCheckedStatus 会议确认状态
 meetingCheckedStatus.Y=meetingCheckedStatus.Y
-
-# 未签到
-
 meetingCheckedStatus.N=meetingCheckedStatus.N
-
-# 未召开
-
 meetingCheckedStatus.F=meetingCheckedStatus.F
 
-# 拥有最高权限
+# 会议重复类型
+meeting.repeat.NONE=Meeting
+meeting.repeat.WEEK=Repeat Meeting
 
+# 性别
+sex.M=Male
+sex.F=Female
+sex.null=Unknown
+sex.U=Unknown
+
+# 角色
+roles.ADMIN=Admin
 roles.ADMIN.hint=roles.ADMIN.hint
-
-# 可修改和取消本部门人员的会议，可查看本部门非公开会议
-
+roles.MANAGER=Manager
 roles.MANAGER.hint=roles.MANAGER.hint
-
-# 员工
-
+roles.USER=Staff
 roles.USER.hint=roles.USER.hint
-
-# 可以管理招聘
-
+roles.HR=HR
 roles.HR.hint=roles.HR.hint
-
-# 负责前台接待, 预约联系
-
+roles.FMY=Receptionist
 roles.FMY.hint=roles.FMY.hint
-
-# 负责管理会议室预订, 代理预订
-
+roles.HYSASS=Meeting Asst
 roles.HYSASS.hint=roles.HYSASS.hint
 
-# 出差管理
-
+# 应用名
 wxcp.app.TRIP=wxcp.app.TRIP
-
-# 会议室管理
-
 wxcp.app.HYSHI=wxcp.app.HYSHI
 
-# 公司开通邀请
-
+# 邀请码类型
 invite.code.COMPANY=invite.code.COMPANY
-
-# 员工注册邀请
-
 invite.code.EMPLOYEE=invite.code.EMPLOYEE
 
-# 白板
-
+# 会议室设施
 meetingRoom.facility.WHITEBOARD=meetingRoom.facility.WHITEBOARD
-
-# 投影仪
-
 meetingRoom.facility.PROJECTOR=meetingRoom.facility.PROJECTOR
-
-# 电话
-
 meetingRoom.facility.PHONE=meetingRoom.facility.PHONE
-
-# 视频会议
-
 meetingRoom.facility.VIDEO=meetingRoom.facility.VIDEO
-
-# 视频会议
-
 meetingRoom.facility.VIDIO=meetingRoom.facility.VIDIO
-
-# 教室
-
 meetingRoom.facility.CLASSROOM=meetingRoom.facility.CLASSROOM
-
-# 八爪鱼
-
 meetingRoom.facility.BAZAYU=meetingRoom.facility.BAZAYU
-
-# 笔记本
-
+###### 客户定制 会议室设施
 meetingRoom.facility.LAPTOP=meetingRoom.facility.LAPTOP
-
-# 红杉树
-
 meetingRoom.facility.HONSANSU=meetingRoom.facility.HONSANSU
-
-# 电视
-
 meetingRoom.facility.TV=meetingRoom.facility.TV
-
-# 话筒
-
 meetingRoom.facility.MIC=meetingRoom.facility.MIC
-
-# 沙发
-
 meetingRoom.facility.SF=meetingRoom.facility.SF
 
-# 系统
-
+# 客户端类型
 clientType.SYS=clientType.SYS
-
-# 无
-
 clientType.null=clientType.null
-
-# Web
-
 clientType.WEB=clientType.WEB
-
-# 微信
-
 clientType.WEIXIN=clientType.WEIXIN
-
-# 小程序
-
 clientType.WXAPP=clientType.WXAPP
-
-# Outlook
-
 clientType.OUTLOOK=clientType.OUTLOOK
-
-# WebApp
-
 clientType.WEBAPP=clientType.WEBAPP
 
-# 待支付
-
+# 订单状态
 orderStatus.UNPAID=orderStatus.UNPAID
-
-# 已支付
-
 orderStatus.PAID=orderStatus.PAID
-
-# 已完成
-
 orderStatus.DONE=orderStatus.DONE
-
-# 已取消
-
 orderStatus.CANCELED=orderStatus.CANCELED
-
-# 已退款
-
 orderStatus.REFUND=orderStatus.REFUND
 
-# 未指定
-
+# 公司授权版本 LicenseEdition
 licenseEdition.null=licenseEdition.null
-
-# 试用版
-
 licenseEdition.TRIAL=licenseEdition.TRIAL
-
-# 基础版
-
 licenseEdition.BASIC=licenseEdition.BASIC
-
-# 免费版
-
 licenseEdition.FREE=licenseEdition.FREE
-
-# 教育版
-
 licenseEdition.EDU=licenseEdition.EDU
-
-# 专业版
-
 licenseEdition.STANDARD=licenseEdition.STANDARD
-
-# 企业版
-
 licenseEdition.ENTERPRISE=licenseEdition.ENTERPRISE
-
-# 全功能测试用
-
 licenseEdition.TESTING=licenseEdition.TESTING
 
-# 预订会议
-
+# 功能开关列表
 func.BOOKING_MEETING=func.BOOKING_MEETING
-
-# 微信企业号
-
 func.WXCP=func.WXCP
-
-# 微信服务号
-
 func.WXMP=func.WXMP
-
-# 会议室开放查看
-
 func.ROOM_OPEN_VIEW=func.ROOM_OPEN_VIEW
-
-# 客户接待会议
-
 func.EXT_CUSTOMER=func.EXT_CUSTOMER
-
-# 面试会议
-
 func.EXT_INTERVIEW=func.EXT_INTERVIEW
-
-# 订单支付
-
 func.ORDER=func.ORDER
-
-# 不发会议邮件
-
 func.NO_MAIL_CAL=func.NO_MAIL_CAL
-
-# 公司高级设置
-
 func.CORP_SETTING=func.CORP_SETTING
-
-# 统计报表
-
 func.REPORT=func.REPORT
-
-# 不需要邮件
-
 func.NO_EMAIL=func.NO_EMAIL
-
-# 会议详情显示部门
-
 func.SHOW_DEPT=func.SHOW_DEPT
-
-# 不显示会议室助手
-
 func.HIDE_HYSCN=func.HIDE_HYSCN
-
-# PAD屏(H5版)
-
 func.PAD=func.PAD
-
-# Outlook插件支持
-
 func.OUTLOOK=func.OUTLOOK
-
-# 原生Android屏
-
 func.PAD_ANDROID=func.PAD_ANDROID
-
-# 教育版限制
-
 func.EDU=func.EDU
-
-# 会畅视频会议
-
 func.VIDEO_BIZCONF=func.VIDEO_BIZCONF
-
-# 短名称字段
-
 func.SHORT_NAME=func.SHORT_NAME
-
-# 设备管理
-
 func.DEVICE=func.DEVICE
-
-# 界面V2
-
 func.UI_V2=func.UI_V2
-
-# 旧微信界面
-
 func.UI_V1=func.UI_V1
-
-# 自动取消会议
-
 func.AUTO_CANCLE=func.AUTO_CANCLE
-
-# 快速创建会议
-
 func.QUICK_CREATE=func.QUICK_CREATE
-
-# 短信激活用户
-
 func.SMS_ACTIVE=func.SMS_ACTIVE
-
-# 多语言国际化
-
 func.I18N=func.I18N
-
-# 中午休息不预订
-
 func.NOON_SPLIT=func.NOON_SPLIT
-
-# 办公区域显示平板
-
 func.AREA_PAD=func.AREA_PAD
-
-# 会议室审批
-
 func.ROOM_APPROVE=func.ROOM_APPROVE
-
-# Exchange服务器支持
-
 func.EXCHANGE=func.EXCHANGE
-
-# 会议室收费
-
 func.ROOM_FEE=func.ROOM_FEE
-
-# 会议间隔
-
 func.MEETING_INTERVAL=func.MEETING_INTERVAL
-
-# 组合会议室
-
 func.COMBINE_ROOM=func.COMBINE_ROOM
-
-# 简化面板
-
 func.DASHBOARD_SIMPLE=func.DASHBOARD_SIMPLE
-
-# LDAP认证
-
 func.LDAP=func.LDAP
-
-# REACT网页版
-
 func.REACT_WEB=func.REACT_WEB
-
-# 冻结公司名
-
 func.FREEZE_CORPNAME=func.FREEZE_CORPNAME
-
-# 专用登录页
-
 func.STATIC_LOGIN=func.STATIC_LOGIN
-
-# 显示切换Web新版
-
 func.WEB_V2=func.WEB_V2
-
-# 关闭会议评论
-
 func.NO_COMMENT=func.NO_COMMENT
-
-# 关闭邀请员工
-
 func.NO_INVITE=func.NO_INVITE
-
-# 汽车归还审批
-
 func.CAR_RETURN=func.CAR_RETURN
-
-# 短信通知
-
 func.SMS_NOTIFY=func.SMS_NOTIFY
-
-# 硬件控制面板
-
 func.HD_CTRL=func.HD_CTRL
-
-# 统计报表V2
-
 func.REPORT2=func.REPORT2
-
-# 九华互联FTP同步
-
 func.JH_FTP_SYNC=func.JH_FTP_SYNC
-
-# 同步上游会议系统
-
 func.SYNC_UPSTREAM=func.SYNC_UPSTREAM
 
-# 会议
-
+# 实体类型
+entityType=实体类型
 entityType.MEETING=entityType.MEETING
-
-# 会议室
-
 entityType.MEETING_ROOM=entityType.MEETING_ROOM
-
-# 公司
-
 entityType.CORP=entityType.CORP
-
-# 用户
-
 entityType.USER=entityType.USER
-
-# 办公区域
-
 entityType.OFFICE_AREA=entityType.OFFICE_AREA
 
-# 访客到达
-
+# 会议评论类型
 CommentType.VISITOR_ARRIVED=CommentType.VISITOR_ARRIVED
-
-# 访客迟到
-
 CommentType.VISITOR_LATE=CommentType.VISITOR_LATE
-
-# 访客取消
-
 CommentType.VISITOR_CANCEL=CommentType.VISITOR_CANCEL
 
-# 建议淘汰
-
 CommentType.INTERVIEW_SG_REJECT=CommentType.INTERVIEW_SG_REJECT
-
-# 建议复试
-
 CommentType.INTERVIEW_SG_NEXT=CommentType.INTERVIEW_SG_NEXT
-
-# 建议复试
-
 CommentType.INTERVIEW_SG_REVIEW=CommentType.INTERVIEW_SG_REVIEW
-
-# 建议录用
-
 CommentType.INTERVIEW_SG_OFFER=CommentType.INTERVIEW_SG_OFFER
 
-# 淘汰
-
 CommentType.INTERVIEW_REJECT=CommentType.INTERVIEW_REJECT
-
-# 录用
-
 CommentType.INTERVIEW_OFFER=CommentType.INTERVIEW_OFFER
-
-# 挂起
-
 CommentType.INTERVIEW_SUSPEND=CommentType.INTERVIEW_SUSPEND
-
-# 面试者拒绝
-
 CommentType.INTERVIEW_REFUSE=CommentType.INTERVIEW_REFUSE
 
-# 取消会议
-
 CommentType.CANCEL_MEETING=CommentType.CANCEL_MEETING
-
-# 确认已开会
-
 CommentType.CONFIRM_OPEN_MEETING=CommentType.CONFIRM_OPEN_MEETING
 
-# 留言
-
 showCommentType.null=showCommentType.null
-
-# 通知访客到达
-
 showCommentType.VISITOR_ARRIVED=showCommentType.VISITOR_ARRIVED
-
-# 通知访客迟到
-
 showCommentType.VISITOR_LATE=showCommentType.VISITOR_LATE
-
-# 通知访客取消
-
 showCommentType.VISITOR_CANCEL=showCommentType.VISITOR_CANCEL
-
-# 建议淘汰
-
 showCommentType.INTERVIEW_SG_REJECT=showCommentType.INTERVIEW_SG_REJECT
-
-# 建议复试
-
 showCommentType.INTERVIEW_SG_NEXT=showCommentType.INTERVIEW_SG_NEXT
-
-# 建议复试
-
 showCommentType.INTERVIEW_SG_REVIEW=showCommentType.INTERVIEW_SG_REVIEW
-
-# 建议录用
-
 showCommentType.INTERVIEW_SG_OFFER=showCommentType.INTERVIEW_SG_OFFER
-
-# 确认淘汰
-
 showCommentType.INTERVIEW_REJECT=showCommentType.INTERVIEW_REJECT
-
-# 确认录用
-
 showCommentType.INTERVIEW_OFFER=showCommentType.INTERVIEW_OFFER
-
-# 确认挂起
-
 showCommentType.INTERVIEW_SUSPEND=showCommentType.INTERVIEW_SUSPEND
-
-# 面试者拒绝
-
 showCommentType.INTERVIEW_REFUSE=showCommentType.INTERVIEW_REFUSE
-
-# 取消会议
-
 showCommentType.CANCEL_MEETING=showCommentType.CANCEL_MEETING
-
-# 确认已开会
-
 showCommentType.CONFIRM_OPEN_MEETING=showCommentType.CONFIRM_OPEN_MEETING
-
-# 会议延时
-
 showCommentType.DELAY_MEETING=showCommentType.DELAY_MEETING
-
-# 提前结束会议
-
 showCommentType.SIGNOUT_MEETING=showCommentType.SIGNOUT_MEETING
-
-# 会议未召开
-
 showCommentType.CLOSE_UNSTART=showCommentType.CLOSE_UNSTART
 
-# 非常弱
-
+# 密码强度
 password.strong.VERY_WEAK=password.strong.VERY_WEAK
-
-# 弱
-
 password.strong.WEAK=password.strong.WEAK
-
-# 一般
-
 password.strong.AVERAGE=password.strong.AVERAGE
-
-# 强
-
 password.strong.STRONG=password.strong.STRONG
-
-# 非常强
-
 password.strong.VERY_STRONG=password.strong.VERY_STRONG
-
-# 安全
-
 password.strong.SECURE=password.strong.SECURE
-
-# 非常安全
-
 password.strong.VERY_SECURE=password.strong.VERY_SECURE
 
-# 中文
-
+# 语言
 lang.zh=lang.zh
-
-# 英文
-
 lang.en=lang.en
 
-# 会议室
-
+# 会议室类型
 meetingRoomType.null=meetingRoomType.null
-
-# 会议室
-
 meetingRoomType.ROOM=meetingRoomType.ROOM
-
-# 外部会议室
-
 meetingRoomType.OUTSIDE=meetingRoomType.OUTSIDE
-
-# 实验设备
-
 meetingRoomType.LAB_EQU=meetingRoomType.LAB_EQU
-
-# 车辆
-
 meetingRoomType.CAR=meetingRoomType.CAR
-
-# 会议室
 
 meetingRoomType.DEFAULT=meetingRoomType.DEFAULT
 
-# 初面
-
+#============= 面试状态 ===============
 RecruitStatus.FIRSTVIEW=RecruitStatus.FIRSTVIEW
-
-# 建议淘汰
-
 RecruitStatus.SUGGEST_REJECT=RecruitStatus.SUGGEST_REJECT
-
-# 建议复试
-
 RecruitStatus.SUGGEST_REVIEW=RecruitStatus.SUGGEST_REVIEW
-
-# 建议录用
-
 RecruitStatus.SUGGEST_OFFER=RecruitStatus.SUGGEST_OFFER
-
-# 淘汰
-
 RecruitStatus.REJECT=RecruitStatus.REJECT
-
-# 复试
-
 RecruitStatus.REVIEW=RecruitStatus.REVIEW
-
-# 录用
-
 RecruitStatus.OFFER=RecruitStatus.OFFER
-
-# 挂起
-
 RecruitStatus.SUSPEND=RecruitStatus.SUSPEND
-
-# 面试者拒绝
-
 RecruitStatus.REFUSE=RecruitStatus.REFUSE
-
-#
-
 RecruitStatus.null=RecruitStatus.null
 
-# 暂无
+#=============企业号应用状态==================
+WxcpAppStatus.OPEN=Open
+WxcpAppStatus.FREEZE=Freeze
 
 speechType.null=speechType.null
 
-# 会议主题
+# =======================  导航定义 =============================
+nav.main=Home
+nav.receptions=Reception
+nav.meetings=Book Meeting
+nav.view-meetings=Query Meeting
+nav.hiring=Hiring
+nav.hiring-plans=Hiring Plans
+nav.recruits=Recruits
+nav.reports=Reports
+nav.reports.memberTimes=Member Times
+nav.reports.ownerTimes=Owner Times
+nav.reports.checkerTimes=Check-in Times
+nav.reports.roomTimes=Meetingroom Times
+nav.admin-company=Company Settings
+nav.admin-meeting-rooms=Meeting Rooms
+nav.admin-devices=Devices
+nav.admin-depts=Departments
+nav.admin-employees=Staff
+nav.my-tags=My Contacts
+nav.my-profile=My Profile
 
+# ---------------- Diff -----------------
 diff.meeting.subject=diff.meeting.subject
-
-# 会议室
-
 diff.meeting.roomId=diff.meeting.roomId
-
-# 会议内容
-
 diff.meeting.content=diff.meeting.content
-
-# 开始时间
-
 diff.meeting.beginAt=diff.meeting.beginAt
-
-# 结束时间
-
 diff.meeting.endAt=diff.meeting.endAt
-
-# 时长
-
 diff.meeting.durationMinutes=diff.meeting.durationMinutes
-
-# 是否公开
-
 diff.meeting.notPublic=diff.meeting.notPublic
 
-# 购买期限
+# =======================  表单 =============================
 
+deptId=部门
+
+# 订单
 order.years=order.years
-
-# 会议室数量
-
 order.roomCount=order.roomCount
-
-# 需要发票？
-
 order.invoiceType=order.invoiceType
 
-# 发票抬头
-
+# 公司联系信息
 corpContact.invoiceTitle=corpContact.invoiceTitle
-
-# 纳税人识别号
-
 corpContact.taxpayerNumber=corpContact.taxpayerNumber
-
-# 公司地址电话
-
 corpContact.taxAddress=corpContact.taxAddress
-
-# 开户银行账号
-
 corpContact.taxBankAccount=corpContact.taxBankAccount
-
-# 发票内容
-
 corpContact.invoiceSubject=corpContact.invoiceSubject
-
-# 邮寄地址
-
 corpContact.address=corpContact.address
-
-# 收件人姓名
-
 corpContact.receiverName=corpContact.receiverName
-
-# 收件人手机
-
 corpContact.receiverPhone=corpContact.receiverPhone
 
-# 公司名称
 
+# 公司注册
 corp.register.corpName=corp.register.corpName
-
-# 您的名字
-
 corp.register.name=corp.register.name
-
-# 您的Email
-
 corp.register.email=corp.register.email
-
-# 邀请码
-
 corp.register.inviteCode=corp.register.inviteCode
 
-# 姓名
-
+# User
 user.name=user.name
-
-# 电子邮箱
-
 user.email=user.email
-
-# 职位
-
 user.position=user.position
-
-# 工号
-
 user.jobNumber=user.jobNumber
-
-# 界面语言
-
+password=密码
+repeatPassword=确认密码
 user.lang=user.lang
 
-# 公司名
-
+# CorpForm
 corpForm.name=corpForm.name
-
-# 公司名
-
 corpForm.corpName=corpForm.corpName
-
-# 电子邮箱
-
 corpForm.email=corpForm.email
-
-# 最大会议室数量
-
 corpForm.maxMeetingRooms=corpForm.maxMeetingRooms
-
-# 邮箱后缀
-
 corpForm.emailPostfix=corpForm.emailPostfix
-
-# 有效日期
-
 corpForm.expiredAt=corpForm.expiredAt
-
-# 授权类型
-
 corpForm.licenseEdition=corpForm.licenseEdition
-
-# 平板视图URL
-
 corpForm.tabletViewUrl=corpForm.tabletViewUrl
-
-# 可用功能
-
 corpForm.additionFuncs=corpForm.additionFuncs
-
-# 可用设施
-
 corpForm.meetingRoomFacilities=corpForm.meetingRoomFacilities
-
-# Logo
-
 corpForm.logoObject=corpForm.logoObject
 
-# 启用状态
-
 corpForm.enabled=corpForm.enabled
-
-# 公司说明
-
 corpForm.notice=corpForm.notice
 
-# 禁用功能
-
 corpForm.disabledFuncs=corpForm.disabledFuncs
-
-# 禁用角色
-
 corpForm.disabledRoles=corpForm.disabledRoles
-
-# 预订开始时间
-
 corpForm.meetingStartHour=corpForm.meetingStartHour
-
-# 预订结束时间
-
 corpForm.meetingEndHour=corpForm.meetingEndHour
-
-# 预订间隔
-
 corpForm.meetingInterval=corpForm.meetingInterval
-
-# 最大预订时长
-
 corpForm.meetingMaxDuration=corpForm.meetingMaxDuration
-
-# 资源类型
-
 corpForm.supportRoomTypes=corpForm.supportRoomTypes
-
-# 预订天数上限
-
 corpForm.bookingLimitDays=corpForm.bookingLimitDays
-
-# 自定义Web资源
-
 corpForm.customWebAssets=corpForm.customWebAssets
-
-# 自定义Mobile资源
-
 corpForm.customMobileAssets=corpForm.customMobileAssets
 
-# 部门名称
+tableAppVersion=平板App版本
+tableAppUrl=平板App下载URL
 
+# Dept
 dept.name=dept.name
-
-# 无部门
-
 dept.noDeptName=dept.noDeptName
-
-# 部门不存在
-
 dept.not-exists=dept.not-exists
-
-# %s还有%s位员工，请先移走所有员工后再删除部门。
-
 flash.warn.dept-deleted-with-users=flash.warn.dept-deleted-with-users
 
-# 编码
-
+# Role
 role.code=role.code
-
-# 角色名称
-
 role.name=role.name
-
-# 备注
-
 role.remark=role.remark
-
-# 顺序
-
 role.showOrder=role.showOrder
 
-# 职位名称
+# feeType
+ONCE=一次性收费
+MONTH=月费
+YEAR=年费
 
+# 招聘计划
 hiringPlan.title=hiringPlan.title
-
-# 需求部门
-
 hiringPlan.dept=hiringPlan.dept
-
-# 招聘人数
-
 hiringPlan.hireCount=hiringPlan.hireCount
-
-# 已录用人数
-
 hiringPlan.offeredCount=hiringPlan.offeredCount
-
-# 截止日期
-
 hiringPlan.dueDate=hiringPlan.dueDate
-
-# 职位需求说明
-
 hiringPlan.jobDescription=hiringPlan.jobDescription
 
-# 会议
-
+# MeetingType
 meetingType.STANDARD=meetingType.STANDARD
-
-# 会议
-
 meetingType.null=meetingType.null
-
-# 普通会议
-
 meetingType.STANDARD.label=meetingType.STANDARD.label
-
-# 面试
-
 meetingType.INTERVIEW=meetingType.INTERVIEW
-
-# 客户接待
-
 meetingType.CUSTOMER=meetingType.CUSTOMER
 
-# 会议主题
-
+# Meeting
 meetingForm.subject=meetingForm.subject
-
-# 会议内容
-
 meetingForm.content=meetingForm.content
-
-# 会议室
-
 meetingForm.roomId=meetingForm.roomId
-
-# 会议日期
-
 meetingForm.meetingDate=meetingForm.meetingDate
-
-# 参与人员
-
 meetingForm.meetingMembers=meetingForm.meetingMembers
-
-# 预订人
-
 meetingForm.owner=meetingForm.owner
-
-# 开始时间
-
 meetingForm.startTime=meetingForm.startTime
-
-# 时长
-
 meetingForm.duration=meetingForm.duration
-
-# 重复类型
-
 meetingForm.meetingRepeatType=meetingForm.meetingRepeatType
-
-#
-
 meetingForm.weekDays=meetingForm.weekDays
-
-# 固定会议结束于
-
 meetingForm.endDate=meetingForm.endDate
-
-# 固定会议结束于
-
 meetingForm.fixedEndDate=meetingForm.fixedEndDate
-
-# 会议设置
-
 meetingForm.config=meetingForm.config
-
-# 时间
-
 meetingForm.time=meetingForm.time
-
-# 预订人
-
 meetingForm.ownerId=meetingForm.ownerId
 
-# 应聘职位
-
 meetingForm.hiringPlanId=meetingForm.hiringPlanId
-
-# 面试人
-
 meetingForm.appliantName=meetingForm.appliantName
-
-# 邮箱
-
 meetingForm.appliantEmail=meetingForm.appliantEmail
-
-# 手机
-
 meetingForm.appliantMobile=meetingForm.appliantMobile
 
-# 访客姓名
-
 meetingForm.visitorName=meetingForm.visitorName
-
-# 访客邮箱
-
 meetingForm.visitorEmail=meetingForm.visitorEmail
-
-# 访客手机
-
 meetingForm.visitorMobile=meetingForm.visitorMobile
-
-# 访客单位
-
 meetingForm.customerName=meetingForm.customerName
-
-# 访客人数
-
 meetingForm.visitorCount=meetingForm.visitorCount
-
-# 接待说明
-
 meetingForm.serveRemark=meetingForm.serveRemark
 
-# 桌签
-
 meetingForm.deskLabel=meetingForm.deskLabel
-
-# 横幅
-
 meetingForm.banner=meetingForm.banner
-
-# 专梯
-
 meetingForm.keepLift=meetingForm.keepLift
-
-# 车牌
-
 meetingForm.carPlateNumber=meetingForm.carPlateNumber
-
-# 其它接待说明
-
 meetingForm.otherServeRemark=meetingForm.otherServeRemark
 
-# 1小时15分钟
-
+# 时间范围
+duration.15=15 Minutes
+duration.30=30 Minutes
+duration.45=45 Minutes
+duration.60=1 Hour
 duration.75=duration.75
-
-# 1个半小时
-
 duration.90=duration.90
-
-# 1小时45分钟
-
 duration.105=duration.105
-
-# 2小时
-
 duration.120=duration.120
-
-# 2小时15分钟
-
 duration.135=duration.135
-
-# 2个半小时
-
 duration.150=duration.150
-
-# 2小时45分钟
-
 duration.165=duration.165
-
-# 3小时
-
 duration.180=duration.180
-
-# 3小时15分钟
-
 duration.195=duration.195
-
-# 3个半小时
-
 duration.210=duration.210
-
-# 3小时45分钟
-
 duration.225=duration.225
-
-# 4小时
-
 duration.240=duration.240
-
-# 5小时
-
 duration.300=duration.300
-
-# 6小时
-
 duration.360=duration.360
-
-# 7小时
-
 duration.420=duration.420
-
-# 8小时
-
 duration.480=duration.480
-
-# 9小时
-
 duration.540=duration.540
-
-# 10小时
-
 duration.600=duration.600
-
-# 11小时
-
 duration.660=duration.660
-
-# 12小时
-
 duration.720=duration.720
 
-# 留言内容
-
+# 会议留言
 meetingCommentForm.content=meetingCommentForm.content
 
-# 应聘职位
-
+# 面试管理
 hiringPlan.id=hiringPlan.id
-
-# 姓名
-
 recruit.name=recruit.name
-
-# 手机
-
 recruit.mobile=recruit.mobile
-
-# 电子邮件
-
 recruit.email=recruit.email
 
-# 栏目编码
-
+# 文章栏目
 articleCategory.code=articleCategory.code
-
-# 显示名称
-
 articleCategory.showName=articleCategory.showName
-
-# 是否显示
-
 articleCategory.shown=articleCategory.shown
-
-# 显示顺序(倒序)
-
 articleCategory.showOrder=articleCategory.showOrder
-
-# 频道
-
 articleCategory.channel=articleCategory.channel
 
-# 微信公众号
-
+# OpenIdSource / ApiPlatform 定义
 openIdSource.WXMP=openIdSource.WXMP
-
-# 微信企业号
-
 openIdSource.WXCP=openIdSource.WXCP
-
-# 微信开放平台
-
 openIdSource.WXOPEN=openIdSource.WXOPEN
-
-# Outlook插件
-
 openIdSource.OUTLOOK=openIdSource.OUTLOOK
-
-# 微信小程序
-
 openIdSource.WXAPP=openIdSource.WXAPP
-
-# 密码登录
-
 openIdSource.PASSWORD=openIdSource.PASSWORD
-
-# 短信
-
 openIdSource.SMS=openIdSource.SMS
-
-# 测试用
-
 openIdSource.TEST=openIdSource.TEST
-
-# 未指定
-
 openIdSource.UNDEFINE=openIdSource.UNDEFINE
-
-# 无数据
-
 openIdSource.null=openIdSource.null
 
-# 已激活
-
+# userStatus
 userStatus.ACTIVE=userStatus.ACTIVE
-
-# 关注
-
 userStatus.SUBSCRIBE=userStatus.SUBSCRIBE
-
-# 解雇
-
 userStatus.FIRED=userStatus.FIRED
-
-# 取消关注
-
 userStatus.UNSUBSCRIBE=userStatus.UNSUBSCRIBE
-
-# 新用户
-
 userStatus.NEW=userStatus.NEW
-
-# 离职
-
 userStatus.LEAVE=userStatus.LEAVE
 
-# 会畅视频会议
-
+# 视频会议类型
 videoMeetingType.VIDEO_BIZCONF=videoMeetingType.VIDEO_BIZCONF
 
-# 目标对象类型
-
+# 文件上传
 upload.refType=upload.refType
-
-# 目标对象Id
-
 upload.refId=upload.refId
 
-# 空指令
-
+# 门禁
 doorControl.null=doorControl.null
-
-# 常开
-
 doorControl.ALWAY_OPEN=doorControl.ALWAY_OPEN
-
-# 常关
-
 doorControl.ALWAY_CLOSE=doorControl.ALWAY_CLOSE
-
-# 恢复
-
 doorControl.ONLINE_CONTROL=doorControl.ONLINE_CONTROL
-
-# 开门
-
 doorControl.OPEN_ONCE=doorControl.OPEN_ONCE
 
-#  ./_messages/zh/schedulings.properties
+@include.article= ./_messages/en/article.properties
+@include.meetingBooking= ./_messages/en/meetingBooking.properties
 
+@include.meeting-rooms= ./_messages/en/meeting-rooms.properties
+@include.office-areas= ./_messages/en/office-areas.properties
+@include.company= ./_messages/en/company.properties
+@include.orders= ./_messages/en/orders.properties
+@include.visitor= ./_messages/en/visitor.properties
+@include.devices= ./_messages/en/devices.properties
+@include.tag= ./_messages/en/tag.properties
 @include.schedulings=./_messages/zh/schedulings.properties

@@ -25,25 +25,26 @@ module I18n::Processes
           path_origin = './config/locales/origin/'
           path_dictionary = './config/locales/dictionary/'
           path = locale == 'zh-CN' ? path_origin : path_dictionary
-          yaml_file(forest, path, locale)
-          $stderr.puts Rainbow('origin file transform to yaml file successfully').green
+          # yaml_file(forest, path, locale)
+          keys_source(dic, path, locale)
+          $stderr.puts Rainbow('origin file transform to yaml file successfully').green unless locale == 'en'
         end
 
         def origin_file_read(file)
-          a = {}
-          File.open(file).read.each_line do |line|
-            next if line =~ /^#/ || line == "\n" || !line.include?('.')
-            if line.include?(':')
-              line.gsub!(/'|,/, '')
-              key = line.split(': ').first.delete(' ')
-              value = line.split(': ').last
-            else
-              key = line.split('=').first.delete(' ')
-              value = line.split('=').last
+          {}.tap do |a|
+            File.open(file).read.each_line do |line|
+              next if line =~ /^#/ || line == "\n" || !line.include?('.')
+              if line.include?('\':')
+                line.gsub!(/'|,/, '')
+                key = line.split(': ').first.delete(' ')
+                value = line.split(': ').last
+              else
+                key = line.split('=').first.delete(' ')
+                value = line.split('=').last
+              end
+              a[key] = value
             end
-            a[key] = value
           end
-          return a
         end
 
         def generate_forest(dic)
@@ -61,6 +62,15 @@ module I18n::Processes
               next if line == '/n'
               local_file.write(line.insert(0, '  '))
             end
+          end
+          local_file.close
+        end
+
+        def keys_source(dic, path, locale)
+          filename = "#{path + locale}.yml"
+          local_file = File.new(filename, 'w')
+          dic.map do |key, value|
+            local_file.write("#{key}=#{value}\n")
           end
           local_file.close
         end

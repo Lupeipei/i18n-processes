@@ -1,166 +1,471 @@
----
-en:
-  meeting:
-    'null': null {resource} message
-    next:
-      'null': not has next meeting
-    booking: booking
-    close: close
-    cancel: cancel
-    status:
-      OPEN: Open
-      LOCK: Lock
-      CANCEL: Canceled
-    repeat:
-      NONE: Meeting
-      WEEK: Repeat Meeting
-  booking:
-    success: booking success
-    meeting: 预约{resource}
-  input:
-    meeting:
-      subject: input meeting subject
-  default:
-    subject: extraordinary meeting
-  date:
-    today: today
-    towrrow: towrrow
-    acquired: acquired
-  time:
-    '30': 30 minutes
-    '60': an hour
-    '90': an hour and a half
-    '120': two hours
-  app:
-    title: appName
-    name: MeetingRoom Booking System
-  since:
-    seconds: " %s second%s ago"
-    minutes: " %s minute%s ago"
-    hours: " %s hour%s ago"
-    days: " %s day%s ago"
-    months: " %s month%s ago"
-    years: " %s year%s ago"
-    format: " MMM d, yyyy"
-  validation:
-    required: Required
-    minSize: Minimum size is %2$d
-    maxSize: Maximum size is %2$d
-    email: Invalid email address
-    range: Not in the range %2$d through %3$d
-    min: Cannot be lower than %2$d
-    max: Cannot be greater than %2$d
-    match: Must match %2$s
-    isTrue: Must be checked
-    equals: Must be equal to &{%2$s}
-    invalid: Incorrect value
-    future: Must be in the future
-    after: Must be after %2$s
-    past: Must be in the past
-    before: Must be before %2$s
-    object: Validation failed
-    notFound: Object not found for id %2$s
-    url: Not a valid URL
-    phone: Not a valid phone
-    ipv4: Not a valid IP address
-    ipv6: Not a valid IP v6 address
-    unique: Must be unique
-  playpaginate:
-    prev: "<"
-    next: ">"
-    first: !!str '<<'
-    last: ">>"
-  option:
-    hour: Hour
-    hours: Hours
-    minute: Minute
-    minutes: Minutes
-    day: Day
-    days: Days
-    unlimit: Unlimit
-    undefine: Undefined
-  yesno:
-    'yes': 'Yes'
-    'no': 'No'
-  link:
-    download: Download
-  manager:
-    form:
-      saveAdd: Add
-      saveEdit: Save
-      cancel: Cancel
-      back: Back
-      print: Print
-      saveModify: Save Modify
-    list:
-      action: Operate
-      edit: Edit
-      delete: Delete
-      confirmdelete: Confirm delete %s?
-    share:
-      clearselectedusers:
-        hint: Clear Selected Users
-  customer:
-    serviceemail: service@hyshi.net
-  cmsChannel:
-    TOUR: TOUR
-    BLOG: BLOG
-    NOTICE: NOTICE
-    'null': Uncategory
-  sex:
-    M: Male
-    F: Female
-    'null': Unknown
-    U: Unknown
-  roles:
-    ADMIN: Admin
-    MANAGER: Manager
-    USER: Staff
-    HR: HR
-    FMY: Receptionist
-    HYSASS: Meeting Asst
-  WxcpAppStatus:
-    OPEN: Open
-    FREEZE: Freeze
-  nav:
-    main: Home
-    receptions: Reception
-    meetings: Book Meeting
-    viewmeetings: Query Meeting
-    hiring: Hiring
-    hiringplans: Hiring Plans
-    recruits: Recruits
-    reports:
-      memberTimes: Member Times
-      ownerTimes: Owner Times
-      checkerTimes: Checkin Times
-      roomTimes: Meetingroom Times
-    admincompany: Company Settings
-    adminmeetingrooms: Meeting Rooms
-    admindevices: Devices
-    admindepts: Departments
-    adminemployees: Staff
-    mytags: My Contacts
-    myprofile: My Profile
-  duration:
-    '15': 15 Minutes
-    '30': 30 Minutes
-    '45': 45 Minutes
-    '60': 1 Hour
-  "@include":
-    article: " ./_messages/en/article.properties"
-    meetingBooking: " ./_messages/en/meetingBooking.properties"
-    meetingrooms: " ./_messages/en/meetingrooms.properties"
-    officeareas: " ./_messages/en/officeareas.properties"
-    company: " ./_messages/en/company.properties"
-    orders: " ./_messages/en/orders.properties"
-    visitor: " ./_messages/en/visitor.properties"
-    devices: " ./_messages/en/devices.properties"
-    tag: " ./_messages/en/tag.properties"
-    schedulings: "./_messages/zh/schedulings.properties"
-  CommentType:
-    CANCEL_MEETING: meeting cancel
-    CONFIRM_OPEN_MEETING: " confirm that meeting has started"
-    INTERVIEW_OFFER: hired
-    INTERVIEW_REFUSE: interview refuse
-    INTERVIEW_REJECT: interviewee rejected
+meeting.null=null {resource} message
+meeting.next=next mmmm
+meeting.booking=booking
+meeting.close=close
+booking.success=booking success
+meeting.next.null=not has next meeting
+booking.meeting.message=booking meeting message
+booking.meeting.subject=subject
+booking.meeting.startDate=start date
+booking.meeting.startTime=start time
+booking.meeting.during=during
+input.meeting.subject=input meeting subject
+default.subject=extraordinary meeting
+meeting.cancel=cancel
+date.today=today
+date.towrrow=towrrow
+date.acquired=acquired
+time.30=30 minutes
+time.60=an hour
+time.90=an hour and a half
+time.120=two hours
+app.title=appName
+booking.meeting=预约{resource}
+since.seconds= %s second%s ago
+since.minutes= %s minute%s ago
+since.hours= %s hour%s ago
+since.days= %s day%s ago
+since.months= %s month%s ago
+since.years= %s year%s ago
+since.format= MMM d, yyyy
+validation.required=Required
+validation.minSize=Minimum size is %2$d
+validation.maxSize=Maximum size is %2$d
+validation.email=Invalid email address
+validation.range=Not in the range %2$d through %3$d
+validation.min=Cannot be lower than %2$d
+validation.max=Cannot be greater than %2$d
+validation.match=Must match %2$s
+validation.isTrue=Must be checked
+validation.equals=Must be equal to &{%2$s}
+validation.invalid=Incorrect value
+validation.future=Must be in the future
+validation.after=Must be after %2$s
+validation.past=Must be in the past
+validation.before=Must be before %2$s
+validation.object=Validation failed
+validation.notFound=Object not found for id %2$s
+validation.url=Not a valid URL
+validation.phone=Not a valid phone
+validation.ipv4=Not a valid IP address
+validation.ipv6=Not a valid IP v6 address
+validation.unique=Must be unique
+play-paginate.prev=<
+play-paginate.next=>
+play-paginate.first=<<
+play-paginate.last=>>
+option.hours.6=6:00 AM
+option.hours.7=7:00 AM
+option.hours.8=8:00 AM
+option.hours.9=9:00 AM
+option.hours.10=10:00 AM
+option.hours.11=11:00 AM
+option.hours.14=14:00 PM
+option.hours.15=15:00 PM
+option.hours.16=16:00 PM
+option.hours.17=17:00 PM
+option.hours.18=18:00 PM
+option.hours.19=19:00 PM
+option.hours.20=20:00 PM
+option.hours.21=21:00 PM
+option.hours.22=22:00 PM
+option.hours.23=23:00 PM
+option.hour=Hour
+option.hours=Hours
+option.minute=Minute
+option.minutes=Minutes
+option.day=Day
+option.days=Days
+option.unlimit=Unlimit
+yesno.yes=Yes
+yesno.no=No
+option.undefine=Undefined
+link.download=Download
+app.name=MeetingRoom Booking System
+manager.form.saveAdd=Add
+manager.form.saveEdit=Save
+manager.form.cancel=Cancel
+manager.form.back=Back
+manager.form.print=Print
+manager.form.saveModify=Save Modify
+manager.list.action=Operate
+manager.list.edit=Edit
+manager.list.delete=Delete
+manager.list.confirm-delete=Confirm delete %s?
+manager.share.clear-selected-users=Clear Selected
+manager.share.clear-selected-users.hint=Clear Selected Users
+customer.service-email=service@hyshi.net
+cmsChannel.TOUR=TOUR
+cmsChannel.BLOG=BLOG
+cmsChannel.NOTICE=NOTICE
+cmsChannel.null=Uncategory
+meeting.status.OPEN=Open
+meeting.status.LOCK=Lock
+meeting.status.CANCEL=Canceled
+meeting.repeat.NONE=Meeting
+meeting.repeat.WEEK=Repeat Meeting
+sex.M=Male
+sex.F=Female
+sex.null=Unknown
+sex.U=Unknown
+roles.ADMIN=Admin
+roles.MANAGER=Manager
+roles.USER=Staff
+roles.HR=HR
+roles.FMY=Receptionist
+roles.HYSASS=Meeting Asst
+WxcpAppStatus.OPEN=Open
+WxcpAppStatus.FREEZE=Freeze
+nav.main=Home
+nav.receptions=Reception
+nav.meetings=Book Meeting
+nav.view-meetings=Query Meeting
+nav.hiring=Hiring
+nav.hiring-plans=Hiring Plans
+nav.recruits=Recruits
+nav.reports=Reports
+nav.reports.memberTimes=Member Times
+nav.reports.ownerTimes=Owner Times
+nav.reports.checkerTimes=Check-in Times
+nav.reports.roomTimes=Meetingroom Times
+nav.admin-company=Company Settings
+nav.admin-meeting-rooms=Meeting Rooms
+nav.admin-devices=Devices
+nav.admin-depts=Departments
+nav.admin-employees=Staff
+nav.my-tags=My Contacts
+nav.my-profile=My Profile
+duration.15=15 Minutes
+duration.30=30 Minutes
+duration.45=45 Minutes
+duration.60=1 Hour
+@include.article= ./_messages/en/article.properties
+@include.meetingBooking= ./_messages/en/meetingBooking.properties
+@include.meeting-rooms= ./_messages/en/meeting-rooms.properties
+@include.office-areas= ./_messages/en/office-areas.properties
+@include.company= ./_messages/en/company.properties
+@include.orders= ./_messages/en/orders.properties
+@include.visitor= ./_messages/en/visitor.properties
+@include.devices= ./_messages/en/devices.properties
+@include.tag= ./_messages/en/tag.properties
+option.bookings2days=option.bookings2days
+flash.notice.delete-success=flash.notice.delete-success
+flash.notice.save-success=flash.notice.save-success
+flash.notice.update-success-with-count=flash.notice.update-success-with-count
+flash.warn.form.valid-fail=flash.warn.form.valid-fail
+flash.warn.form.valid-fail-for=flash.warn.form.valid-fail-for
+user.status.ACTIVE=user.status.ACTIVE
+user.status.SUBSCRIBE=user.status.SUBSCRIBE
+user.status.UNSUBSCRIBE=user.status.UNSUBSCRIBE
+user.status.FIRED=user.status.FIRED
+user.status.NEW=user.status.NEW
+user.status.null=user.status.null
+meeting.status.APPROVE=meeting.status.APPROVE
+meeting.status.REJECTED=meeting.status.REJECTED
+meetingCheckedStatus.Y=meetingCheckedStatus.Y
+meetingCheckedStatus.N=meetingCheckedStatus.N
+meetingCheckedStatus.F=meetingCheckedStatus.F
+roles.ADMIN.hint=roles.ADMIN.hint
+roles.MANAGER.hint=roles.MANAGER.hint
+roles.USER.hint=roles.USER.hint
+roles.HR.hint=roles.HR.hint
+roles.FMY.hint=roles.FMY.hint
+roles.HYSASS.hint=roles.HYSASS.hint
+wxcp.app.TRIP=wxcp.app.TRIP
+wxcp.app.HYSHI=wxcp.app.HYSHI
+invite.code.COMPANY=invite.code.COMPANY
+invite.code.EMPLOYEE=invite.code.EMPLOYEE
+meetingRoom.facility.WHITEBOARD=meetingRoom.facility.WHITEBOARD
+meetingRoom.facility.PROJECTOR=meetingRoom.facility.PROJECTOR
+meetingRoom.facility.PHONE=meetingRoom.facility.PHONE
+meetingRoom.facility.VIDEO=meetingRoom.facility.VIDEO
+meetingRoom.facility.VIDIO=meetingRoom.facility.VIDIO
+meetingRoom.facility.CLASSROOM=meetingRoom.facility.CLASSROOM
+meetingRoom.facility.BAZAYU=meetingRoom.facility.BAZAYU
+meetingRoom.facility.LAPTOP=meetingRoom.facility.LAPTOP
+meetingRoom.facility.HONSANSU=meetingRoom.facility.HONSANSU
+meetingRoom.facility.TV=meetingRoom.facility.TV
+meetingRoom.facility.MIC=meetingRoom.facility.MIC
+meetingRoom.facility.SF=meetingRoom.facility.SF
+clientType.SYS=clientType.SYS
+clientType.null=clientType.null
+clientType.WEB=clientType.WEB
+clientType.WEIXIN=clientType.WEIXIN
+clientType.WXAPP=clientType.WXAPP
+clientType.OUTLOOK=clientType.OUTLOOK
+clientType.WEBAPP=clientType.WEBAPP
+orderStatus.UNPAID=orderStatus.UNPAID
+orderStatus.PAID=orderStatus.PAID
+orderStatus.DONE=orderStatus.DONE
+orderStatus.CANCELED=orderStatus.CANCELED
+orderStatus.REFUND=orderStatus.REFUND
+licenseEdition.null=licenseEdition.null
+licenseEdition.TRIAL=licenseEdition.TRIAL
+licenseEdition.BASIC=licenseEdition.BASIC
+licenseEdition.FREE=licenseEdition.FREE
+licenseEdition.EDU=licenseEdition.EDU
+licenseEdition.STANDARD=licenseEdition.STANDARD
+licenseEdition.ENTERPRISE=licenseEdition.ENTERPRISE
+licenseEdition.TESTING=licenseEdition.TESTING
+func.BOOKING_MEETING=func.BOOKING_MEETING
+func.WXCP=func.WXCP
+func.WXMP=func.WXMP
+func.ROOM_OPEN_VIEW=func.ROOM_OPEN_VIEW
+func.EXT_CUSTOMER=func.EXT_CUSTOMER
+func.EXT_INTERVIEW=func.EXT_INTERVIEW
+func.ORDER=func.ORDER
+func.NO_MAIL_CAL=func.NO_MAIL_CAL
+func.CORP_SETTING=func.CORP_SETTING
+func.REPORT=func.REPORT
+func.NO_EMAIL=func.NO_EMAIL
+func.SHOW_DEPT=func.SHOW_DEPT
+func.HIDE_HYSCN=func.HIDE_HYSCN
+func.PAD=func.PAD
+func.OUTLOOK=func.OUTLOOK
+func.PAD_ANDROID=func.PAD_ANDROID
+func.EDU=func.EDU
+func.VIDEO_BIZCONF=func.VIDEO_BIZCONF
+func.SHORT_NAME=func.SHORT_NAME
+func.DEVICE=func.DEVICE
+func.UI_V2=func.UI_V2
+func.UI_V1=func.UI_V1
+func.AUTO_CANCLE=func.AUTO_CANCLE
+func.QUICK_CREATE=func.QUICK_CREATE
+func.SMS_ACTIVE=func.SMS_ACTIVE
+func.I18N=func.I18N
+func.NOON_SPLIT=func.NOON_SPLIT
+func.AREA_PAD=func.AREA_PAD
+func.ROOM_APPROVE=func.ROOM_APPROVE
+func.EXCHANGE=func.EXCHANGE
+func.ROOM_FEE=func.ROOM_FEE
+func.MEETING_INTERVAL=func.MEETING_INTERVAL
+func.COMBINE_ROOM=func.COMBINE_ROOM
+func.DASHBOARD_SIMPLE=func.DASHBOARD_SIMPLE
+func.LDAP=func.LDAP
+func.REACT_WEB=func.REACT_WEB
+func.FREEZE_CORPNAME=func.FREEZE_CORPNAME
+func.STATIC_LOGIN=func.STATIC_LOGIN
+func.WEB_V2=func.WEB_V2
+func.NO_COMMENT=func.NO_COMMENT
+func.NO_INVITE=func.NO_INVITE
+func.CAR_RETURN=func.CAR_RETURN
+func.SMS_NOTIFY=func.SMS_NOTIFY
+func.HD_CTRL=func.HD_CTRL
+func.REPORT2=func.REPORT2
+func.JH_FTP_SYNC=func.JH_FTP_SYNC
+func.SYNC_UPSTREAM=func.SYNC_UPSTREAM
+entityType.MEETING=entityType.MEETING
+entityType.MEETING_ROOM=entityType.MEETING_ROOM
+entityType.CORP=entityType.CORP
+entityType.USER=entityType.USER
+entityType.OFFICE_AREA=entityType.OFFICE_AREA
+CommentType.VISITOR_ARRIVED=CommentType.VISITOR_ARRIVED
+CommentType.VISITOR_LATE=CommentType.VISITOR_LATE
+CommentType.VISITOR_CANCEL=CommentType.VISITOR_CANCEL
+CommentType.INTERVIEW_SG_REJECT=CommentType.INTERVIEW_SG_REJECT
+CommentType.INTERVIEW_SG_NEXT=CommentType.INTERVIEW_SG_NEXT
+CommentType.INTERVIEW_SG_REVIEW=CommentType.INTERVIEW_SG_REVIEW
+CommentType.INTERVIEW_SG_OFFER=CommentType.INTERVIEW_SG_OFFER
+CommentType.INTERVIEW_REJECT=CommentType.INTERVIEW_REJECT
+CommentType.INTERVIEW_OFFER=CommentType.INTERVIEW_OFFER
+CommentType.INTERVIEW_SUSPEND=CommentType.INTERVIEW_SUSPEND
+CommentType.INTERVIEW_REFUSE=CommentType.INTERVIEW_REFUSE
+CommentType.CANCEL_MEETING=CommentType.CANCEL_MEETING
+CommentType.CONFIRM_OPEN_MEETING=CommentType.CONFIRM_OPEN_MEETING
+showCommentType.null=showCommentType.null
+showCommentType.VISITOR_ARRIVED=showCommentType.VISITOR_ARRIVED
+showCommentType.VISITOR_LATE=showCommentType.VISITOR_LATE
+showCommentType.VISITOR_CANCEL=showCommentType.VISITOR_CANCEL
+showCommentType.INTERVIEW_SG_REJECT=showCommentType.INTERVIEW_SG_REJECT
+showCommentType.INTERVIEW_SG_NEXT=showCommentType.INTERVIEW_SG_NEXT
+showCommentType.INTERVIEW_SG_REVIEW=showCommentType.INTERVIEW_SG_REVIEW
+showCommentType.INTERVIEW_SG_OFFER=showCommentType.INTERVIEW_SG_OFFER
+showCommentType.INTERVIEW_REJECT=showCommentType.INTERVIEW_REJECT
+showCommentType.INTERVIEW_OFFER=showCommentType.INTERVIEW_OFFER
+showCommentType.INTERVIEW_SUSPEND=showCommentType.INTERVIEW_SUSPEND
+showCommentType.INTERVIEW_REFUSE=showCommentType.INTERVIEW_REFUSE
+showCommentType.CANCEL_MEETING=showCommentType.CANCEL_MEETING
+showCommentType.CONFIRM_OPEN_MEETING=showCommentType.CONFIRM_OPEN_MEETING
+showCommentType.DELAY_MEETING=showCommentType.DELAY_MEETING
+showCommentType.SIGNOUT_MEETING=showCommentType.SIGNOUT_MEETING
+showCommentType.CLOSE_UNSTART=showCommentType.CLOSE_UNSTART
+password.strong.VERY_WEAK=password.strong.VERY_WEAK
+password.strong.WEAK=password.strong.WEAK
+password.strong.AVERAGE=password.strong.AVERAGE
+password.strong.STRONG=password.strong.STRONG
+password.strong.VERY_STRONG=password.strong.VERY_STRONG
+password.strong.SECURE=password.strong.SECURE
+password.strong.VERY_SECURE=password.strong.VERY_SECURE
+lang.zh=lang.zh
+lang.en=lang.en
+meetingRoomType.null=meetingRoomType.null
+meetingRoomType.ROOM=meetingRoomType.ROOM
+meetingRoomType.OUTSIDE=meetingRoomType.OUTSIDE
+meetingRoomType.LAB_EQU=meetingRoomType.LAB_EQU
+meetingRoomType.CAR=meetingRoomType.CAR
+meetingRoomType.DEFAULT=meetingRoomType.DEFAULT
+RecruitStatus.FIRSTVIEW=RecruitStatus.FIRSTVIEW
+RecruitStatus.SUGGEST_REJECT=RecruitStatus.SUGGEST_REJECT
+RecruitStatus.SUGGEST_REVIEW=RecruitStatus.SUGGEST_REVIEW
+RecruitStatus.SUGGEST_OFFER=RecruitStatus.SUGGEST_OFFER
+RecruitStatus.REJECT=RecruitStatus.REJECT
+RecruitStatus.REVIEW=RecruitStatus.REVIEW
+RecruitStatus.OFFER=RecruitStatus.OFFER
+RecruitStatus.SUSPEND=RecruitStatus.SUSPEND
+RecruitStatus.REFUSE=RecruitStatus.REFUSE
+RecruitStatus.null=RecruitStatus.null
+speechType.null=speechType.null
+diff.meeting.subject=diff.meeting.subject
+diff.meeting.roomId=diff.meeting.roomId
+diff.meeting.content=diff.meeting.content
+diff.meeting.beginAt=diff.meeting.beginAt
+diff.meeting.endAt=diff.meeting.endAt
+diff.meeting.durationMinutes=diff.meeting.durationMinutes
+diff.meeting.notPublic=diff.meeting.notPublic
+order.years=order.years
+order.roomCount=order.roomCount
+order.invoiceType=order.invoiceType
+corpContact.invoiceTitle=corpContact.invoiceTitle
+corpContact.taxpayerNumber=corpContact.taxpayerNumber
+corpContact.taxAddress=corpContact.taxAddress
+corpContact.taxBankAccount=corpContact.taxBankAccount
+corpContact.invoiceSubject=corpContact.invoiceSubject
+corpContact.address=corpContact.address
+corpContact.receiverName=corpContact.receiverName
+corpContact.receiverPhone=corpContact.receiverPhone
+corp.register.corpName=corp.register.corpName
+corp.register.name=corp.register.name
+corp.register.email=corp.register.email
+corp.register.inviteCode=corp.register.inviteCode
+user.name=user.name
+user.email=user.email
+user.position=user.position
+user.jobNumber=user.jobNumber
+user.lang=user.lang
+corpForm.name=corpForm.name
+corpForm.corpName=corpForm.corpName
+corpForm.email=corpForm.email
+corpForm.maxMeetingRooms=corpForm.maxMeetingRooms
+corpForm.emailPostfix=corpForm.emailPostfix
+corpForm.expiredAt=corpForm.expiredAt
+corpForm.licenseEdition=corpForm.licenseEdition
+corpForm.tabletViewUrl=corpForm.tabletViewUrl
+corpForm.additionFuncs=corpForm.additionFuncs
+corpForm.meetingRoomFacilities=corpForm.meetingRoomFacilities
+corpForm.logoObject=corpForm.logoObject
+corpForm.enabled=corpForm.enabled
+corpForm.notice=corpForm.notice
+corpForm.disabledFuncs=corpForm.disabledFuncs
+corpForm.disabledRoles=corpForm.disabledRoles
+corpForm.meetingStartHour=corpForm.meetingStartHour
+corpForm.meetingEndHour=corpForm.meetingEndHour
+corpForm.meetingInterval=corpForm.meetingInterval
+corpForm.meetingMaxDuration=corpForm.meetingMaxDuration
+corpForm.supportRoomTypes=corpForm.supportRoomTypes
+corpForm.bookingLimitDays=corpForm.bookingLimitDays
+corpForm.customWebAssets=corpForm.customWebAssets
+corpForm.customMobileAssets=corpForm.customMobileAssets
+dept.name=dept.name
+dept.noDeptName=dept.noDeptName
+dept.not-exists=dept.not-exists
+flash.warn.dept-deleted-with-users=flash.warn.dept-deleted-with-users
+role.code=role.code
+role.name=role.name
+role.remark=role.remark
+role.showOrder=role.showOrder
+hiringPlan.title=hiringPlan.title
+hiringPlan.dept=hiringPlan.dept
+hiringPlan.hireCount=hiringPlan.hireCount
+hiringPlan.offeredCount=hiringPlan.offeredCount
+hiringPlan.dueDate=hiringPlan.dueDate
+hiringPlan.jobDescription=hiringPlan.jobDescription
+meetingType.STANDARD=meetingType.STANDARD
+meetingType.null=meetingType.null
+meetingType.STANDARD.label=meetingType.STANDARD.label
+meetingType.INTERVIEW=meetingType.INTERVIEW
+meetingType.CUSTOMER=meetingType.CUSTOMER
+meetingForm.subject=meetingForm.subject
+meetingForm.content=meetingForm.content
+meetingForm.roomId=meetingForm.roomId
+meetingForm.meetingDate=meetingForm.meetingDate
+meetingForm.meetingMembers=meetingForm.meetingMembers
+meetingForm.owner=meetingForm.owner
+meetingForm.startTime=meetingForm.startTime
+meetingForm.duration=meetingForm.duration
+meetingForm.meetingRepeatType=meetingForm.meetingRepeatType
+meetingForm.weekDays=meetingForm.weekDays
+meetingForm.endDate=meetingForm.endDate
+meetingForm.fixedEndDate=meetingForm.fixedEndDate
+meetingForm.config=meetingForm.config
+meetingForm.time=meetingForm.time
+meetingForm.ownerId=meetingForm.ownerId
+meetingForm.hiringPlanId=meetingForm.hiringPlanId
+meetingForm.appliantName=meetingForm.appliantName
+meetingForm.appliantEmail=meetingForm.appliantEmail
+meetingForm.appliantMobile=meetingForm.appliantMobile
+meetingForm.visitorName=meetingForm.visitorName
+meetingForm.visitorEmail=meetingForm.visitorEmail
+meetingForm.visitorMobile=meetingForm.visitorMobile
+meetingForm.customerName=meetingForm.customerName
+meetingForm.visitorCount=meetingForm.visitorCount
+meetingForm.serveRemark=meetingForm.serveRemark
+meetingForm.deskLabel=meetingForm.deskLabel
+meetingForm.banner=meetingForm.banner
+meetingForm.keepLift=meetingForm.keepLift
+meetingForm.carPlateNumber=meetingForm.carPlateNumber
+meetingForm.otherServeRemark=meetingForm.otherServeRemark
+duration.75=duration.75
+duration.90=duration.90
+duration.105=duration.105
+duration.120=duration.120
+duration.135=duration.135
+duration.150=duration.150
+duration.165=duration.165
+duration.180=duration.180
+duration.195=duration.195
+duration.210=duration.210
+duration.225=duration.225
+duration.240=duration.240
+duration.300=duration.300
+duration.360=duration.360
+duration.420=duration.420
+duration.480=duration.480
+duration.540=duration.540
+duration.600=duration.600
+duration.660=duration.660
+duration.720=duration.720
+meetingCommentForm.content=meetingCommentForm.content
+hiringPlan.id=hiringPlan.id
+recruit.name=recruit.name
+recruit.mobile=recruit.mobile
+recruit.email=recruit.email
+articleCategory.code=articleCategory.code
+articleCategory.showName=articleCategory.showName
+articleCategory.shown=articleCategory.shown
+articleCategory.showOrder=articleCategory.showOrder
+articleCategory.channel=articleCategory.channel
+openIdSource.WXMP=openIdSource.WXMP
+openIdSource.WXCP=openIdSource.WXCP
+openIdSource.WXOPEN=openIdSource.WXOPEN
+openIdSource.OUTLOOK=openIdSource.OUTLOOK
+openIdSource.WXAPP=openIdSource.WXAPP
+openIdSource.PASSWORD=openIdSource.PASSWORD
+openIdSource.SMS=openIdSource.SMS
+openIdSource.TEST=openIdSource.TEST
+openIdSource.UNDEFINE=openIdSource.UNDEFINE
+openIdSource.null=openIdSource.null
+userStatus.ACTIVE=userStatus.ACTIVE
+userStatus.SUBSCRIBE=userStatus.SUBSCRIBE
+userStatus.FIRED=userStatus.FIRED
+userStatus.UNSUBSCRIBE=userStatus.UNSUBSCRIBE
+userStatus.NEW=userStatus.NEW
+userStatus.LEAVE=userStatus.LEAVE
+videoMeetingType.VIDEO_BIZCONF=videoMeetingType.VIDEO_BIZCONF
+upload.refType=upload.refType
+upload.refId=upload.refId
+doorControl.null=doorControl.null
+doorControl.ALWAY_OPEN=doorControl.ALWAY_OPEN
+doorControl.ALWAY_CLOSE=doorControl.ALWAY_CLOSE
+doorControl.ONLINE_CONTROL=doorControl.ONLINE_CONTROL
+doorControl.OPEN_ONCE=doorControl.OPEN_ONCE
+@include.schedulings=./_messages/zh/schedulings.properties

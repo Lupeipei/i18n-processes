@@ -30,13 +30,18 @@ module I18n::Processes
         def missing(opt = {})
           # update the compared file en.yml
           preprocessing({:locales => ['en'], :path => './upload/en'})
-          # find missing
-          forest = i18n.missing_keys(opt.slice(:locales, :base_locale, :types))
-          missing_count = forest.leaves.count
-          print_forest forest, opt, :missing_keys unless forest.empty?
+          # find missing using forest
+          # forest = i18n.missing_keys(opt.slice(:locales, :base_locale, :types))
+          # missing_count = forest.leaves.count
+          # print_forest forest, opt, :missing_keys unless forest.empty?
+          missing_keys = spreadsheet_report.find_missing
+          missing_count = missing_keys.count
+
+
           # save to primitive file
           spreadsheet_report.missing_report opt[:path], opt.except(:path) unless missing_count.zero?
           # if missing_count == 0 ,generate corresponding en file for origin zh-CH files
+          spreadsheet_report.translated_files if missing_count.zero?
 
         end
 

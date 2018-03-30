@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require 'fileutils'
-
+require 'yaml'
 module I18n
   module Processes
     module Data
@@ -25,6 +25,8 @@ module I18n
           raise CommandError, "#{format} #{op} error: #{e.message}"
         end
 
+
+
         protected
 
         def write_config(format)
@@ -34,6 +36,20 @@ module I18n
         def read_config(format)
           (config[format] || {})[:read]
         end
+
+
+
+        # def source_config(format)
+        #   (config[format] || {})[:source]
+        # end
+        #
+        # def translation_config(format)
+        #   (config[format] || {})[:translation]
+        # end
+        #
+        # def translated_config(format)
+        #   (config[format] || {})[:translated]
+        # end
 
         # @return [Hash]
         def load_file(path)
@@ -49,8 +65,6 @@ module I18n
           hash = tree.to_hash(true)
           adapter = self.class.adapter_name_for_path(path)
           content = adapter_dump(hash, adapter)
-          $stderr.puts Rainbow("contents: #{content}").green
-          $stderr.puts Rainbow("path: #{path}").green
           # Ignore unchanged data
           return if File.file?(path) && content == read_file(path)
           ::FileUtils.mkpath(File.dirname(path))

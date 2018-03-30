@@ -164,6 +164,7 @@ module I18n::Processes
         val = Array(val) + Array(flag.include?(Array) ? argv.flat_map { |x| x.split(',') } : argv)
       end
       val = conf[:default] if val.nil? && conf.key?(:default)
+
       val = conf[:parser].call(val, context) if conf.key?(:parser)
       val
     end

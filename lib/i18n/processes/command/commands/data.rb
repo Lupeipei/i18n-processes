@@ -65,6 +65,7 @@ module I18n::Processes
             args: %i[locales out_format]
 
         def data(opt = {})
+          $stderr.puts Rainbow("data from here?!")
           print_forest i18n.data_forest(opt[:locales]), opt
         end
 

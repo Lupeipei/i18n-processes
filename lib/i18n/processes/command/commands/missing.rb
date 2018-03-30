@@ -28,7 +28,7 @@ module I18n::Processes
             args: [:locales, :out_format, :missing_types, ['-p', '--path PATH', 'Destination path', default: 'tmp/missing_keys']]
 
         def missing(opt = {})
-          options = {:locales => ['en'], :path => './upload/en'}
+          options = {:locales => ['en']}
           preprocessing(options)
           missing_keys = spreadsheet_report.find_missing
           missing_count = missing_keys.count

@@ -15,7 +15,7 @@ require 'i18n/processes/scanners/pattern_mapper'
 module I18n::Processes
   module UsedKeys # rubocop:disable Metrics/ModuleLength
     SEARCH_DEFAULTS = {
-      paths: %w[app/].freeze,
+      paths: %w[tmp/].freeze,
       relative_roots: %w[app/controllers app/helpers app/mailers app/presenters app/views].freeze,
       scanners: [
         ['::I18n::Processes::Scanners::RubyAstScanner', only: %w[*.rb]],

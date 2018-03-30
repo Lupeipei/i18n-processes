@@ -75,13 +75,13 @@ module I18n::Processes::Configuration # rubocop:disable Metrics/ModuleLength
   def internal_locale
     @config_sections[:internal_locale] ||= begin
       internal_locale = (config[:internal_locale] || DEFAULTS[:internal_locale]).to_s
-      # valid_locales = Dir[File.join(I18n::Processes.gem_path, 'config', 'locales','origin', '*.yml')]
-      #                 .map { |f| File.basename(f, '.yml') }
-      # unless valid_locales.first.include?(internal_locale)
-      #   log_warn "invalid internal_locale #{internal_locale.inspect}. "\
-      #            "Available internal locales: #{valid_locales * ', '}."
-      #   internal_locale = DEFAULTS[:internal_locale].to_s
-      # end
+      valid_locales = Dir[File.join(I18n::Processes.gem_path, 'config', 'locales', '*.yml')]
+                      .map { |f| File.basename(f, '.yml') }
+      unless valid_locales.first.include?(internal_locale)
+        log_warn "invalid internal_locale #{internal_locale.inspect}. "\
+                 "Available internal locales: #{valid_locales * ', '}."
+        internal_locale = DEFAULTS[:internal_locale].to_s
+      end
       internal_locale
     end
   end

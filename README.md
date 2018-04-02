@@ -1,6 +1,6 @@
 # I18n::Processes
 
-设置目标语言，根据给到的指定格式的中文文档，输出相对应的翻译文件。
+给到目标语言, 针对指定格式的中文文档，输出相对应的翻译文件。
 
 ## Installation
 
@@ -26,8 +26,8 @@ Or install it yourself as:
   - translated：翻译后的文件存放路径
 
 - 将需要翻译的中文文件夹放入设置好的目录下，比如source/
-- 运行：`bundle exec i18n-processes preprocessing`, 会提取出所有的keys
-- 运行：`bundle exec i18n-processes missing`
+- 运行：`i18n-processes preprocessing`, 会提取出所有的keys
+- 运行：`i18n-processes missing`
 - 在你设置的翻译文件存放路径下，比如translated/，会生成与原文件同结构的文件，内含对应的翻译文件
 
 
@@ -39,7 +39,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/i18n-processes.
+Bug reports and pull requests are welcome on GitHub at https://github.com/Lupeipei/i18n-processes.
 
 ## License
 

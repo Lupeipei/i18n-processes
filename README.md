@@ -20,10 +20,15 @@ Or install it yourself as:
 
 ## Usage
 
-- 将需要翻译的中文文件夹放入source/目录下
-- 运行：bundle exec i18n-processes preprocessing
-- 运行：bundle exec i18n-processes missing
-- 在translated/下，生成同名的文件夹，内含对应的翻译文件
+- 在config/i18n-processes.yml中，设置三个路径：
+  - source: base_locale zh-CN原始文件存放路径
+  - translation: 翻译文件存放路径
+  - translated：翻译后的文件存放路径
+
+- 将需要翻译的中文文件夹放入设置好的目录下，比如source/
+- 运行：`bundle exec i18n-processes preprocessing`, 会提取出所有的keys
+- 运行：`bundle exec i18n-processes missing`
+- 在你设置的翻译文件存放路径下，比如translated/，会生成与原文件同结构的文件，内含对应的翻译文件
 
 
 ## Development
@@ -34,7 +39,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/i18n-processes.
+Bug reports and pull requests are welcome on GitHub at https://github.com/i18n-processes.
 
 ## License
 

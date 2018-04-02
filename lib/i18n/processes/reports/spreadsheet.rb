@@ -26,7 +26,7 @@ module I18n::Processes::Reports
     def translated_files(locale)
       path = translated_path.first
       dic = get_dic("./tmp/#{locale}")
-      FileUtils.rm_f Dir.glob("./#{path}*") unless Dir["./#{path}*"].size.zero?
+      FileUtils.rm_f Dir.glob("./#{path}**/**") unless Dir["./#{path}**/**"].size.zero?
       origin_files = origin_files(base_locale).flatten
       # $stderr.puts Rainbow origin_files
       origin_files.each do |origin_file|

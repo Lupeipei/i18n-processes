@@ -563,8 +563,8 @@ userStatus.LEAVE=离职
 videoMeetingType.VIDEO_BIZCONF=会畅视频会议
 
 # 文件上传
-upload.refType=目标对象类型
-upload.refId=目标对象Id
+upload.refType=目标对象类型-改变了值
+upload.refId=目标对象Id-改变了值
 
 # 门禁
 doorControl.null=空指令

@@ -1252,3 +1252,12 @@ time.60=time.60
 
 # 1个半小时不同的keys
 time.90=time.90
+
+# 2小时
+time.120=time.120
+
+# appName
+app.title=app.title
+
+# 预约{resource}不同的keys
+booking.meeting=booking.meeting

@@ -39,7 +39,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/Lupeipei/i18n-processes.
+Bug reports and pull requests are welcome on GitHub at [i18n-processes](https://github.com/Lupeipei/i18n-processes).
 
 ## License
 

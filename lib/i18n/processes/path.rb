@@ -13,6 +13,16 @@ module I18n::Processes:: Path
     end
   end
 
+  def get_dic(path)
+    {}.tap do |dic|
+      File.open(path).each_line do |line|
+        key = line.split('=').first
+        value = line.split('=').last
+        dic[key] = value
+      end
+    end
+  end
+
   def source_path
     config_file[:data][:source]
   end

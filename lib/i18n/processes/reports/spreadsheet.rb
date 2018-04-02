@@ -9,8 +9,10 @@ module I18n::Processes::Reports
     include I18n::Processes::Path
 
     def missing_report(locale)
-      path = "tmp/missing_keys_#{locale}"
-      report = File.new(path, 'w')
+      path = 'tmp/missing_keys/'
+      FileUtils::mkdir_p path  unless Dir.exist?path
+      file = "#{path}missing_keys_#{locale}"
+      report = File.new(file, 'w')
       report.write("# 说明：以#开头的行，表示key对应的中文翻译\n# 下一行'='左边为key，'='右边需要填上对应的#{locale}翻译： \n")
       report.write("\n\n# =======================  missing keys list =============================\n\n")
       find_missing(locale).map do |k,v|
@@ -18,7 +20,7 @@ module I18n::Processes::Reports
         report.write("#{k}=#{k}\n\n")
       end
       report.close
-      $stderr.puts Rainbow("missing report saved to #{path}").green
+      $stderr.puts Rainbow("missing report saved to #{file}\n").green
     end
 
     def translated_files(locale)
@@ -26,11 +28,11 @@ module I18n::Processes::Reports
       dic = get_dic("./tmp/#{locale}")
       FileUtils.rm_f Dir.glob("./#{path}*") unless Dir["./#{path}*"].size.zero?
       origin_files = origin_files(base_locale).flatten
-      $stderr.puts Rainbow origin_files
+      # $stderr.puts Rainbow origin_files
       origin_files.each do |origin_file|
         translated_file(origin_file,"#{path}#{locale}/",  dic)
       end
-      $stderr.puts Rainbow("translated files saved to #{path}").green
+      $stderr.puts Rainbow("translated files saved to #{path}\n").green
     end
 
     def find_missing(locale = nil)
@@ -41,17 +43,6 @@ module I18n::Processes::Reports
     end
 
     private
-
-
-    def get_dic(path)
-      {}.tap do |dic|
-        File.open(path).each_line do |line|
-          key = line.split('=').first
-          value = line.split('=').last
-          dic[key] = value
-        end
-      end
-    end
 
     def translated_file(file, path, dic)
       translated_file = new_file(file, path)

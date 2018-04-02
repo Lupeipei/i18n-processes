@@ -25,6 +25,21 @@ module I18n
           end
         end
 
+        def changed_keys(diff = nil)
+          if diff
+            print_title "#{diff.count} keys' value changed"
+            print_table headings: [Rainbow('key').cyan.bright,
+                                   Rainbow('Current').cyan.bright,
+                                   'Previous'] do |t|
+              t.rows = diff.map do |key, value|
+                [key, value[:current], value[:previous]]
+              end
+            end
+          else
+            print_success 'No key have been changed.'
+          end
+        end
+
         def icon(type)
           glyph = missing_type_info(type)[:glyph]
           { missing_used: Rainbow(glyph).red, missing_diff: Rainbow(glyph).yellow }[type]

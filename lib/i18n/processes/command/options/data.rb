@@ -85,6 +85,10 @@ module I18n::Processes
             puts i18n.data.adapter_dump forest.to_hash(true), format
           end
         end
+
+        def print_changed_keys(diff, version = :changed_keys)
+          terminal_report.send(version, diff)
+        end
       end
     end
   end

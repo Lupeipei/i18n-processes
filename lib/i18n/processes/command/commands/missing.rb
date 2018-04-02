@@ -29,18 +29,19 @@ module I18n::Processes
 
         def missing(opt = {})
           translated_locales = opt[:locales].reject{|x| x == base_locale}
-          translated_locales.map { |x| preprocessing({:locales => [x] } ) }
-          missing_keys = {}
-          translated_locales.map { |x| missing_keys[x] = spreadsheet_report.find_missing(x)}
-          missing_keys.each do |locale, missing_key|
-            missing_count = missing_key.count
+          translated_locales.each do |locale|
+            $stderr.puts Rainbow("#{base_locale} to #{locale}\n").green
+            preprocessing({:locales => [locale] })
+            missing_keys = spreadsheet_report.find_missing(locale)
+            missing_count = missing_keys.count
             if missing_count.zero?
               spreadsheet_report.translated_files(locale)
             else
-              $stderr.puts Rainbow("#{missing_count} keys need to be translated to #{locale}")
+              $stderr.puts Rainbow("#{missing_count} keys need to be translated to #{locale}").green
               spreadsheet_report.missing_report(locale)
             end
           end
+
         end
 
         cmd :translate_missing,

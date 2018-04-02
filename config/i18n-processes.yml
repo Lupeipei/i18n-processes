@@ -2,7 +2,7 @@ base_locale: zh-CN
 
 locales: [zh-CN, en, fr, ru]
 
-# source: zh-CN原始文件存放路径， translation: 翻译文件存放路径，translated：翻译后的文件存放路径
+# source: base_locale zh-CN原始文件存放路径， translation: 翻译文件存放路径，translated：翻译后的文件存放路径
 # 存放对比文件的地方，默认为tmp/
 
 data:

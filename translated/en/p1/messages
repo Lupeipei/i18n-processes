@@ -1,0 +1,267 @@
+# You can specialize this file for each language.
+# For example, for French create a messages.fr file
+#
+since.seconds= %s second%s ago
+since.minutes= %s minute%s ago
+since.hours= %s hour%s ago
+since.days= %s day%s ago
+since.months= %s month%s ago
+since.years= %s year%s ago
+since.format= MMM d, yyyy
+
+# =======================  表单验证定义 =============================
+validation.required=Required
+validation.min=Cannot be lower than %2$d
+validation.max=Cannot be greater than %2$d
+validation.email=Invalid email address
+validation.minSize=Minimum size is %2$d
+validation.maxSize=Maximum size is %2$d
+validation.range=Not in the range %2$d through %3$d
+validation.match=Must match %2$s
+validation.isTrue=Must be checked
+validation.equals=Must be equal to &{%2$s}
+validation.invalid=Incorrect value
+validation.future=Must be in the future
+validation.after=Must be after %2$s
+validation.past=Must be in the past
+validation.before=Must be before %2$s
+validation.object=Validation failed
+validation.notFound=Object not found for id %2$s
+validation.url=Not a valid URL
+validation.phone=Not a valid phone
+validation.ipv4=Not a valid IP address
+validation.ipv6=Not a valid IP v6 address
+validation.unique=Must be unique
+
+#
+play-paginate.prev=<
+play-paginate.next=>
+play-paginate.first=<<
+play-paginate.last=>>
+
+# 时间说明
+option.hours.6=6:00 AM
+option.hours.7=7:00 AM
+option.hours.8=8:00 AM
+option.hours.9=9:00 AM
+option.hours.10=10:00 AM
+option.hours.11=11:00 AM
+option.hours.14=14:00 PM
+option.hours.15=15:00 PM
+option.hours.16=16:00 PM
+option.hours.17=17:00 PM
+option.hours.18=18:00 PM
+option.hours.19=19:00 PM
+option.hours.20=20:00 PM
+option.hours.21=21:00 PM
+option.hours.22=22:00 PM
+option.hours.23=23:00 PM
+option.hour=Hour
+option.hours=Hours
+option.minute=Minute
+option.minutes=Minutes
+option.day=Day
+option.days=Days
+option.unlimit=Unlimit
+
+# 扩展专用
+yesno.yes=Yes
+yesno.no=No
+option.undefine=Undefined
+link.download=Download
+
+# app
+app.name=MeetingRoom Booking System
+
+# manager界面元素
+manager.form.saveAdd=Add
+manager.form.saveEdit=Save
+manager.form.cancel=Cancel
+manager.form.back=Back
+manager.form.print=Print
+manager.form.saveModify=Save Modify
+
+manager.list.action=Operate
+manager.list.edit=Edit
+manager.list.delete=Delete
+manager.list.confirm-delete=Confirm delete %s?
+manager.share.clear-selected-users=Clear Selected
+manager.share.clear-selected-users.hint=Clear Selected Users
+
+# 服务配置
+customer.service-email=service@hyshi.net
+
+# flash公共消息
+
+# 用户状态
+
+# 频道
+cmsChannel.TOUR=TOUR
+cmsChannel.BLOG=BLOG
+cmsChannel.NOTICE=NOTICE
+cmsChannel.null=Uncategory
+
+# 会议状态
+meeting.status.OPEN=Open
+meeting.status.LOCK=Lock
+meeting.status.CANCEL=Canceled
+
+# MeetingCheckedStatus 会议确认状态
+
+# 会议重复类型
+meeting.repeat.NONE=Meeting
+meeting.repeat.WEEK=Repeat Meeting
+
+# 性别
+sex.M=Male
+sex.F=Female
+sex.null=Unknown
+sex.U=Unknown
+
+# 角色
+roles.ADMIN=Admin
+roles.MANAGER=Manager
+roles.USER=Staff
+roles.HR=HR
+roles.FMY=Receptionist
+roles.HYSASS=Meeting Asst
+
+# 应用名
+
+# 邀请码类型
+
+# 会议室设施
+###### 客户定制 会议室设施
+
+# 客户端类型
+
+# 订单状态
+
+# 公司授权版本 LicenseEdition
+
+# 功能开关列表
+
+# 以下不使用的配置
+
+# 实体类型
+entityType=实体类型
+
+# 会议评论类型
+
+
+
+
+
+# 密码强度
+
+# 语言
+
+# 会议室类型
+
+
+#============= 面试状态 ===============
+
+#=============企业号应用状态==================
+
+
+# =======================  导航定义 =============================
+nav.main=Home
+nav.receptions=Reception
+nav.meetings=Book Meeting
+nav.view-meetings=Query Meeting
+nav.hiring=Hiring
+nav.hiring-plans=Hiring Plans
+nav.recruits=Recruits
+nav.reports=Reports
+nav.reports.memberTimes=Member Times
+nav.reports.ownerTimes=Owner Times
+nav.reports.checkerTimes=Check-in Times
+nav.reports.roomTimes=Meetingroom Times
+nav.admin-company=Company Settings
+nav.admin-meeting-rooms=Meeting Rooms
+nav.admin-devices=Devices
+nav.admin-depts=Departments
+nav.admin-employees=Staff
+nav.my-tags=My Contacts
+nav.my-profile=My Profile
+
+# ---------------- Diff -----------------
+
+# =======================  表单 =============================
+
+deptId=部门
+
+# 订单
+
+# 公司联系信息
+corpContact.invoiceTitle=Invoice to
+corpContact.invoiceSubject=Invoice content
+corpContact.address=Recipient address
+corpContact.receiverName=Recipient name
+# change corpContact.receiverPhone=收件人手机 to corpContact.receiverPhone=收件人手机号
+corpContact.receiverPhone=Recipient phone number
+
+
+# 公司注册
+
+# User
+password=密码
+repeatPassword=确认密码
+
+# CorpForm
+
+
+
+tableAppVersion=平板App版本
+tableAppUrl=平板App下载URL
+
+# Dept
+dept.name=Dept Name
+dept.noDeptName=No Dept Name.
+dept.not-exists=The dept Not exists!
+flash.warn.dept-deleted-with-users=The %s had %s members，please remove the members before delete the dept.
+
+# Role
+
+# feeType
+ONCE=一次性收费
+MONTH=月费
+YEAR=年费
+
+# 招聘计划
+
+# MeetingType
+
+# Meeting
+
+
+
+
+# 时间范围
+
+# 会议留言
+
+# 面试管理
+
+# 文章栏目
+
+# OpenIdSource / ApiPlatform 定义
+
+# userStatus
+
+# 视频会议类型
+
+# 文件上传
+
+# 门禁
+
+@include.article= ./_messages/en/article.properties
+@include.meetingBooking= ./_messages/en/meetingBooking.properties
+
+@include.meeting-rooms= ./_messages/en/meeting-rooms.properties
+@include.office-areas= ./_messages/en/office-areas.properties
+@include.company= ./_messages/en/company.properties
+@include.orders= ./_messages/en/orders.properties
+@include.visitor= ./_messages/en/visitor.properties
+@include.devices= ./_messages/en/devices.properties
+@include.tag= ./_messages/en/tag.properties

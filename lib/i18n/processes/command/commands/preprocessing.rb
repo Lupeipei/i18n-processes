@@ -1,34 +1,33 @@
 # frozen_string_literal: true
 
 require 'i18n/processes/command/collection'
+require 'i18n/processes/path'
 
 module I18n::Processes
   module Command
     module Commands
       module Preprocessing
         include Command::Collection
+        include Path
 
         cmd :preprocessing,
             pos:  '[locale...]',
-            desc: 'preprocess origin data files into yaml format files',
+            desc: 'preprocess origin data files into primitive files with key=value format',
             args: {}
 
         def preprocessing(opt = {})
-          locale = opt[:locales].nil? ? 'zh-CN' : opt[:locales].first
+          locale = opt[:locales].include?(base_locale) ? 'zh-CN' : opt[:locales].first
           dic = {}
-          origin_files(locale).each do |file|
+          $stderr.puts Rainbow origin_files(locale) if locale == 'en'
+          origin_files(locale).flatten.each do |file|
             # dic.merge!(origin_file_read(file)) { |key, v1, v2| fail "conflict: #{key}: #{v1}, #{v2} in #{file}" unless v1 == v2 }
             dic.merge!(origin_file_read(file))
           end
           path = 'tmp/'
           keys_source(dic, path, locale)
-          $stderr.puts Rainbow('origin file transform to yaml file successfully').green if locale == 'zh-CN'
+          $stderr.puts Rainbow('preprocess origin data files into primitive files successfully').green if locale == base_locale
         end
 
-        def origin_files(locale)
-          source = locale == 'zh-CN' ? source_path.first : translation_path.first
-          Dir.glob("#{source}**/*.*")
-        end
 
         def origin_file_read(file)
           {}.tap do |a|
@@ -48,30 +47,13 @@ module I18n::Processes
         end
 
         def keys_source(dic, path, locale)
-          # filename = "#{path + locale}.yml"
           filename = path + locale
+          File.delete(filename) if File.exist?(filename)
           local_file = File.new(filename, 'w')
           dic.map do |key, value|
             value.include?("\n") ? local_file.write("#{key}=#{value}") : local_file.write("#{key}=#{value}\n")
           end
           local_file.close
-        end
-
-        def source_path
-          config_file[:data][:source]
-        end
-
-        def translation_path
-          config_file[:data][:translation]
-        end
-
-        def translated_path
-          config_file[:data][:translated]
-        end
-
-        def config_file
-          file = Dir.glob(File.join('**', '*.yml')).select{ |x| x.include?'i18n-processes'}
-          YAML.load_file(file.first).deep_symbolize_keys unless file.empty?
         end
 
       end

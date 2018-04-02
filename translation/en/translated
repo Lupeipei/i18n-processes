@@ -1,0 +1,305 @@
+# 说明：以#开头的行，表示key对应的中文翻译
+# 下一行'='左边为key，'='右边需要填上对应的en翻译：
+
+
+# =======================  missing keys list =============================
+
+# 我们将在一个工作日内和您联系，完成配置工作。
+company.show.rightbar.custom-domain.hint3=company.show.rightbar.custom-domain.hint3
+
+# 快速提示： 可让同事用微信搜索公众号《会议室助手》
+company.show.rightbar.invate-code.line1=company.show.rightbar.invate-code.line1
+
+# 然后使用公司邀请码加入：
+company.show.rightbar.invate-code.line2=company.show.rightbar.invate-code.line2
+
+# 当前Logo
+company.logoFile.alt=company.logoFile.alt
+
+# 企业微信通讯录Secret
+company.wxqyContactsSecret=company.wxqyContactsSecret
+
+# 用于同步企业微信组织架构到会议室系统
+company.wxqyContactsSecret.placeholder=company.wxqyContactsSecret.placeholder
+
+# 进入企业微信管理后台，在“管理工具”—“通讯录同步助手”开启“API接口同步”，然后复制界面上的Secret到这里
+company.wxqyContactsSecret.hint=company.wxqyContactsSecret.hint
+
+# 原生Android屏
+deviceType.ANDROID_PAD=deviceType.ANDROID_PAD
+
+# 显示屏
+deviceType.H5_PAD=deviceType.H5_PAD
+
+# 灯控
+deviceType.LIGHT=deviceType.LIGHT
+
+# 电源控制
+deviceType.POWER=deviceType.POWER
+
+# 门禁
+deviceType.DOOR=deviceType.DOOR
+
+# 人体红外探测
+deviceType.HUMAN_INFRARED=deviceType.HUMAN_INFRARED
+
+# 人体活动探测
+deviceType.HUMAN_DETECT=deviceType.HUMAN_DETECT
+
+# 设备代理
+deviceType.AGENT=deviceType.AGENT
+
+# 原生Android屏
+deviceInstruct.ANDROID_PAD=deviceInstruct.ANDROID_PAD
+
+# 显示屏
+deviceInstruct.H5_PAD=deviceInstruct.H5_PAD
+
+# 灯光
+deviceInstruct.LIGHT=deviceInstruct.LIGHT
+
+# 开
+deviceInstruct.LIGHT.true=deviceInstruct.LIGHT.true
+
+# 关
+deviceInstruct.LIGHT.false=deviceInstruct.LIGHT.false
+
+# 未连接
+deviceInstruct.LIGHT.null=deviceInstruct.LIGHT.null
+
+# 电源
+deviceInstruct.POWER=deviceInstruct.POWER
+
+# 开
+deviceInstruct.POWER.true=deviceInstruct.POWER.true
+
+# 关
+deviceInstruct.POWER.false=deviceInstruct.POWER.false
+
+# 未连接
+deviceInstruct.POWER.null=deviceInstruct.POWER.null
+
+# 门禁
+deviceInstruct.DOOR=deviceInstruct.DOOR
+
+# 开
+deviceInstruct.DOOR.true=deviceInstruct.DOOR.true
+
+# 关
+deviceInstruct.DOOR.false=deviceInstruct.DOOR.false
+
+# 未连接
+deviceInstruct.DOOR.null=deviceInstruct.DOOR.null
+
+# 人体探测
+deviceInstruct.HUMAN_INFRARED=deviceInstruct.HUMAN_INFRARED
+
+# 有人
+deviceInstruct.HUMAN_INFRARED.true=deviceInstruct.HUMAN_INFRARED.true
+
+# 无人
+deviceInstruct.HUMAN_INFRARED.false=deviceInstruct.HUMAN_INFRARED.false
+
+# 未连接
+deviceInstruct.HUMAN_INFRARED.null=deviceInstruct.HUMAN_INFRARED.null
+
+# 人体探测
+deviceInstruct.HUMAN_DETECT=deviceInstruct.HUMAN_DETECT
+
+# 有人
+deviceInstruct.HUMAN_DETECT.true=deviceInstruct.HUMAN_DETECT.true
+
+# 无人
+deviceInstruct.HUMAN_DETECT.false=deviceInstruct.HUMAN_DETECT.false
+
+# 未连接
+deviceInstruct.HUMAN_DETECT.null=deviceInstruct.HUMAN_DETECT.null
+
+# 连接
+deviceInstruct.AGENT=deviceInstruct.AGENT
+
+# 在线
+deviceInstruct.AGENT.true=deviceInstruct.AGENT.true
+
+# 离线
+deviceInstruct.AGENT.false=deviceInstruct.AGENT.false
+
+# 未连接
+deviceInstruct.AGENT.null=deviceInstruct.AGENT.null
+
+# 解除绑定
+manager.devices.unbind=manager.devices.unbind
+
+# 绑定
+manager.devices.bind=manager.devices.bind
+
+# 确认解除%s的绑定?
+manager.devices.confirm-unbind=manager.devices.confirm-unbind
+
+# 会议室设备
+meeting-rooms.device.title=meeting-rooms.device.title
+
+# 每小时费用
+meetingRoom.pricePerHour=meetingRoom.pricePerHour
+
+# 解绑设备%s(编号:%s)成功
+flash.notice.meeting-rooms.unbind-device-succ=flash.notice.meeting-rooms.unbind-device-succ
+
+# 没有绑定门禁设备
+meeting-rooms.not-bind-door=meeting-rooms.not-bind-door
+
+# 没有绑定灯光控制设备
+meeting-rooms.not-bind-light=meeting-rooms.not-bind-light
+
+# 没有绑定电源控制设备
+meeting-rooms.not-bind-power=meeting-rooms.not-bind-power
+
+# 交易金额
+trade.changeAmount=trade.changeAmount
+
+# 是否通过
+meetingApprove.approval=meetingApprove.approval
+
+# 备注
+meetingApprove.remark=meetingApprove.remark
+
+# 园区
+officeAreaLevel.CAMPUS=officeAreaLevel.CAMPUS
+
+# 大楼
+officeAreaLevel.BUILDING=officeAreaLevel.BUILDING
+
+# 楼层
+officeAreaLevel.FLOOR=officeAreaLevel.FLOOR
+
+# 新增园区
+office-areas.operate.new-campus=office-areas.operate.new-campus
+
+# 新增大楼
+office-areas.operate.new-building=office-areas.operate.new-building
+
+# 新增楼层
+office-areas.operate.new-floor=office-areas.operate.new-floor
+
+# 请用微信扫一扫预订
+office-areas.show.top-hint1=office-areas.show.top-hint1
+
+# 本页可直接打印，张贴在门口，方便用微信扫一扫查看会议室状态
+office-areas.show.bottom-hint1=office-areas.show.bottom-hint1
+
+# 『打印』按钮之后的内容不会被打印
+office-areas.show.bottom-hint2=office-areas.show.bottom-hint2
+
+# 您也可以复制以上内容到Word编辑后再打印
+office-areas.show.bottom-hint3=office-areas.show.bottom-hint3
+
+# 用户
+scheduling.userIds=scheduling.userIds
+
+# 当前会议
+scheduling.currentMeetingId=scheduling.currentMeetingId
+
+# 会议日期
+scheduling.meetingDate=scheduling.meetingDate
+
+# 开始时间
+scheduling.beginTime=scheduling.beginTime
+
+# 时长
+scheduling.duratio=scheduling.duratio
+
+# 结束时间
+scheduling.endTime=scheduling.endTime
+
+# 未受理
+ticketStatus.NEW=ticketStatus.NEW
+
+# 受理
+ticketStatus.ACCEPT=ticketStatus.ACCEPT
+
+# 挂起
+ticketStatus.SUSPEND=ticketStatus.SUSPEND
+
+# 结束
+ticketStatus.CLOSE=ticketStatus.CLOSE
+
+# 拒绝
+ticketStatus.DENY=ticketStatus.DENY
+
+# 电话
+ticketType.CALL=ticketType.CALL
+
+# 跟进
+ticketType.FOLLOW=ticketType.FOLLOW
+
+# 任务
+ticketType.TASK=ticketType.TASK
+
+# 无会议信息
+meeting.null=meeting.null
+
+# 下一个 mmmm
+meeting.next=meeting.next
+
+# 预定
+meeting.booking=meeting.booking
+
+# 结束
+meeting.close=meeting.close
+
+# 预定会议成功
+booking.success=booking.success
+
+# 接下来没有会议了
+meeting.next.null=meeting.next.null
+
+# 欢迎，输入会议信息开始预订会议
+booking.meeting.message=booking.meeting.message
+
+# 会议主题
+booking.meeting.subject=booking.meeting.subject
+
+# 会议日期
+booking.meeting.startDate=booking.meeting.startDate
+
+# 开始时间
+booking.meeting.startTime=booking.meeting.startTime
+
+# 持续时长
+booking.meeting.during=booking.meeting.during
+
+# 请输入会议主题
+input.meeting.subject=input.meeting.subject
+
+# 临时会议
+default.subject=default.subject
+
+# 取消
+meeting.cancel=meeting.cancel
+
+# 今天
+date.today=date.today
+
+# 明天
+date.towrrow=date.towrrow
+
+# 后天
+date.acquired=date.acquired
+
+# 30分钟
+time.30=time.30
+
+# 1小时
+time.60=time.60
+
+# 1个半小时
+time.90=time.90
+
+# 2小时
+time.120=time.120
+
+# appName
+app.title=app.title
+
+# 预约{resource}
+booking.meeting=booking.meeting

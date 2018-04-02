@@ -28,12 +28,19 @@ module I18n::Processes
             args: [:locales, :out_format, :missing_types, ['-p', '--path PATH', 'Destination path', default: 'tmp/missing_keys']]
 
         def missing(opt = {})
-          options = {:locales => ['en']}
-          preprocessing(options)
-          missing_keys = spreadsheet_report.find_missing
-          missing_count = missing_keys.count
-          spreadsheet_report.missing_report opt[:path], opt.except(:path) unless missing_count.zero?
-          spreadsheet_report.translated_files if missing_count.zero?
+          translated_locales = opt[:locales].reject{|x| x == base_locale}
+          translated_locales.map { |x| preprocessing({:locales => [x] } ) }
+          missing_keys = {}
+          translated_locales.map { |x| missing_keys[x] = spreadsheet_report.find_missing(x)}
+          missing_keys.each do |locale, missing_key|
+            missing_count = missing_key.count
+            if missing_count.zero?
+              spreadsheet_report.translated_files(locale)
+            else
+              $stderr.puts Rainbow("#{missing_count} keys need to be translated to #{locale}")
+              spreadsheet_report.missing_report(locale)
+            end
+          end
         end
 
         cmd :translate_missing,

@@ -2,16 +2,18 @@
 
 require 'i18n/processes/reports/base'
 require 'fileutils'
+require 'i18n/processes/path'
 
 module I18n::Processes::Reports
   class Spreadsheet < Base
+    include I18n::Processes::Path
 
-    def missing_report(path, _opt)
-      path = path.presence || 'tmp/missing_keys'
-      report = File.new(path,'w')
-      report.write("# 说明：以#开头的行，表示key对应的中文翻译\n# 下一行'='左边为key，'='右边需要填上对应的英文翻译： \n")
+    def missing_report(locale)
+      path = "tmp/missing_keys_#{locale}"
+      report = File.new(path, 'w')
+      report.write("# 说明：以#开头的行，表示key对应的中文翻译\n# 下一行'='左边为key，'='右边需要填上对应的#{locale}翻译： \n")
       report.write("\n\n# =======================  missing keys list =============================\n\n")
-      find_missing.map do |k,v|
+      find_missing(locale).map do |k,v|
         report.write("# #{v}")
         report.write("#{k}=#{k}\n\n")
       end
@@ -19,23 +21,23 @@ module I18n::Processes::Reports
       $stderr.puts Rainbow("missing report saved to #{path}").green
     end
 
-    def translated_files
-      dic = get_dic('./config/locales/dictionary/en.yml')
-      path = './translated/'
-      FileUtils.rm_f Dir.glob("#{path}*") unless Dir["#{path}*"].size.zero?
-      origin_files = Dir['./upload/zh-CN/*']
-      origin_files.each do |file|
-        translated_file(file, path, dic)
+    def translated_files(locale)
+      path = translated_path.first
+      dic = get_dic("./tmp/#{locale}")
+      FileUtils.rm_f Dir.glob("./#{path}*") unless Dir["./#{path}*"].size.zero?
+      origin_files = origin_files(base_locale).flatten
+      $stderr.puts Rainbow origin_files
+      origin_files.each do |origin_file|
+        translated_file(origin_file,"#{path}#{locale}/",  dic)
       end
       $stderr.puts Rainbow("translated files saved to #{path}").green
     end
 
-    def find_missing
-      path_zh = './config/locales/origin/zh-CN.yml'
-      path_en = './config/locales/dictionary/en.yml'
-      zh_dic = get_dic(path_zh)
-      en_dic = get_dic(path_en)
-      zh_dic.select {|k,v| (zh_dic.keys - en_dic.keys).include?(k)}
+    def find_missing(locale = nil)
+      path = './tmp/'
+      comp_dic = get_dic(path + locale)
+      base_dic = get_dic(path + base_locale)
+      base_dic.select { |k,v| (base_dic.keys - comp_dic.keys).include?(k)}
     end
 
     private
@@ -52,8 +54,7 @@ module I18n::Processes::Reports
     end
 
     def translated_file(file, path, dic)
-      file_name = File.basename(file)
-      translated_file = File.new("#{path}#{file_name}.en", 'w')
+      translated_file = new_file(file, path)
       File.open(file).read.each_line do |line|
         if line =~ /^#/ || line == "\n" || !line.include?('.')
           translated_file.write line
@@ -67,6 +68,13 @@ module I18n::Processes::Reports
         end
       end
       translated_file.close
+    end
+
+    def new_file(file, path)
+      sourced = source_path.first
+      new_file = file.sub(sourced, path) if file.include?(sourced)
+      FileUtils::mkdir_p File.dirname(new_file) unless Dir.exist?File.dirname(new_file)
+      File.new(new_file, 'w')
     end
 
   end

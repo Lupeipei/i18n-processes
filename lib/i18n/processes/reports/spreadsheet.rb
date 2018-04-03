@@ -17,7 +17,7 @@ module I18n::Processes::Reports
       report.write("\n\n# =======================  missing keys list =============================\n\n")
       find_missing(locale).map do |k,v|
         report.write("# #{v}")
-        report.write("#{k}=#{k}\n\n")
+        report.write("#{k}=\n\n")
       end
       report.close
       $stderr.puts Rainbow("missing report saved to #{file}\n").red.bright

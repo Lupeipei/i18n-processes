@@ -50,6 +50,7 @@ module I18n::Processes
         def keys_source(dic, path, locale)
           filename = path + locale
           previous_file = "#{path}pre_#{locale}"
+          FileUtils::mkdir_p File.dirname(filename) unless Dir.exist?File.dirname(filename)
           File.delete(previous_file) if File.exist?(previous_file)
           File.rename(filename, previous_file) if File.exist?(filename)
           local_file = File.new(filename, 'w')

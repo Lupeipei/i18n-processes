@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    i18n-processes (0.1.0)
+    i18n-processes (0.1.1)
       activesupport (>= 4.0.2)
       ast (>= 2.1.0)
       easy_translate (>= 0.5.1)

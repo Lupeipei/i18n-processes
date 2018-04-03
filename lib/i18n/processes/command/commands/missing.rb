@@ -36,6 +36,7 @@ module I18n::Processes
             missing_count = missing_keys.count
             if missing_count.zero?
               spreadsheet_report.translated_files(locale)
+              spreadsheet_report.origin_dic
             else
               $stderr.puts Rainbow("#{missing_count} keys need to be translated to #{locale}").green
               spreadsheet_report.missing_report(locale)

@@ -20,6 +20,9 @@ data:
   translated:
     - translated/
 
+  compare:
+    - tmp/
+
   yaml:
     write:
       ## do not wrap lines at 80 characters (override default)

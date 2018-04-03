@@ -42,6 +42,8 @@ module I18n::Processes::Reports
       base_dic.select { |k,v| (base_dic.keys - comp_dic.keys).include?(k)}
     end
 
+    ## save origin files in key = value format for next comparing
+
     private
 
     def translated_file(file, path, dic)

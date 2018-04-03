@@ -34,14 +34,16 @@ module I18n::Processes:: Path
 
   def changed_keys(locale)
     previous = "#{compare_path.first}previous/pre_#{base_locale}"
-    current = compare_path.first + base_locale
-    locale_file = compare_path.first + locale
-    previous_dic = get_dic(previous)
-    current_dic = get_dic(current)
-    locale_dic = get_dic(locale_file)
-    diff = current_dic.merge(previous_dic){|k, v1, v2| {:current => v1, :previous => v2 } unless v1 == v2 }
-    diff.select!{ |k, v| v.is_a?(Hash)}
-    check_changed_keys(diff,locale_dic)
+    if File.exist?(previous)
+      current = compare_path.first + base_locale
+      locale_file = compare_path.first + locale
+      previous_dic = get_dic(previous)
+      current_dic = get_dic(current)
+      locale_dic = get_dic(locale_file)
+      diff = current_dic.merge(previous_dic){|k, v1, v2| {:current => v1, :previous => v2 } unless v1 == v2 }
+      diff.select!{ |k, v| v.is_a?(Hash)}
+      check_changed_keys(diff,locale_dic)
+    end
   end
 
   def check_changed_keys(diff, locale_dic)
@@ -68,7 +70,7 @@ module I18n::Processes:: Path
   end
 
   def get_dic(path)
-    fail "#{path} not exist" unless  File.exist?(path)
+    fail "#{path} not exist" unless File.exist?(path)
     {}.tap do |dic|
       File.open(path).each_line do |line|
         key = line.split('=').first

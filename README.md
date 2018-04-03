@@ -7,7 +7,7 @@
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'i18n-processes'
+gem 'i18n-processes', '~> 0.1.2'
 ```
 
 And then execute:
@@ -20,11 +20,14 @@ Or install it yourself as:
 
 ## Usage
 
-- 在config/i18n-processes.yml中，设置三个路径：
+- 复制默认的config文件i18n-processes.yml，添加到你自己的config目录下，设置三个路径：
+```
+$ cp $(i18n-processes gem-path)/config/i18n-processes.yml config/
+```
   - source: base_locale zh-CN原始文件存放路径
   - translation: 翻译文件存放路径
   - translated：翻译后的文件存放路径
-
+  
 - 将需要翻译的中文文件夹放入设置好的目录下，比如source/
 - 运行：`i18n-processes preprocessing`, 会提取出所有的keys
 - 运行：`i18n-processes missing`

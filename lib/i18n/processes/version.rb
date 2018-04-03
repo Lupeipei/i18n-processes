@@ -2,6 +2,6 @@
 
 module I18n
   module Processes
-    VERSION = '0.1.1'
+    VERSION = '0.1.2'
   end
 end

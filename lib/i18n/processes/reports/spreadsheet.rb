@@ -20,7 +20,7 @@ module I18n::Processes::Reports
         report.write("#{k}=#{k}\n\n")
       end
       report.close
-      $stderr.puts Rainbow("missing report saved to #{file}\n").green
+      $stderr.puts Rainbow("missing report saved to #{file}\n").red.bright
     end
 
     def translated_files(locale)

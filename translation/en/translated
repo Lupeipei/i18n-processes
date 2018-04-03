@@ -1,5 +1,480 @@
-# 说明：以#开头的行，表示key对应的中文翻译
-# 下一行'='左边为key，'='右边需要填上对应的en翻译：
+# article
+article.title=Title
+article.shown=Visible
+article.showOrder=Display order (reverse order)
+article.channel=Channel
+article.category=Article section
+article.category.id=Article section
+article.friendlyName=English name
+article.readCount=Reads
+
+# page
+company.show.title=Company settings
+company.show.subtitle=Company basic information
+company.show.save-button=Save changes
+
+company.nav.show=Basic information
+company.nav.advance=Advanced settings
+company.nav.orders=Order center
+
+company.show.rightbar.invation=Invitation
+company.show.rightbar.invation.link=Invite colleagues to join
+company.show.rightbar.payinfo=Payment information
+company.show.rightbar.buy-link=Purchase license
+company.show.rightbar.price-link=Version feature comparison
+company.show.rightbar.expired-on=Valid until
+company.show.rightbar.max-rooms-count=Authorized number of manageable meeting rooms
+company.show.rightbar.current-rooms-count=Number of meeting rooms opened
+company.show.rightbar.custom-domain=Custom domain name
+company.show.rightbar.custom-domain.hint1=%s now supports custom domain name, please send email to
+company.show.rightbar.custom-domain.hint2= request, and provide the company domain name you want to resolve.
+Company.show.rightbar.custom-domain.hint3=We will contact you within one business day to complete the configuration.
+
+company.advance.subtitle=Advanced company settings
+company.advance.ext-meeting-type=Extended meeting type
+company.advance.ext-meeting-type.hint=You can remove unused meeting type(s)
+company.advance.booking-begin=Start time of reserve meeting
+company.advance.booking-end=End time of reserve meeting
+company.advance.booking-limit=Max duration of meeting reservation
+company.advance.booking-split=Interval of meeting booking
+company.advance.booking-date-limit=Reservation date limit
+company.advance.booking-date-limit.hint=Specifies maxium days allowed for book a future meeting, if set too far then may result to waste of resources; repetitive meeting not subject to this restriction
+
+# form
+company.name=Company name
+company.corpName=Company name
+company.notice=Company profile
+company.notice.placeholder=Enter company profile
+company.notice.hint=200 words or less
+company.emailPostfix=Company email suffix
+company.emailPostfix.placeholder=Used to ensure that only company employees can join, if leave blank then mailbox restrictions do not apply
+company.emailPostfix.hint=It's the string after @ of your company mailbox, for example if company's mailbox is john.doe@bigcompany.com, then enter bigcompany.com; multiple suffixes can be separated by comma
+company.logoFile=Company logo
+company.logoFile.hint.please-select-file=Please select company logo image
+company.logoFile.hint.logo-usage=Uploaded company logo will be visible in system interface, please make sure use a square image.
+company.logoFile.hint.remove-logo.prefix=You can also
+company.logoFile.hint.remove-logo.title=Delete company logo
+company.logoFile.hint.remove-logo.confirm=Confirm delete company logo?
+Company.logoFile.alt=Current logo
+corpLang=Compay Default Language
+
+# flash
+flash.company.notice.save-advance-succ=Company advanced settings saved successfully!
+flash.company.notice.rm-logo-succ=Remove company logo successfully!
+flash.company.warn.bad-time-split=Time interval illegal!
+flash.company.warn.need-square-picture=Please make sure to select a square image!
+flash.company.warn.edu-cannot-change-name=It does not allow to modify company name, original name restored, please contact customer service if you need to change company name
+
+
+# Index page element
+meeting-rooms.index.title=Meeting rooms management
+meeting-rooms.index.subtitle=Maintain company meeting rooms
+meeting-rooms.index.tablabel=Meeting room
+meeting-rooms.index.drag-tips=Drag meeting room to sort
+meeting-rooms.operate.new=Add meeting room
+
+meeting-rooms.index.open-for-view=Open meeting for view
+meeting-rooms.index.open-for-view.hint=Unregistered users can view meeting room arrangement
+
+meeting-rooms.operate.print=Print room QR code
+
+meeting-rooms.add.subtitle=Add a new meeting room
+
+meeting-rooms.edit.subtitle=Modified at - %s
+meeting-rooms.pad.title=Bind Pad device
+meeting-rooms.pad.had-binded=The current meeting room has been bound to a Pad device.
+meeting-rooms.pad.rebind=Re-bind Pad device
+meeting-rooms.pad.install-app-please=Please install Android App:
+meeting-rooms.pad.open-and-input-bindcode=After opening App, enter the prompted binding code:
+
+meeting-rooms.show.top-hint1=Temporary use of meeting room, please scan with WeChat
+meeting-rooms.show.top-hint2=to avoid conflict with others
+meeting-rooms.show.bottom-hint1=This page can be printed directly and paste at door of the meeting room, scan QR code with WeChat can review status of the meeting room
+meeting-rooms.show.bottom-hint2=The content of the "Print" button will not be printed
+meeting-rooms.show.bottom-hint3=You can also copy above to Word and edit before print
+
+# MeetingRoom Form
+meetingRoom.name=Meeting room name
+meetingRoom.name.placeholder=Please enter meeting room name
+meetingRoom.location=Location
+meetingRoom.location.placeholder=Meeting room location
+meetingRoom.location.hint=A brief description of where the meeting room is located, such as "west wing of building 3", so that everyone can know where it is
+meetingRoom.capacity =Maximum Capacity
+meetingRoom.capacity.placeholder=Please enter maximum capacity of the meeting room
+meetingRoom.facilities=Meeting facilities
+meetingRoom.facilities.hint=Meeting facilities available in meeting room
+meetingRoom.officeArea=Office area
+disabledReason=Reason for close
+meetingRoom.disableReason.placeholder=Please use short text to explain why the meeting room is unavailable
+meetingRoom.disableReason.hint=50 words or less, will be visible in meeting room view in WeChat and suggesting the relevant personnel
+
+meetingRoom.shortName=Short name
+meetingRoom.shortName.placeholder=Please enter a short name for the meeting room, less than 20 characters (optional)
+meetingRoom.shortName.hint=Short name will be used in the meeting notification, display screen or other places where screen estate is limited, if leave blank, full meeting room name will be used
+
+meetingRoom.allowRoles=Reservation permission
+meetingRoom.allowRoles.hint=If un-check "Everyone can book", ordinary staff can not book this meeting room, only specified role can reserve it
+
+meetingRoom.settings =Meeting room settings
+meetingRoom.settings.not-public=Do not publish meeting schedule
+meetingRoom.settings.not-public.hint=Unregistered user can not view meeting room schedule
+
+meetingRoom.notice=Meeting room notice
+meetingRoom.notice.placeholder=Enter meeting room notice
+meetingRoom.notice.hint=200 words or less, inform room usage notes (optional)
+
+meetingRoom.officeArea.id=Office area
+meetingRoom.officeArea.hint=Geographically differentiated office area, a "reception desk" can be considered as an office area
+
+meetingRoom.disable-for-short-time-no-reason=No reason, temporarily closed
+meetingRoom.disable-for-short-time=Temporarily closed
+meetingRoom.disable-for-short-time.hint=Temporarily not allow booking
+meetingRoom.booking.allowAll=All people can book
+meetingRoom.capacity.number=Can serve %s people
+
+# Limit={list room? .allowRoleSet (), as: 'role'} & {'roles.' + Role} # {if! Role_isLast}, # {/ if} # {/ list}booking
+meetingRoom.booking.limitFor.start=Only
+meetingRoom.booking.limitFor.end= can book
+
+# Flash
+flash.notice.create-rooms-succ=Meeting room %s created successfully
+flash.notice.save-rooms-succ=Meeting room %s modified successfully
+flash.notice.disable-rooms-succ=Meeting room %s disabled successfully
+flash.notice.disable-rooms-with-meetings=Meeting room %s disabled successfully, but %s meetings already scheduled, please inform the relevant staff
+flash.notice.meeting-rooms.generate-pad-bind-key-succ=Pad binding code just regenerated, please enter the new binding code on the Pad
+flash.warn.meeting-room-deleted-with-meetings =There are meeting arrangements in %s, please make sure not more meetings in %s before delete the meeting room.
+flash.warn.meeting-room-reach-max-count=Reached maximum number of meeting rooms %s, can not add more rooms, please contact online customer service to purchase license if you need to manage more meeting rooms
+
+# Validation
+validate.meetingRoom.disableReason.require=Close reason required
+validate.meetingRoom.disableReason.length=Reason for close, 50 words or less
+
+
+# Other
+meeting-rooms.bookingPermision=Booking Permissions
+meeting-rooms.not-exists=Meeting room not exist
+
+# HTML page
+meetingBooking.title.main=Book meeting
+meetingBooking.title.booking-by-date=Book by date
+meetingBooking.title.detail=Meeting details
+meetingBooking.title.find-room-by-time=Find a meeting room at specified time
+meetingBooking.title.find-time-by-room=Find a meeting time with specified room
+
+
+meetingBooking.booking=Book
+
+
+# Confirm the status
+meeting.joinStatus.notMember=Non meeting participants can not set the engagement status
+meeting.joinStatus.invalidStatus=Illegal participation status
+
+# You can specialize this file for each language.
+# For example, for French create a messages.fr file
+#
+since.seconds = %s second%s ago
+since.minutes = %s minute%s ago
+since.hours   = %s hour%s ago
+since.days    = %s day%s ago
+since.months  = %s month%s ago
+since.years   = %s year%s ago
+since.format  = MMM d, yyyy
+
+# =======================  表单验证定义 =============================
+validation.required=Required
+validation.minSize=Minimum size is %2$d
+validation.maxSize=Maximum size is %2$d
+validation.email=Invalid email address
+validation.range=Not in the range %2$d through %3$d
+validation.min=Cannot be lower than %2$d
+validation.max=Cannot be greater than %2$d
+validation.match=Must match %2$s
+validation.isTrue=Must be checked
+validation.equals=Must be equal to &{%2$s}
+validation.invalid=Incorrect value
+validation.future=Must be in the future
+validation.after=Must be after %2$s
+validation.past=Must be in the past
+validation.before=Must be before %2$s
+validation.object=Validation failed
+validation.notFound=Object not found for id %2$s
+validation.url=Not a valid URL
+validation.phone=Not a valid phone
+validation.ipv4=Not a valid IP address
+validation.ipv6=Not a valid IP v6 address
+validation.unique=Must be unique
+
+#
+play-paginate.prev=<
+play-paginate.next=>
+play-paginate.first=<<
+play-paginate.last=>>
+
+# 时间说明
+option.hours.6=6:00 AM
+option.hours.7=7:00 AM
+option.hours.8=8:00 AM
+option.hours.9=9:00 AM
+option.hours.10=10:00 AM
+option.hours.11=11:00 AM
+option.hours.14=14:00 PM
+option.hours.15=15:00 PM
+option.hours.16=16:00 PM
+option.hours.17=17:00 PM
+option.hours.18=18:00 PM
+option.hours.19=19:00 PM
+option.hours.20=20:00 PM
+option.hours.21=21:00 PM
+option.hours.22=22:00 PM
+option.hours.23=23:00 PM
+option.hour=Hour
+option.hours=Hours
+option.minute=Minute
+option.minutes=Minutes
+option.day=Day
+option.days=Days
+option.unlimit=Unlimit
+
+# 扩展专用
+yesno.yes=Yes
+yesno.no=No
+option.undefine=Undefined
+link.download=Download
+
+# app
+app.name=MeetingRoom Booking System
+
+# manager界面元素
+manager.form.saveAdd=Add
+manager.form.saveEdit=Save
+manager.form.cancel=Cancel
+manager.form.back=Back
+manager.form.print=Print
+manager.form.saveModify=Save Modify
+
+manager.list.action=Operate
+manager.list.edit=Edit
+manager.list.delete=Delete
+manager.list.confirm-delete=Confirm delete %s?
+manager.share.clear-selected-users=Clear Selected
+manager.share.clear-selected-users.hint=Clear Selected Users
+
+# 服务配置
+customer.service-email=service@hyshi.net
+
+# 频道
+cmsChannel.TOUR=TOUR
+cmsChannel.BLOG=BLOG
+cmsChannel.NOTICE=NOTICE
+cmsChannel.null=Uncategory
+
+# 会议状态
+meeting.status.OPEN=Open
+meeting.status.LOCK=Lock
+meeting.status.CANCEL=Canceled
+
+# 会议重复类型
+meeting.repeat.NONE=Meeting
+meeting.repeat.WEEK=Repeat Meeting
+
+# 性别
+sex.M=Male
+sex.F=Female
+sex.null=Unknown
+sex.U=Unknown
+
+# 角色
+roles.ADMIN=Admin
+roles.MANAGER=Manager
+roles.USER=Staff
+roles.HR=HR
+roles.FMY=Receptionist
+roles.HYSASS=Meeting Asst
+
+
+
+# =======================  导航定义 =============================
+nav.main=Home
+nav.receptions=Reception
+nav.meetings=Book Meeting
+nav.view-meetings=Query Meeting
+nav.hiring=Hiring
+nav.hiring-plans=Hiring Plans
+nav.recruits=Recruits
+nav.reports=Reports
+nav.reports.memberTimes=Member Times
+nav.reports.ownerTimes=Owner Times
+nav.reports.checkerTimes=Check-in Times
+nav.reports.roomTimes=Meetingroom Times
+nav.admin-company=Company Settings
+nav.admin-meeting-rooms=Meeting Rooms
+nav.admin-devices=Devices
+nav.admin-depts=Departments
+nav.admin-employees=Staff
+nav.my-tags=My Contacts
+nav.my-profile=My Profile
+
+
+
+# Dept
+dept.name=Dept Name
+dept.noDeptName=No Dept Name.
+dept.not-exists=The dept Not exists!
+flash.warn.dept-deleted-with-users=The %s had %s members，please remove the members before delete the dept.
+
+
+@include.article = ./_messages/en/article.properties
+@include.meetingBooking = ./_messages/en/meetingBooking.properties
+
+@include.meeting-rooms = ./_messages/en/meeting-rooms.properties
+@include.office-areas = ./_messages/en/office-areas.properties
+@include.company = ./_messages/en/company.properties
+@include.orders = ./_messages/en/orders.properties
+@include.visitor = ./_messages/en/visitor.properties
+@include.devices = ./_messages/en/devices.properties
+@include.tag = ./_messages/en/tag.properties
+
+
+# Index page
+office-areas.index.title=Office area management
+office-areas.index.subtitle=Maintain office area
+office-areas.index.tablabel=Office area
+
+office-areas.operate.new =Add new office area
+
+office-areas.visitSetting=Visitor settings
+
+# Add page
+office-areas.add.subtitle=Add office area
+office-areas.add.exists-same=Office of the same name already exists
+# edit page
+office-areas.edit.subtitle=Modified: %s
+
+# form
+officeArea.name=Office area
+officeArea.name.placeholder=Please enter name of the office area
+officeArea.phone=Receptionist phone
+officeArea.phone.placeholder=Please enter the office area corresponding to the receptionist corresponding to the phone (optional)
+officeArea.remark=Remarks
+officeArea.remark.placeholder=Office area notes (optional)
+officeArea.roomCount=Number of meeting rooms
+
+officeArea.address=Address
+officeArea.address.placeholder=Please enter specified office area address (optional)
+officeArea.address.hint=Send this address to visitors when sending an invitation
+officeArea.address.hint-view-map =, make sure the map on the right shows the correct address
+
+officeArea.trafficAdvice=Traffic advice
+officeArea.trafficAdvice.placeholder=Please enter traffic advice (optional)
+officeArea.trafficAdvice.hint=Send public transport information to visitors when sending an invitation
+
+officeArea.wifiName=Guest WIFI SSID
+officeArea.wifiName.placeholder=Please leave blank if you do not want to share WIFI with visitors
+officeArea.wifiName.hint=Please enter WIFI SSID to share with visitors
+officeArea.wifiPassword=WIFI password
+officeArea.wifiPassword.placeholder=Please leave blank if you do not want to share WIFI with visitors
+officeArea.wifiPassword.hint=Please enter WIFI password to share with visitors
+
+officeArea.admins=Service director
+officeArea.admins.placeholder=Meeting service director for the office area, support Chinese phonetic abbreviation
+# officeArea.admins.hint=not set. Responsible for the coordination of the office of the office, the meeting approval; all the office area of ​​the meeting will be copied to the office area service director
+officeArea.admins.hint=Responsible for the coordination of meetings, can modify or cancel the meeting (optional)
+
+# flash
+office-areas.flash.update-succ=Office area saved successfully
+
+# other
+office-areas.all-areas=All areas
+office-areas.default-name=Default
+
+
+# Index page
+office-areas.index.title=Office area management
+office-areas.index.subtitle=Maintain office area
+office-areas.index.tablabel=Office area
+
+office-areas.operate.new =Add new office area
+
+office-areas.visitSetting=Visitor settings
+
+# Add page
+office-areas.add.subtitle=Add office area
+office-areas.add.exists-same=Office of the same name already exists
+# edit page
+office-areas.edit.subtitle=Modified: %s
+
+# form
+officeArea.name=Office area
+officeArea.name.placeholder=Please enter name of the office area
+officeArea.phone=Receptionist phone
+officeArea.phone.placeholder=Please enter the office area corresponding to the receptionist corresponding to the phone (optional)
+officeArea.remark=Remarks
+officeArea.remark.placeholder=Office area notes (optional)
+officeArea.roomCount=Number of meeting rooms
+
+officeArea.address=Address
+officeArea.address.placeholder=Please enter specified office area address (optional)
+officeArea.address.hint=Send this address to visitors when sending an invitation
+officeArea.address.hint-view-map =, make sure the map on the right shows the correct address
+
+officeArea.trafficAdvice=Traffic advice
+officeArea.trafficAdvice.placeholder=Please enter traffic advice (optional)
+officeArea.trafficAdvice.hint=Send public transport information to visitors when sending an invitation
+
+officeArea.wifiName=Guest WIFI SSID
+officeArea.wifiName.placeholder=Please leave blank if you do not want to share WIFI with visitors
+officeArea.wifiName.hint=Please enter WIFI SSID to share with visitors
+officeArea.wifiPassword=WIFI password
+officeArea.wifiPassword.placeholder=Please leave blank if you do not want to share WIFI with visitors
+officeArea.wifiPassword.hint=Please enter WIFI password to share with visitors
+
+officeArea.admins=Service director
+officeArea.admins.placeholder=Meeting service director for the office area, support Chinese phonetic abbreviation
+# officeArea.admins.hint=not set. Responsible for the coordination of the office of the office, the meeting approval; all the office area of ​​the meeting will be copied to the office area service director
+officeArea.admins.hint=Responsible for the coordination of meetings, can modify or cancel the meeting (optional)
+
+# flash
+office-areas.flash.update-succ=Office area saved successfully
+
+# other
+office-areas.all-areas=All areas
+office-areas.default-name=Default
+
+order.corp.name=Order company
+order.orderNumber=Order number
+order.remark=Order description
+order.amount=Order amount
+order.created.info=Order created
+
+
+order.contact.info=Order Invoice & Delivery information
+
+order.invoice.type=Invoice type
+order.invoice.type.PLAIN=Ordinary invoice
+order.invoice.type.VAT=VAT
+order.invoice.type.NONE=No invoice required
+order.invoice.type.MANUAL=Manual
+
+
+corpContact.invoiceTitle=Invoice to
+corpContact.invoiceSubject=Invoice content
+corpContact.receiverName=Recipient name
+corpContact.receiverPhone=Recipient phone number
+corpContact.province=Province
+corpContact.city=City
+corpContact.district=District
+corpContact.address=Recipient address
+corpContact.postCode=Zip code
+corpContact.address2=Administrative area
+
+
+tag.name=Name
+tag.userIds=Contacts
+
+
+visitorMeeting.visitorName=Name
+visitorMeeting.visitorEmail=Email
+visitorMeeting.visitorMobile=Phone
 
 
 # =======================  missing keys list =============================

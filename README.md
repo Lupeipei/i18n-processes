@@ -20,18 +20,31 @@ Or install it yourself as:
 
 ## Usage
 
-- 复制默认的config文件i18n-processes.yml，添加到你自己的config目录下，设置三个路径：
-```
-$ cp $(i18n-processes gem-path)/config/i18n-processes.yml config/
-```
-  - source: base_locale zh-CN原始文件存放路径
+- 复制config目录下的文件i18n-processes.yml，添加到你自己的config目录下：
+
+  ```
+  $ cp $(i18n-processes gem-path)/config/i18n-processes.yml config/
+  ```
+
+  设置四个路径：
+
+  - source: 原文件存放路径
   - translation: 翻译文件存放路径
   - translated：翻译后的文件存放路径
-  
+  - compare：对比文件存放路径，默认为tmp/
+
+
 - 将需要翻译的中文文件夹放入设置好的目录下，比如source/
-- 运行：`i18n-processes preprocessing`, 会提取出所有的keys
+- 运行：`i18n-processes preprocessing`
+  处理原文件，提取出所有的keys
 - 运行：`i18n-processes missing`
-- 在你设置的翻译文件存放路径下，比如translated/，会生成与原文件同结构的文件，内含对应的翻译文件
+  先对比上期的原始文件【如果有的话】，存在key相同，value不同的情况则会报错，输出diff：
+  
+  这时可以通过两种方式消除diff：
+  - 删除翻译文件【比如translation/en/translated】中出现的diff.keys
+  - 删除上期文件【比如tmp/previous/pre_zh-CN】中出现的diff.keys
+
+在你设置的翻译文件存放路径下，比如translated/，会生成与原文件同结构的文件，内含对应的翻译文件
 
 
 ## Development

@@ -31,18 +31,19 @@ module I18n::Processes
           translated_locales = opt[:locales].reject{|x| x == base_locale}
           translated_locales.each do |locale|
             $stderr.puts Rainbow("#{base_locale} to #{locale}\n").green
+            # 创建en,对比上一期，如果两者的差异一样或者en中不存在这些keys，没问题，不一样，则raise error
             preprocessing({:locales => [locale] })
+            changed_keys(locale)
             missing_keys = spreadsheet_report.find_missing(locale)
             missing_count = missing_keys.count
             if missing_count.zero?
               spreadsheet_report.translated_files(locale)
-              spreadsheet_report.origin_dic
+              spreadsheet_report.origin_dic(locale)
             else
-              $stderr.puts Rainbow("#{missing_count} keys need to be translated to #{locale}").green
+              $stderr.puts Rainbow("#{missing_count} keys need to be translated to #{locale}").red.bright
               spreadsheet_report.missing_report(locale)
             end
           end
-
         end
 
         cmd :translate_missing,

@@ -3,12 +3,18 @@
 module I18n::Processes:: Path
 
   def origin_files(locale)
-    source = locale == base_locale ? source_path : translation_path[locale.to_sym]
-    [].tap do |file|
-      source.map do |path|
-        path = path[-1] == '/' ? path : path + '/'
-        group = Dir.glob("#{path}**/**")
-        file << group.reject { |x| File.directory?(x) }
+    if source_path == []
+      log_stderr "please check the path for origin baselocale files"
+    elsif translation_path == []
+      log_stderr "please check the path for translation files"
+    else
+      source = locale == base_locale ? source_path : translation_path[locale.to_sym]
+      [].tap do |file|
+        source.map do |path|
+          path = path[-1] == '/' ? path : path + '/'
+          group = Dir.glob("#{path}**/**")
+          file << group.reject { |x| File.directory?(x) }
+        end
       end
     end
   end
@@ -24,15 +30,15 @@ module I18n::Processes:: Path
   end
 
   def source_path
-    config_file[:data][:source]
+    config_file[:data][:source] ||= []
   end
 
   def translation_path
-    config_file[:data][:translation]
+    config_file[:data][:translation] ||= []
   end
 
   def translated_path
-    config_file[:data][:translated]
+    config_file[:data][:translated] ||= []
   end
 
   def config_file

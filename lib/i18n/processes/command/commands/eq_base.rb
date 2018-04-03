@@ -7,14 +7,14 @@ module I18n::Processes
       module EqBase
         include Command::Collection
 
-        cmd :eq_base,
-            pos:  '[locale ...]',
-            desc: 'show translations equal to base value',
-            args: %i[locales out_format]
-
-        def eq_base(opt = {})
-          print_forest i18n.eq_base_keys(opt), opt, :eq_base_keys
-        end
+        # cmd :eq_base,
+        #     pos:  '[locale ...]',
+        #     desc: 'show translations equal to base value',
+        #     args: %i[locales out_format]
+        #
+        # def eq_base(opt = {})
+        #   print_forest i18n.eq_base_keys(opt), opt, :eq_base_keys
+        # end
       end
     end
   end

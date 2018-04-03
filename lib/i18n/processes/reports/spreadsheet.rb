@@ -24,7 +24,7 @@ module I18n::Processes::Reports
     end
 
     def translated_files(locale)
-      path = translated_path.first
+      path = translated_path.first unless translated_path == []
       dic = get_dic("./tmp/#{locale}")
       FileUtils.rm_f Dir.glob("./#{path}**/**") unless Dir["./#{path}**/**"].size.zero?
       origin_files = origin_files(base_locale).flatten

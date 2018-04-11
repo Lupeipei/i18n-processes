@@ -1,6 +1,6 @@
 # I18n::Processes
 
-给到目标语言, 针对指定格式的中文文档，输出相对应的翻译文件。
+设定base_local(如zh-CN)及目标语言（如en,fr）,针对指定格式的base_local文档，检查键值的变动，确保目标语言（如en,fr）文件及时更新对应的翻译文档。
 
 ## Installation
 
@@ -25,7 +25,7 @@ Or install it yourself as:
   ```
   $ cp $(i18n-processes gem-path)/config/i18n-processes.yml config/
   ```
-
+  base_local默认为zh-CN.
   设置四个路径：
 
   - source: 原文件存放路径
